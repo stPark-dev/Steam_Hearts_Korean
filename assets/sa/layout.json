@@ -1,0 +1,59 @@
+{
+  "_doc": "SA 그림별 배치. clear=[x,y,폭,높이] 상자를 지우고 그 안에 한글을 그림. x는 숫자 또는 \"center\". y는 첫 줄 칸의 위쪽, 줄 간격 pitch. 원래 글자 위치는 docs/initial-survey.md 3절 원본에서 측정.",
+  "BROKEN.SA": {
+    "width": 320, "height": 224, "size": 12, "pitch": 14, "shear": 0.2,
+    "paragraphs": [
+      {"id": "broken.1", "clear": [4, 31, 312, 33], "x": 18, "y": 33, "color": [31, 31, 31]},
+      {"id": "broken.2", "clear": [4, 69, 312, 45], "x": 18, "y": 71, "color": [31, 31, 31]},
+      {"id": "broken.3", "clear": [4, 130, 312, 33], "x": 16, "y": 132, "color": [31, 31, 31]}
+    ]
+  },
+  "AKIAREA.SA": {
+    "width": 320, "height": 224, "size": 12, "pitch": 14, "shear": 0.2,
+    "paragraphs": [
+      {"id": "akiarea.1", "clear": [4, 11, 312, 61], "x": 21, "y": 13, "color": [31, 31, 31]},
+      {"id": "akiarea.2", "clear": [4, 76, 312, 61], "x": 21, "y": 78, "color": [31, 31, 31]},
+      {"id": "akiarea.3", "clear": [4, 154, 312, 20], "x": "center", "y": 157, "color": [31, 31, 31]}
+    ]
+  },
+  "LOADFAIL.SA": {
+    "width": 320, "height": 224, "size": 12, "pitch": 14, "shear": 0.2,
+    "paragraphs": [
+      {"id": "loadfail.1", "clear": [4, 19, 312, 35], "x": 31, "y": 21, "color": [31, 0, 0]},
+      {"id": "loadfail.2", "clear": [4, 66, 312, 23], "x": 31, "y": 70, "color": [31, 0, 0]},
+      {"id": "loadfail.3", "clear": [4, 95, 312, 37], "x": 31, "y": 99, "color": [31, 0, 0]},
+      {"id": "loadfail.4", "clear": [4, 154, 312, 20], "x": "center", "y": 157, "color": [31, 31, 31]}
+    ]
+  },
+  "SIYO.SA": {
+    "width": 320, "height": 224, "size": 14, "pitch": 16, "shear": 0.2,
+    "paragraphs": [
+      {"id": "siyo.1", "clear": [4, 62, 312, 26], "x": "center", "y": 66, "color": [31, 31, 31]}
+    ]
+  },
+  "READNOW.SA": {
+    "width": 320, "height": 48, "size": 13, "pitch": 16, "shear": 0,
+    "paragraphs": [
+      {"id": "readnow.1", "clear": [0, 0, 320, 16], "x": 1, "y": 0, "color": [9, 16, 31]},
+      {"id": "readnow.2", "clear": [0, 16, 320, 16], "x": 1, "y": 16, "color": [9, 16, 31]}
+    ]
+  },
+  "RAM.SA": {
+    "width": 200, "height": 32, "size": 13, "pitch": 16, "shear": 0,
+    "paragraphs": [
+      {"id": "ram.internal", "clear": [0, 0, 66, 16], "x": 0, "y": 0, "color": [0, 1, 12]},
+      {"id": "ram.cartridge", "clear": [66, 0, 134, 16], "x": 70, "y": 0, "color": [14, 23, 31]},
+      {"id": "ram.internal", "clear": [0, 16, 66, 16], "x": 0, "y": 16, "color": [14, 23, 31]},
+      {"id": "ram.cartridge", "clear": [66, 16, 134, 16], "x": 70, "y": 16, "color": [0, 1, 12]}
+    ]
+  },
+  "YESNO.SA": {
+    "width": 96, "height": 32, "size": 13, "pitch": 16, "shear": 0,
+    "paragraphs": [
+      {"id": "yesno.yes", "clear": [0, 0, 44, 16], "x": 2, "y": 0, "color": [0, 1, 12]},
+      {"id": "yesno.no", "clear": [44, 0, 52, 16], "x": 50, "y": 0, "color": [14, 23, 31]},
+      {"id": "yesno.yes", "clear": [0, 16, 44, 16], "x": 2, "y": 16, "color": [14, 23, 31]},
+      {"id": "yesno.no", "clear": [44, 16, 52, 16], "x": 50, "y": 16, "color": [0, 1, 12]}
+    ]
+  }
+}

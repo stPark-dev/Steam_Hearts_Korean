@@ -1,0 +1,8 @@
+*.chd
+*.bin
+*.cue
+*.iso
+work/
+out/
+__pycache__/
+.pytest_cache/
