@@ -4,13 +4,20 @@ Korean text is drawn over the original picture: each paragraph clears its box an
 lines with the original look (italic, 16-step anti-alias ramp of one color). Anything outside
 the paragraph boxes (separator lines, untranslated words) stays byte-identical.
 """
+import os
 from functools import lru_cache
+from pathlib import Path
 
 import numpy as np
 from fontTools.ttLib import TTCollection
 from PIL import Image, ImageDraw, ImageFont
 
-DEFAULT_FONT = "/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc"
+_FONT_CANDIDATES = (
+    os.environ.get("KH_FONT", ""),
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc",            # Debian fonts-noto-cjk
+    str(Path(__file__).resolve().parents[2] / "work/fonts/NotoSansCJK-Medium.ttc"),  # Windows etc.
+)
+DEFAULT_FONT = next((p for p in _FONT_CANDIDATES if p and os.path.isfile(p)), _FONT_CANDIDATES[1])
 FONT_INDEX_KR = 1           # "Noto Sans CJK KR Medium" inside the collection
 SUPER = 4                   # supersampling factor
 LEVELS = 16

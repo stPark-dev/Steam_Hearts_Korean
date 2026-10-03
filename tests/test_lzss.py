@@ -53,7 +53,7 @@ def test_stale_tail_model_changes_output_of_stream_that_reads_it():
     b"GIGA32K\0" + bytes(range(256)) * 20,
     bytes(random.Random(7).randrange(4) for _ in range(30000)),
     os.urandom(3000),
-])
+], ids=lambda d: f"{len(d)}B")  # short ids: Windows caps env vars (PYTEST_CURRENT_TEST) at 32767 chars
 def test_roundtrip_and_independent_of_stale_tail(kind, data):
     stream = lzss.compress(data, kind)
     assert stream[3] == kind

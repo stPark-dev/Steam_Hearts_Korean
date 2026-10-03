@@ -6,7 +6,9 @@ if [ ! -f "$CUE" ]; then
   echo "디스크 이미지가 없습니다: $CUE" >&2
   exit 1
 fi
-export MEDNAFEN_HOME="$PWD/work/mednafen_home"
+# Windows(Git Bash)의 mednafen.exe는 C:/ 형식 경로가 필요
+ROOT="$(pwd -W 2>/dev/null || pwd)"
+export MEDNAFEN_HOME="$ROOT/work/mednafen_home"
 mkdir -p "$MEDNAFEN_HOME/firmware"
 if [ ! -f "$MEDNAFEN_HOME/firmware/sega_101.bin" ]; then
   if [ ! -f sega_101.bin ]; then
@@ -17,6 +19,8 @@ if [ ! -f "$MEDNAFEN_HOME/firmware/sega_101.bin" ]; then
 fi
 if command -v mednafen >/dev/null 2>&1; then
   MED=mednafen
+elif [ -f work/tools/mednafen-win/mednafen.exe ]; then
+  MED=work/tools/mednafen-win/mednafen.exe
 elif [ -x work/tools/mednafen/usr/games/mednafen ]; then
   MED=work/tools/mednafen/usr/games/mednafen
   export LD_LIBRARY_PATH="$PWD/work/tools/libs/usr/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
