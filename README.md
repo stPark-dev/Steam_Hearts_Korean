@@ -29,9 +29,10 @@
 | 엔딩 스태프 롤 (`SR.SPT`) | 18블록, 역할·회사명 번역, 이름 한글 음역 | 실행 확인, **이름 독음 일부 확인 필요** |
 | 오프닝 동영상 속 로고 | Cinepak 동영상 안의 그림 | 1차에서는 그대로 둠 (결정 D-2) |
 | 메뉴·옵션 | 원판도 영어 | 그대로 둠 |
-| 음성 | 자막 없음 | 넣지 않음 (결정 D-5) |
+| 비주얼 장면 1–7 음성 (`VIS*.AIF`) | 그림 아래 검은 띠에 한글 자막 한 줄. 새 코드 `SUB.BIN`과 장면별 `SUBn.DAT`를 디스크에 추가 | 7장면 실행 확인, 시각 확인(장면 1 첫 줄 0.08초 먼저), **번역은 받아쓰기 기반 초안** |
+| 스테이지 안 대화 음성 (`ST*.AIF`) | 자막 없음 | 아직 안 함 |
 
-자세한 조사·확인 기록은 [`docs/initial-survey.md`](docs/initial-survey.md)에 있습니다.
+자세한 조사·확인 기록은 [`docs/initial-survey.md`](docs/initial-survey.md), 음성 자막은 [`docs/subtitle-pilot.md`](docs/subtitle-pilot.md)에 있습니다. 결정 D-5(음성 자막 넣지 않음)는 2026-10-03에 비주얼 장면부터 넣는 것으로 바꿨습니다.
 
 ### 남은 일
 
@@ -40,6 +41,7 @@
 3. 타이틀 로고 승인 (`assets/title/layout.json`의 `approved`).
 4. 데이터 선택 화면(`SIYO.SA`, `RAM.SA`)과 카트리지 읽는 중 줄의 실제 표시 확인.
 5. 스테이지 지도(`.MAX`) 안에 그림 글자가 없는지 남은 스테이지 확인.
+6. 음성 자막: 일본어 받아쓰기를 원음과 대조해 고치고(`asr_uncertain` 표시 줄 우선) 번역 검수. 정상 플레이로 각 장면에 들어갔을 때의 표시 확인.
 
 ## 번역 데이터
 
@@ -47,6 +49,7 @@
 |---|---|
 | [`translation/sa.json`](translation/sa.json) | 백업 RAM 안내 17칸 (원문 받아쓰기·번역·상태) |
 | [`translation/credits.json`](translation/credits.json) | 스태프 롤 18블록 |
+| [`translation/voice/vis1.json`](translation/voice/) … `vis7.json` | 비주얼 장면 음성 자막 502줄 (음성 파일, 시작·끝 초, 일본어 받아쓰기, 번역, 상태) |
 | [`assets/sa/layout.json`](assets/sa/layout.json) | 안내 그림별 글자 상자·위치·색 |
 | [`assets/title/layout.json`](assets/title/layout.json) | 타이틀 로고 크기·위치·색 수·승인 여부 |
 
@@ -58,6 +61,8 @@
 - Noto Sans CJK KR Medium (`/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc`, 데비안 `fonts-noto-cjk`)
 - 원본 디스크 BIN/CUE (CHD라면 `chdman extractcd -i "Steam-Hearts (Japan).chd" -o "Steam-Hearts (Japan).cue"`)
 - 실행 확인용: Mednafen 1.29 이상, 세가새턴 BIOS `sega_101.bin`(프로젝트 폴더, 커밋하지 않음)
+- Windows: 글꼴은 `work/fonts/NotoSansCJK-Medium.ttc`에 두면 됩니다(`KH_FONT`로 지정 가능). 실행은 `run_ko.bat`. 같은 소스라도 Windows의 FreeType 버전 때문에 그림 글자 바이트가 데비안 빌드와 다를 수 있습니다.
+- 자막 코드 `assets/subtitle/SUB.BIN`을 다시 만들 때만: 빅엔디언 SH 크로스 gcc(`apt install gcc-sh4-linux-gnu`, Windows는 WSL) 후 `sh tools/subtitle/build.sh`
 
 ## 사용법
 
@@ -67,7 +72,7 @@ python3 tools/khpatch.py build --source "/경로/Steam-Hearts (Japan).cue"
 
 # 대조군: 아무것도 바꾸지 않은 빌드 (원본과 바이트 단위로 같아야 함)
 python3 tools/khpatch.py build --source "/경로/Steam-Hearts (Japan).cue" --out out/control \
-    --sa original --title original --credits original
+    --sa original --title original --credits original --subtitles original
 
 # 테스트
 python3 -m pytest -q tests

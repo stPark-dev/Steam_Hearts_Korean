@@ -1,0 +1,385 @@
+{
+ "scene": 4,
+ "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "note": "start/end는 음성 파일 시작부터의 초. audio는 장면 안에서 재생되는 순서(0부터). 게임에서는 그 음성이 실제로 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
+ "audio": [
+  {
+   "file": "VIS4A.AIF"
+  },
+  {
+   "file": "VIS4B.AIF"
+  }
+ ],
+ "entries": [
+  {
+   "id": "vis4.001",
+   "audio": 0,
+   "start": 0.62,
+   "end": 3.0,
+   "ja": "あの、なんですか",
+   "ko": "저기, 뭐예요?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.002",
+   "audio": 0,
+   "start": 5.9,
+   "end": 8.38,
+   "ja": "いいからおとなしくしてなさい",
+   "ko": "됐으니까 얌전히 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.003",
+   "audio": 0,
+   "start": 8.38,
+   "end": 10.54,
+   "ja": "ファラ、ちょっとやりすぎじゃない?",
+   "ko": "파라, 좀 심한 거 아니야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.004",
+   "audio": 0,
+   "start": 10.54,
+   "end": 12.08,
+   "ja": "手が痛いです",
+   "ko": "손이 아파요.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.005",
+   "audio": 0,
+   "start": 12.7,
+   "end": 17.3,
+   "ja": "火遊びするような子にはこのぐらいお仕置きが必要よ",
+   "ko": "불장난하는 애한텐 이 정도 벌은 필요해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.006",
+   "audio": 0,
+   "start": 17.3,
+   "end": 18.64,
+   "ja": "お仕置き…",
+   "ko": "벌…?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.007",
+   "audio": 0,
+   "start": 18.64,
+   "end": 21.5,
+   "ja": "大事な髪の毛をこんなにしてくれた",
+   "ko": "소중한 머리카락을 이렇게 만든",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.008",
+   "audio": 0,
+   "start": 21.5,
+   "end": 25.36,
+   "ja": "お礼はたっぷりとしてあげるからね",
+   "ko": "보답은 톡톡히 해 줄 테니까.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.009",
+   "audio": 0,
+   "start": 25.36,
+   "end": 27.0,
+   "ja": "ファラ、治療だろ",
+   "ko": "파라, 치료잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.010",
+   "audio": 0,
+   "start": 31.88,
+   "end": 33.76,
+   "ja": "可愛がってあげる",
+   "ko": "귀여워해 줄게.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.011",
+   "audio": 0,
+   "start": 39.98,
+   "end": 40.96,
+   "ja": "嫌です",
+   "ko": "싫어요.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.012",
+   "audio": 0,
+   "start": 41.44,
+   "end": 43.9,
+   "ja": "おいおい、あまり無茶するなよ",
+   "ko": "어이, 너무 무리하지 마.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.013",
+   "audio": 0,
+   "start": 43.9,
+   "end": 46.0,
+   "ja": "やめてください、でしょ",
+   "ko": "'그만해 주세요'라고 해야지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.014",
+   "audio": 0,
+   "start": 60.72,
+   "end": 63.54,
+   "ja": "見とれてないで早くレベル測ってよ",
+   "ko": "넋 놓고 보지 말고 빨리 레벨 재.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.015",
+   "audio": 0,
+   "start": 63.54,
+   "end": 65.34,
+   "ja": "やってるよ",
+   "ko": "하고 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.016",
+   "audio": 0,
+   "start": 66.14,
+   "end": 68.92,
+   "ja": "やってるけどなんか変なんだ",
+   "ko": "하고는 있는데 뭔가 이상해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.017",
+   "audio": 0,
+   "start": 68.92,
+   "end": 69.98,
+   "ja": "何がよ",
+   "ko": "뭐가?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.018",
+   "audio": 0,
+   "start": 69.98,
+   "end": 71.38,
+   "ja": "レベルはゼロ",
+   "ko": "레벨은 0.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.019",
+   "audio": 0,
+   "start": 71.98,
+   "end": 73.9,
+   "ja": "ウイルスの反応はあるのに",
+   "ko": "바이러스 반응은 있는데.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.020",
+   "audio": 0,
+   "start": 73.9,
+   "end": 75.64,
+   "ja": "どういうこと?",
+   "ko": "무슨 뜻이야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.021",
+   "audio": 0,
+   "start": 76.56,
+   "end": 78.42,
+   "ja": "まだ感染していないのかな",
+   "ko": "아직 감염되지 않은 걸까?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.022",
+   "audio": 0,
+   "start": 78.96,
+   "end": 79.74,
+   "ja": "離して",
+   "ko": "놔 줘요.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.023",
+   "audio": 0,
+   "start": 82.33,
+   "end": 86.21,
+   "ja": "どうにもこうにもこのままじゃ私の気が済まないわ",
+   "ko": "어쨌든 이대로는 내 성에 안 차.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.024",
+   "audio": 0,
+   "start": 93.16,
+   "end": 94.62,
+   "ja": "余分なものは脱いでください",
+   "ko": "필요 없는 건 벗어 주세요.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis4.025",
+   "audio": 0,
+   "start": 99.67,
+   "end": 100.53,
+   "ja": "どうかした?",
+   "ko": "왜 그래?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.026",
+   "audio": 0,
+   "start": 100.53,
+   "end": 103.55,
+   "ja": "服だ、服にはウイルスの反応がある",
+   "ko": "옷이야. 옷에 바이러스 반응이 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.027",
+   "audio": 0,
+   "start": 103.99,
+   "end": 105.53,
+   "ja": "治療するわよ",
+   "ko": "치료할게.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.028",
+   "audio": 0,
+   "start": 106.03,
+   "end": 106.39,
+   "ja": "え",
+   "ko": "네?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.029",
+   "audio": 0,
+   "start": 106.99,
+   "end": 108.89,
+   "ja": "抗体を照射してあげるの",
+   "ko": "항체를 쬐어 주는 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.030",
+   "audio": 0,
+   "start": 110.15,
+   "end": 112.99,
+   "ja": "確かにこれから感染する可能性もあるし",
+   "ko": "앞으로 감염될 가능성도 있고",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.031",
+   "audio": 0,
+   "start": 112.99,
+   "end": 115.87,
+   "ja": "他のエンブリオにも抗体を散布してほしいから",
+   "ko": "다른 엠브리오에게도 항체를 뿌려 줬으면 하니까.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.032",
+   "audio": 0,
+   "start": 115.87,
+   "end": 117.5,
+   "ja": "痛くないわよ",
+   "ko": "안 아파.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.033",
+   "audio": 0,
+   "start": 122.57,
+   "end": 125.09,
+   "ja": "動けなくなるかもしれないけどね",
+   "ko": "못 움직이게 될지도 모르지만.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.034",
+   "audio": 1,
+   "start": 6.29,
+   "end": 9.65,
+   "ja": "ごめん、今ロープを解くからね",
+   "ko": "미안, 지금 밧줄 풀어 줄게.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.035",
+   "audio": 1,
+   "start": 15.27,
+   "end": 17.0,
+   "ja": "そうでもないさ",
+   "ko": "그렇지도 않아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.036",
+   "audio": 1,
+   "start": 29.21,
+   "end": 33.27,
+   "ja": "あら、ずいぶん気に入られたみたいね、ブロー",
+   "ko": "어머, 꽤 마음에 들었나 봐, 블로.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.037",
+   "audio": 1,
+   "start": 33.27,
+   "end": 34.21,
+   "ja": "ファラ!",
+   "ko": "파라!",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.038",
+   "audio": 1,
+   "start": 38.56,
+   "end": 40.0,
+   "ja": "ちょっと手荒なことしたけど",
+   "ko": "좀 거칠게 하긴 했지만",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.039",
+   "audio": 1,
+   "start": 40.0,
+   "end": 44.32,
+   "ja": "ファラはウイルスの予防のために抗体を照射したんだよ",
+   "ko": "파라는 바이러스 예방을 위해 항체를 쬔 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.040",
+   "audio": 1,
+   "start": 46.74,
+   "end": 48.76,
+   "ja": "別にわかってくれなくてもいいわ",
+   "ko": "굳이 이해해 주지 않아도 돼.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis4.041",
+   "audio": 1,
+   "start": 49.68,
+   "end": 53.24,
+   "ja": "私には一生ブローがついているんですもの",
+   "ko": "나한텐 평생 블로가 있으니까요.",
+   "status": "needs_review"
+  }
+ ]
+}

@@ -1,0 +1,429 @@
+{
+ "scene": 6,
+ "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "note": "start/end는 음성 파일 시작부터의 초. audio는 장면 안에서 재생되는 순서(0부터). 게임에서는 그 음성이 실제로 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
+ "audio": [
+  {
+   "file": "VIS6A.AIF"
+  },
+  {
+   "file": "VIS6B.AIF"
+  }
+ ],
+ "entries": [
+  {
+   "id": "vis6.001",
+   "audio": 0,
+   "start": 0.62,
+   "end": 1.38,
+   "ja": "アルバルト…",
+   "ko": "알바르트…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.002",
+   "audio": 0,
+   "start": 2.22,
+   "end": 2.92,
+   "ja": "どうした",
+   "ko": "왜 그러지?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.003",
+   "audio": 0,
+   "start": 3.58,
+   "end": 6.56,
+   "ja": "私にも治療とやらをするんじゃないのか",
+   "ko": "나한테도 치료인지 뭔지를 하려는 것 아닌가?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.004",
+   "audio": 0,
+   "start": 7.92,
+   "end": 9.44,
+   "ja": "あ、いや、その…",
+   "ko": "아, 아니, 그…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.005",
+   "audio": 0,
+   "start": 9.44,
+   "end": 11.5,
+   "ja": "照れてる場合じゃないでしょ",
+   "ko": "부끄러워할 때가 아니잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.006",
+   "audio": 0,
+   "start": 11.5,
+   "end": 14.08,
+   "ja": "さっさと犯すなり殺すなりすればいい",
+   "ko": "어서 범하든 죽이든 마음대로 해라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.007",
+   "audio": 0,
+   "start": 14.7,
+   "end": 15.72,
+   "ja": "覚悟はできている",
+   "ko": "각오는 되어 있다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.008",
+   "audio": 0,
+   "start": 15.72,
+   "end": 16.12,
+   "ja": "そんな…",
+   "ko": "그런…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.009",
+   "audio": 0,
+   "start": 16.62,
+   "end": 19.5,
+   "ja": "どうであれ、私にとっては屈辱的な行為であることに",
+   "ko": "어쨌든 나에겐 굴욕적인 행위라는 것엔",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.010",
+   "audio": 0,
+   "start": 19.5,
+   "end": 21.4,
+   "ja": "変わりはない",
+   "ko": "변함이 없다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.011",
+   "audio": 0,
+   "start": 21.98,
+   "end": 23.84,
+   "ja": "ああ、もうじれったいわね",
+   "ko": "아, 정말 답답하네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.012",
+   "audio": 0,
+   "start": 24.36,
+   "end": 25.3,
+   "ja": "さあ、脱いで",
+   "ko": "자, 벗어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.013",
+   "audio": 0,
+   "start": 26.28,
+   "end": 26.98,
+   "ja": "ごめんよ",
+   "ko": "미안해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.014",
+   "audio": 0,
+   "start": 36.33,
+   "end": 37.15,
+   "ja": "恥ずかしい",
+   "ko": "부끄럽군…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.015",
+   "audio": 0,
+   "start": 37.83,
+   "end": 38.73,
+   "ja": "アルバルト…",
+   "ko": "알바르트…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.016",
+   "audio": 0,
+   "start": 38.73,
+   "end": 39.8,
+   "ja": "ファラ、",
+   "ko": "파라,",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.017",
+   "audio": 0,
+   "start": 42.36,
+   "end": 43.4,
+   "ja": "レベルは?",
+   "ko": "레벨은?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.018",
+   "audio": 0,
+   "start": 43.96,
+   "end": 46.6,
+   "ja": "ゼロよ、感染もしていないわ",
+   "ko": "0이야. 감염도 안 됐어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.019",
+   "audio": 0,
+   "start": 48.64,
+   "end": 49.26,
+   "ja": "どうした?",
+   "ko": "왜 그래?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.020",
+   "audio": 0,
+   "start": 50.04,
+   "end": 53.6,
+   "ja": "ファラ、抗体の照射を最低レベルで",
+   "ko": "파라, 항체 조사를 최저 레벨로.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.021",
+   "audio": 0,
+   "start": 54.38,
+   "end": 54.7,
+   "ja": "ええ",
+   "ko": "응.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.022",
+   "audio": 1,
+   "start": 0.66,
+   "end": 4.14,
+   "ja": "アルバルト、僕たちはただ、",
+   "ko": "알바르트, 우린 그저",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.023",
+   "audio": 1,
+   "start": 4.3,
+   "end": 6.64,
+   "ja": "みんなをウイルスから守りたい",
+   "ko": "모두를 바이러스로부터 지키고 싶어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.024",
+   "audio": 1,
+   "start": 8.0,
+   "end": 11.6,
+   "ja": "それが、昔のウエスティナを取り戻すことなんだと",
+   "ko": "그게 옛 웨스티나를 되찾는 일이라고.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.025",
+   "audio": 1,
+   "start": 13.15,
+   "end": 17.11,
+   "ja": "貴様に敗れた私には、もう興味のないことだ",
+   "ko": "너에게 패한 나에겐 이제 관심 없는 일이다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.026",
+   "audio": 1,
+   "start": 17.33,
+   "end": 18.39,
+   "ja": "関係なくなんかない!",
+   "ko": "관계없지 않아!",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.027",
+   "audio": 1,
+   "start": 19.69,
+   "end": 22.19,
+   "ja": "あなたにだって、使命があるんでしょ?",
+   "ko": "당신에게도 사명이 있잖아?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.028",
+   "audio": 1,
+   "start": 26.07,
+   "end": 27.99,
+   "ja": "かつてお前たちと同じだった",
+   "ko": "나도 한때는 너희와 같았다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.029",
+   "audio": 1,
+   "start": 29.43,
+   "end": 32.45,
+   "ja": "自分にだけ与えられなかった使命を求めて、",
+   "ko": "나에게만 주어지지 않은 사명을 찾아",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.030",
+   "audio": 1,
+   "start": 32.59,
+   "end": 34.49,
+   "ja": "この星を彷徨っていた",
+   "ko": "이 별을 헤매었지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.031",
+   "audio": 1,
+   "start": 34.49,
+   "end": 37.5,
+   "ja": "自分の存在に疑問を持ったことも",
+   "ko": "내 존재에 의문을 품은 적도…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.032",
+   "audio": 1,
+   "start": 46.04,
+   "end": 49.72,
+   "ja": "戦うことこそが私の使命であると",
+   "ko": "싸우는 것이야말로 내 사명이라고.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.033",
+   "audio": 1,
+   "start": 52.86,
+   "end": 55.48,
+   "ja": "だからこそ私はお前たちに問うた",
+   "ko": "그래서 나는 너희에게 물었다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.034",
+   "audio": 1,
+   "start": 55.48,
+   "end": 59.12,
+   "ja": "自分の意思で生きるとはどういうことか",
+   "ko": "자신의 의지로 산다는 게 무엇인지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.035",
+   "audio": 1,
+   "start": 62.51,
+   "end": 65.13,
+   "ja": "我々作られた不自然な命に",
+   "ko": "만들어진 부자연스러운 생명인 우리에게",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.036",
+   "audio": 1,
+   "start": 65.13,
+   "end": 67.57,
+   "ja": "この星で生きる権利があるのか",
+   "ko": "이 별에서 살 권리가 있는지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.037",
+   "audio": 1,
+   "start": 67.57,
+   "end": 68.37,
+   "ja": "それを…",
+   "ko": "그것을…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.038",
+   "audio": 1,
+   "start": 74.48,
+   "end": 75.72,
+   "ja": "君と出会えていたら",
+   "ko": "너와 만났더라면",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.039",
+   "audio": 1,
+   "start": 75.72,
+   "end": 78.5,
+   "ja": "理解しあえたかもしれない",
+   "ko": "서로 이해할 수 있었을지도 모르지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.040",
+   "audio": 1,
+   "start": 82.6,
+   "end": 85.48,
+   "ja": "プロトは軌道上の戦艦ニルバーナにいる",
+   "ko": "프로토는 궤도 위의 전함 니르바나에 있다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.041",
+   "audio": 1,
+   "start": 86.0,
+   "end": 86.52,
+   "ja": "行け",
+   "ko": "가라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.042",
+   "audio": 1,
+   "start": 87.24,
+   "end": 89.36,
+   "ja": "あとは自分の目で確かめればいい",
+   "ko": "나머지는 네 눈으로 확인해라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.043",
+   "audio": 1,
+   "start": 90.1,
+   "end": 93.36,
+   "ja": "すべてはプロトだけが知っているというの",
+   "ko": "모든 건 프로토만 안다는 거야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.044",
+   "audio": 1,
+   "start": 95.1,
+   "end": 97.38,
+   "ja": "僕たちだって生きてるんだ",
+   "ko": "우리도 살아 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.045",
+   "audio": 1,
+   "start": 97.38,
+   "end": 99.98,
+   "ja": "プロトが運命を決める世界なんて",
+   "ko": "프로토가 운명을 정하는 세상 따윈",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis6.046",
+   "audio": 1,
+   "start": 100.48,
+   "end": 101.62,
+   "ja": "私は嫌よ",
+   "ko": "난 싫어.",
+   "status": "needs_review"
+  }
+ ]
+}

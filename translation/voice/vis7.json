@@ -1,0 +1,548 @@
+{
+ "scene": 7,
+ "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "note": "start/end는 음성 파일 시작부터의 초. audio는 장면 안에서 재생되는 순서(0부터). 게임에서는 그 음성이 실제로 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
+ "audio": [
+  {
+   "file": "VIS7A.AIF"
+  },
+  {
+   "file": "VIS7B.AIF"
+  }
+ ],
+ "entries": [
+  {
+   "id": "vis7.001",
+   "audio": 0,
+   "start": 0.62,
+   "end": 3.08,
+   "ja": "助けて、怖いの",
+   "ko": "도와줘, 무서워.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.002",
+   "audio": 0,
+   "start": 3.86,
+   "end": 6.16,
+   "ja": "なぜ、ニルバーナ・プロト",
+   "ko": "어째서, 니르바나 프로토…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.003",
+   "audio": 0,
+   "start": 6.86,
+   "end": 10.34,
+   "ja": "私の中にもう一人の何かが",
+   "ko": "내 안에 또 하나의 무언가가…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.004",
+   "audio": 0,
+   "start": 12.82,
+   "end": 15.62,
+   "ja": "プロトもウイルスに感染してたんじゃないの?",
+   "ko": "프로토도 바이러스에 감염됐던 거 아니야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.005",
+   "audio": 0,
+   "start": 16.38,
+   "end": 17.38,
+   "ja": "だとしたら、",
+   "ko": "그렇다면",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.006",
+   "audio": 0,
+   "start": 17.38,
+   "end": 20.76,
+   "ja": "ウイルスが歪めた意識は誰のものだったんだ",
+   "ko": "바이러스가 비튼 의식은 누구의 것이었지?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.007",
+   "audio": 0,
+   "start": 21.18,
+   "end": 23.5,
+   "ja": "使命を受けて…",
+   "ko": "사명을 받아…",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis7.008",
+   "audio": 0,
+   "start": 25.9,
+   "end": 29.16,
+   "ja": "私は何のために、何のために",
+   "ko": "나는 무엇을 위해, 무엇을 위해…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.009",
+   "audio": 0,
+   "start": 39.67,
+   "end": 41.85,
+   "ja": "ファラ、治療だ",
+   "ko": "파라, 치료야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.010",
+   "audio": 0,
+   "start": 43.93,
+   "end": 46.87,
+   "ja": "うん、治療するから着てるものは脱いでね",
+   "ko": "응, 치료할 테니 입은 건 벗어 줘.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.011",
+   "audio": 0,
+   "start": 47.43,
+   "end": 50.11,
+   "ja": "僕たちはエンブリオのみんなを救いたいんだ",
+   "ko": "우린 엠브리오 모두를 구하고 싶어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.012",
+   "audio": 0,
+   "start": 50.11,
+   "end": 52.37,
+   "ja": "もちろん、あなたも含めて",
+   "ko": "물론 당신도 포함해서.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.013",
+   "audio": 0,
+   "start": 52.93,
+   "end": 53.97,
+   "ja": "あなたたちが?",
+   "ko": "당신들이?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.014",
+   "audio": 0,
+   "start": 55.09,
+   "end": 56.41,
+   "ja": "こう考えてくれてもいい",
+   "ko": "이렇게 생각해도 좋아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.015",
+   "audio": 0,
+   "start": 57.29,
+   "end": 60.71,
+   "ja": "僕たちはアウトローでもアウトローとして生きていける",
+   "ko": "무법자도 무법자로서 살아갈 수 있는",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.016",
+   "audio": 0,
+   "start": 61.41,
+   "end": 62.51,
+   "ja": "そんな世界が好きなんだ",
+   "ko": "그런 세상이 좋아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.017",
+   "audio": 0,
+   "start": 63.49,
+   "end": 64.59,
+   "ja": "単純なことよね",
+   "ko": "단순한 거지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.018",
+   "audio": 0,
+   "start": 69.26,
+   "end": 70.48,
+   "ja": "あ、ごめん",
+   "ko": "아, 미안.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.019",
+   "audio": 0,
+   "start": 71.94,
+   "end": 75.5,
+   "ja": "あまり綺麗だったもんだから思わず見とれちゃって",
+   "ko": "너무 예뻐서 나도 모르게 넋을 잃었어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.020",
+   "audio": 0,
+   "start": 77.52,
+   "end": 81.36,
+   "ja": "ブロー、ずいぶん口がうまくなったわね",
+   "ko": "블로, 꽤 말솜씨가 늘었네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.021",
+   "audio": 0,
+   "start": 81.36,
+   "end": 82.74,
+   "ja": "な、なんだよ",
+   "ko": "뭐, 뭐야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.022",
+   "audio": 0,
+   "start": 83.22,
+   "end": 85.82,
+   "ja": "ほら、早くレベルを測らないと",
+   "ko": "자, 빨리 레벨을 재야지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.023",
+   "audio": 0,
+   "start": 85.82,
+   "end": 87.16,
+   "ja": "慌てちゃって",
+   "ko": "허둥대기는.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.024",
+   "audio": 0,
+   "start": 87.96,
+   "end": 89.98,
+   "ja": "私は、私は…",
+   "ko": "나는, 나는…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.025",
+   "audio": 0,
+   "start": 94.72,
+   "end": 96.22,
+   "ja": "ファラ、レベルは?",
+   "ko": "파라, 레벨은?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.026",
+   "audio": 0,
+   "start": 96.52,
+   "end": 98.22,
+   "ja": "レベル10!",
+   "ko": "레벨 10!",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.027",
+   "audio": 0,
+   "start": 98.84,
+   "end": 99.92,
+   "ja": "早くしないと",
+   "ko": "서둘러야 해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.028",
+   "audio": 0,
+   "start": 99.92,
+   "end": 101.62,
+   "ja": "最大出力で照射するよ",
+   "ko": "최대 출력으로 쬘게.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.029",
+   "audio": 0,
+   "start": 101.62,
+   "end": 104.26,
+   "ja": "だめよ、あなたの体が持たないわ",
+   "ko": "안 돼, 네 몸이 못 버텨.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.030",
+   "audio": 0,
+   "start": 104.26,
+   "end": 108.24,
+   "ja": "プロトが助からなかったらここまで来た意味がないんだ",
+   "ko": "프로토를 못 구하면 여기까지 온 의미가 없어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.031",
+   "audio": 0,
+   "start": 108.24,
+   "end": 112.5,
+   "ja": "じゃあ私の体も使って、リンクはできるでしょ",
+   "ko": "그럼 내 몸도 써. 링크는 할 수 있잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.032",
+   "audio": 0,
+   "start": 112.92,
+   "end": 115.0,
+   "ja": "ファラ…わかった",
+   "ko": "파라… 알았어.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis7.033",
+   "audio": 0,
+   "start": 121.74,
+   "end": 124.0,
+   "ja": "プロト、頑張って、もう少しだ",
+   "ko": "프로토, 힘내. 조금만 더.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.034",
+   "audio": 1,
+   "start": 5.44,
+   "end": 6.5,
+   "ja": "ファラ…",
+   "ko": "파라…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.035",
+   "audio": 1,
+   "start": 8.75,
+   "end": 10.05,
+   "ja": "大丈夫だ",
+   "ko": "괜찮아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.036",
+   "audio": 1,
+   "start": 14.48,
+   "end": 15.84,
+   "ja": "大丈夫、助かったわ",
+   "ko": "괜찮아, 살았어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.037",
+   "audio": 1,
+   "start": 23.0,
+   "end": 24.26,
+   "ja": "意識はどうだい?",
+   "ko": "의식은 어때?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.038",
+   "audio": 1,
+   "start": 24.34,
+   "end": 28.16,
+   "ja": "はっきりしてきたわ",
+   "ko": "또렷해졌어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.039",
+   "audio": 1,
+   "start": 28.16,
+   "end": 29.26,
+   "ja": "お疲れ様",
+   "ko": "수고했어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.040",
+   "audio": 1,
+   "start": 29.26,
+   "end": 33.5,
+   "ja": "あなたたちには運命なんて関係ないのね",
+   "ko": "너희에겐 운명 따윈 상관없구나.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.041",
+   "audio": 1,
+   "start": 34.28,
+   "end": 38.04,
+   "ja": "僕たちエンブリオは滅びなきゃいけないのかい?",
+   "ko": "우리 엠브리오는 멸망해야 하는 거야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.042",
+   "audio": 1,
+   "start": 38.72,
+   "end": 39.74,
+   "ja": "わからない、",
+   "ko": "모르겠어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.043",
+   "audio": 1,
+   "start": 39.74,
+   "end": 44.3,
+   "ja": "でもあなたたちに会うまではそう信じていた",
+   "ko": "하지만 너희를 만나기 전까지는 그렇게 믿었어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.044",
+   "audio": 1,
+   "start": 44.3,
+   "end": 48.66,
+   "ja": "あなたもエンブリオの代表、一人でしょうに",
+   "ko": "당신도 엠브리오의 대표 중 하나잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.045",
+   "audio": 1,
+   "start": 49.54,
+   "end": 51.48,
+   "ja": "私たちは仮初めの命",
+   "ko": "우리는 덧없는 생명.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.046",
+   "audio": 1,
+   "start": 52.76,
+   "end": 57.08,
+   "ja": "ウエスティナにとってはもう不必要な存在なのよ",
+   "ko": "웨스티나에겐 이제 필요 없는 존재야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.047",
+   "audio": 1,
+   "start": 57.08,
+   "end": 59.74,
+   "ja": "そんなの、そんなの認めない",
+   "ko": "그런 거, 그런 거 인정 못 해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.048",
+   "audio": 1,
+   "start": 60.34,
+   "end": 64.04,
+   "ja": "僕たちのやってきたことは無駄だったって言うのかい",
+   "ko": "우리가 해 온 일이 헛수고였다는 거야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.049",
+   "audio": 1,
+   "start": 65.92,
+   "end": 69.02,
+   "ja": "でも、現実には運命は変わったわ",
+   "ko": "하지만 현실에선 운명이 바뀌었어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.050",
+   "audio": 1,
+   "start": 69.68,
+   "end": 73.0,
+   "ja": "僕たちはウエスティナと共存してきたじゃないか",
+   "ko": "우린 웨스티나와 함께 살아왔잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.051",
+   "audio": 1,
+   "start": 73.94,
+   "end": 76.8,
+   "ja": "そしてこれからもそうして生きていくんだ",
+   "ko": "그리고 앞으로도 그렇게 살아갈 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.052",
+   "audio": 1,
+   "start": 81.53,
+   "end": 84.47,
+   "ja": "私のコントロールを離れたニルバーナが落ちる",
+   "ko": "내 통제를 벗어난 니르바나가 떨어져.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.053",
+   "audio": 1,
+   "start": 85.41,
+   "end": 86.13,
+   "ja": "そうか",
+   "ko": "그렇구나.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.054",
+   "audio": 1,
+   "start": 86.13,
+   "end": 88.23,
+   "ja": "ニルバーナは私の分身",
+   "ko": "니르바나는 내 분신.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.055",
+   "audio": 1,
+   "start": 88.23,
+   "end": 90.19,
+   "ja": "私を置いて早く逃げて",
+   "ko": "날 두고 빨리 도망쳐.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.056",
+   "audio": 1,
+   "start": 91.07,
+   "end": 93.27,
+   "ja": "そんなことできるわけないだろう",
+   "ko": "그런 걸 할 수 있을 리가 없잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.057",
+   "audio": 1,
+   "start": 105.7,
+   "end": 108.62,
+   "ja": "ニルバーナが燃え尽きるように落下軌道を…",
+   "ko": "니르바나가 다 타 버리도록 낙하 궤도를…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.058",
+   "audio": 1,
+   "start": 108.62,
+   "end": 110.9,
+   "ja": "死んで満足するのはあなただけ",
+   "ko": "죽어서 만족하는 건 너뿐이야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis7.059",
+   "audio": 1,
+   "start": 116.02,
+   "end": 117.4,
+   "ja": "ファラの言う通りだよ",
+   "ko": "파라 말이 맞아.",
+   "status": "needs_review"
+  }
+ ]
+}

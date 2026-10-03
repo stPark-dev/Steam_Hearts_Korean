@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""스팀하츠 한글판 빌드.  python3 tools/khpatch.py build --source <원본.cue> [--out out/ko] [--sa original] [--title original] [--credits original]"""
+"""스팀하츠 한글판 빌드.  python3 tools/khpatch.py build --source <원본.cue> [--out out/ko] [--sa original] [--title original] [--credits original] [--subtitles original]"""
 import argparse
 import json
 import sys
@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from steamhearts.build import BuildError, build  # noqa: E402
 
-COMPONENTS = ["sa", "title", "credits"]
+COMPONENTS = ["sa", "title", "credits", "subtitles"]
 
 
 def main() -> int:

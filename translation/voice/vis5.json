@@ -1,0 +1,870 @@
+{
+ "scene": 5,
+ "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "note": "start/end는 음성 파일 시작부터의 초. audio는 장면 안에서 재생되는 순서(0부터). 게임에서는 그 음성이 실제로 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
+ "audio": [
+  {
+   "file": "VIS5A.AIF"
+  },
+  {
+   "file": "VIS5B.AIF"
+  },
+  {
+   "file": "VIS5C.AIF"
+  }
+ ],
+ "entries": [
+  {
+   "id": "vis5.001",
+   "audio": 0,
+   "start": 2.26,
+   "end": 3.42,
+   "ja": "あなたたちは誰?",
+   "ko": "당신들은 누구야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.002",
+   "audio": 0,
+   "start": 4.48,
+   "end": 5.48,
+   "ja": "私はファラ",
+   "ko": "난 파라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.003",
+   "audio": 0,
+   "start": 6.12,
+   "end": 7.06,
+   "ja": "僕はブロー",
+   "ko": "난 블로.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.004",
+   "audio": 0,
+   "start": 7.9,
+   "end": 8.44,
+   "ja": "君は?",
+   "ko": "넌?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.005",
+   "audio": 0,
+   "start": 9.16,
+   "end": 11.6,
+   "ja": "このエリアの守護者、レイファン",
+   "ko": "이 지역의 수호자, 레이판.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.006",
+   "audio": 0,
+   "start": 12.1,
+   "end": 13.24,
+   "ja": "君のことなんだね",
+   "ko": "너였구나.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.007",
+   "audio": 0,
+   "start": 13.84,
+   "end": 16.3,
+   "ja": "夢を見ながら街に至るというのは",
+   "ko": "'꿈을 꾸며 거리에 이른다'는 게.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis5.008",
+   "audio": 0,
+   "start": 17.18,
+   "end": 18.56,
+   "ja": "どうしてここへ来たの?",
+   "ko": "왜 여기 왔어?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.009",
+   "audio": 0,
+   "start": 19.48,
+   "end": 21.94,
+   "ja": "僕の使命を果たすために",
+   "ko": "내 사명을 다하기 위해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.010",
+   "audio": 0,
+   "start": 22.64,
+   "end": 25.96,
+   "ja": "私にもみんなのようにエッチなことするの?",
+   "ko": "나한테도 다른 애들처럼 야한 짓 할 거야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.011",
+   "audio": 0,
+   "start": 26.24,
+   "end": 27.38,
+   "ja": "レイファン、",
+   "ko": "레이판,",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.012",
+   "audio": 0,
+   "start": 27.44,
+   "end": 30.7,
+   "ja": "僕たちのことでどういう情報が伝わってるんだい?",
+   "ko": "우리에 대해 어떤 소문이 돈 거야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.013",
+   "audio": 0,
+   "start": 31.12,
+   "end": 32.98,
+   "ja": "そんなことは言えない",
+   "ko": "그런 건 말 못 해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.014",
+   "audio": 0,
+   "start": 34.08,
+   "end": 36.02,
+   "ja": "見当違いもいいところだわ",
+   "ko": "완전히 헛짚었네.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis5.015",
+   "audio": 0,
+   "start": 36.02,
+   "end": 36.56,
+   "ja": "え?",
+   "ko": "어?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.016",
+   "audio": 0,
+   "start": 37.06,
+   "end": 39.26,
+   "ja": "あんたたちがどう思ってるか知らないけど",
+   "ko": "너희가 어떻게 생각하는지 모르겠지만",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.017",
+   "audio": 0,
+   "start": 39.7,
+   "end": 41.46,
+   "ja": "こいつの頭の中にはさ",
+   "ko": "이 녀석 머릿속엔 말이야",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.018",
+   "audio": 0,
+   "start": 42.16,
+   "end": 45.46,
+   "ja": "みんなを救いたいって、ただそれしかないのよ",
+   "ko": "모두를 구하고 싶다는 생각밖에 없어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.019",
+   "audio": 0,
+   "start": 50.16,
+   "end": 53.26,
+   "ja": "自分で自分のやりたいと思ったことをする",
+   "ko": "스스로 하고 싶다고 생각한 일을 해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.020",
+   "audio": 0,
+   "start": 53.92,
+   "end": 56.84,
+   "ja": "他のみんなからはアウトロー扱いされても",
+   "ko": "다른 이들에게 무법자 취급을 받아도",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.021",
+   "audio": 0,
+   "start": 56.84,
+   "end": 59.58,
+   "ja": "あたしたちは自分を信じているわ",
+   "ko": "우린 자신을 믿어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.022",
+   "audio": 0,
+   "start": 60.86,
+   "end": 62.4,
+   "ja": "服を脱がせているのも",
+   "ko": "옷을 벗기는 것도",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.023",
+   "audio": 0,
+   "start": 62.4,
+   "end": 66.3,
+   "ja": "ウイルスに侵されたみんなを治療するためにやっていることなの",
+   "ko": "바이러스에 감염된 모두를 치료하기 위해서야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.024",
+   "audio": 0,
+   "start": 66.3,
+   "end": 69.5,
+   "ja": "平和だった頃のこの星を取り戻したいんだ",
+   "ko": "평화롭던 시절의 이 별을 되찾고 싶어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.025",
+   "audio": 0,
+   "start": 71.87,
+   "end": 73.87,
+   "ja": "自分が自分らしく生きられる…",
+   "ko": "자신이 자신답게 살 수 있는…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.026",
+   "audio": 0,
+   "start": 79.04,
+   "end": 81.18,
+   "ja": "レイファン、嫌なのはわかってる",
+   "ko": "레이판, 싫은 건 알아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.027",
+   "audio": 0,
+   "start": 81.18,
+   "end": 84.36,
+   "ja": "でも、僕たちを信じてほしい",
+   "ko": "하지만 우릴 믿어 줬으면 해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.028",
+   "audio": 0,
+   "start": 87.43,
+   "end": 88.71,
+   "ja": "僕たちしかいないんだ",
+   "ko": "우리밖에 없어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.029",
+   "audio": 0,
+   "start": 89.69,
+   "end": 91.31,
+   "ja": "あなたたちみたいな人…",
+   "ko": "당신들 같은 사람…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.030",
+   "audio": 0,
+   "start": 94.33,
+   "end": 95.17,
+   "ja": "レイファン",
+   "ko": "레이판.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.031",
+   "audio": 0,
+   "start": 95.17,
+   "end": 97.0,
+   "ja": "レベルは…",
+   "ko": "레벨은…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.032",
+   "audio": 0,
+   "start": 100.5,
+   "end": 101.0,
+   "ja": "3ね",
+   "ko": "3이야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.033",
+   "audio": 0,
+   "start": 102.08,
+   "end": 103.0,
+   "ja": "悪いけど…",
+   "ko": "미안하지만…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.034",
+   "audio": 0,
+   "start": 103.94,
+   "end": 104.74,
+   "ja": "手を…",
+   "ko": "손을…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.035",
+   "audio": 0,
+   "start": 110.71,
+   "end": 112.17,
+   "ja": "じゃあ少し我慢してね",
+   "ko": "그럼 조금만 참아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.036",
+   "audio": 0,
+   "start": 112.17,
+   "end": 113.5,
+   "ja": "行くよ",
+   "ko": "간다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.037",
+   "audio": 0,
+   "start": 115.06,
+   "end": 117.5,
+   "ja": "自分が何をするべきなのか",
+   "ko": "자신이 무엇을 해야 하는지",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis5.038",
+   "audio": 0,
+   "start": 124.77,
+   "end": 126.5,
+   "ja": "本当の君は…",
+   "ko": "진짜 너는…",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis5.039",
+   "audio": 1,
+   "start": 0.62,
+   "end": 1.4,
+   "ja": "終わったよ",
+   "ko": "끝났어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.040",
+   "audio": 1,
+   "start": 1.4,
+   "end": 4.99,
+   "ja": "楽になったような気がする",
+   "ko": "편해진 것 같아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.041",
+   "audio": 1,
+   "start": 5.93,
+   "end": 6.93,
+   "ja": "ねえレイファン",
+   "ko": "있잖아, 레이판.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.042",
+   "audio": 1,
+   "start": 7.63,
+   "end": 10.93,
+   "ja": "私たちやっぱり野蛮なアウトローかしら",
+   "ko": "우리 역시 야만적인 무법자일까?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.043",
+   "audio": 1,
+   "start": 11.49,
+   "end": 15.23,
+   "ja": "ううん、きっと違うと思う",
+   "ko": "아니, 분명 아닐 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.044",
+   "audio": 1,
+   "start": 16.79,
+   "end": 20.03,
+   "ja": "レイファン、教えてほしいことがあるんだ",
+   "ko": "레이판, 알려 줬으면 하는 게 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.045",
+   "audio": 1,
+   "start": 20.89,
+   "end": 22.63,
+   "ja": "プロト姉さまのことでしょ",
+   "ko": "프로토 언니 얘기지?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.046",
+   "audio": 1,
+   "start": 22.63,
+   "end": 26.15,
+   "ja": "うん、プロトはここにいるって聞いたんだけど",
+   "ko": "응, 프로토가 여기 있다고 들었는데.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.047",
+   "audio": 1,
+   "start": 26.83,
+   "end": 31.09,
+   "ja": "お姉さまはいつも私にしか本当の居場所を教えないの",
+   "ko": "언니는 늘 나한테만 진짜 있는 곳을 알려 줘.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.048",
+   "audio": 1,
+   "start": 32.03,
+   "end": 34.45,
+   "ja": "へー、徹底してるのね",
+   "ko": "흐음, 철저하네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.049",
+   "audio": 1,
+   "start": 35.21,
+   "end": 38.05,
+   "ja": "この地上のどこを探しても見つからないわ",
+   "ko": "이 땅 어디를 찾아도 없을 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.050",
+   "audio": 1,
+   "start": 39.01,
+   "end": 39.37,
+   "ja": "じゃあ",
+   "ko": "그럼…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.051",
+   "audio": 1,
+   "start": 40.29,
+   "end": 41.87,
+   "ja": "空よりも高いところ",
+   "ko": "하늘보다도 높은 곳.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.052",
+   "audio": 1,
+   "start": 42.45,
+   "end": 43.09,
+   "ja": "宇宙?",
+   "ko": "우주?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.053",
+   "audio": 1,
+   "start": 44.27,
+   "end": 47.25,
+   "ja": "そう、お姉さまはここに眠っていた分身を起こして",
+   "ko": "응. 언니는 여기 잠들어 있던 분신을 깨워서",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.054",
+   "audio": 1,
+   "start": 47.25,
+   "end": 49.19,
+   "ja": "衛星軌道上へ上がったの",
+   "ko": "위성 궤도로 올라갔어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.055",
+   "audio": 1,
+   "start": 53.14,
+   "end": 54.52,
+   "ja": "ものすごく怯えてた",
+   "ko": "몹시 겁에 질려 있었어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.056",
+   "audio": 1,
+   "start": 55.38,
+   "end": 57.3,
+   "ja": "スチームハーツがどうのって",
+   "ko": "스팀 하츠가 어쩌고 하면서.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.057",
+   "audio": 1,
+   "start": 57.86,
+   "end": 59.2,
+   "ja": "スチームハーツ?",
+   "ko": "스팀 하츠?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.058",
+   "audio": 1,
+   "start": 62.57,
+   "end": 64.69,
+   "ja": "ここの守護者に伝わる昔話",
+   "ko": "이곳 수호자에게 전해지는 옛이야기야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.059",
+   "audio": 1,
+   "start": 64.69,
+   "end": 69.11,
+   "ja": "災い起こる時、導きの光、",
+   "ko": "재앙이 일어날 때 인도의 빛,",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.060",
+   "audio": 1,
+   "start": 69.41,
+   "end": 71.19,
+   "ja": "スチームハーツ現る",
+   "ko": "스팀 하츠 나타나리.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.061",
+   "audio": 1,
+   "start": 72.13,
+   "end": 76.05,
+   "ja": "…の星、取り戻す力なりっていうお話",
+   "ko": "별을 되찾을 힘이 되리라… 그런 이야기야.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis5.062",
+   "audio": 1,
+   "start": 77.27,
+   "end": 78.57,
+   "ja": "取り戻す?",
+   "ko": "되찾는다고?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.063",
+   "audio": 1,
+   "start": 78.93,
+   "end": 82.1,
+   "ja": "この力っていうのが、",
+   "ko": "그 힘이라는 게",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.064",
+   "audio": 1,
+   "start": 82.22,
+   "end": 86.56,
+   "ja": "あなたたちの自分を信じるという心のことだと思えるの",
+   "ko": "자신을 믿는 너희의 마음이라고 생각돼.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.065",
+   "audio": 1,
+   "start": 86.64,
+   "end": 87.5,
+   "ja": "今なら",
+   "ko": "지금이라면.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.066",
+   "audio": 1,
+   "start": 87.5,
+   "end": 89.72,
+   "ja": "僕はそんな大したやつじゃないよ",
+   "ko": "난 그렇게 대단한 녀석이 아니야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.067",
+   "audio": 1,
+   "start": 91.42,
+   "end": 93.22,
+   "ja": "ただ、みんなを助けたいだけ",
+   "ko": "그냥 모두를 돕고 싶을 뿐이야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.068",
+   "audio": 1,
+   "start": 94.08,
+   "end": 98.7,
+   "ja": "それが僕たちのためにもみんなのためにもなると思っているだけさ",
+   "ko": "그게 우리에게도 모두에게도 좋다고 생각할 뿐이야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.069",
+   "audio": 1,
+   "start": 99.62,
+   "end": 103.42,
+   "ja": "災いっていうのがプロトの心変わりだとすると",
+   "ko": "재앙이라는 게 프로토의 변심이라면",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis5.070",
+   "audio": 1,
+   "start": 103.88,
+   "end": 106.4,
+   "ja": "お姉さまはあなたたちがその力で",
+   "ko": "언니는 너희가 그 힘으로",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.071",
+   "audio": 1,
+   "start": 106.4,
+   "end": 108.94,
+   "ja": "自分を倒しにやってくると怖がっているんだわ",
+   "ko": "자기를 쓰러뜨리러 올까 봐 두려워하는 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.072",
+   "audio": 1,
+   "start": 110.22,
+   "end": 113.34,
+   "ja": "すごく強い人がお姉さまの護衛についているわ",
+   "ko": "아주 강한 사람이 언니를 호위하고 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.073",
+   "audio": 1,
+   "start": 113.8,
+   "end": 117.86,
+   "ja": "まさか、赤き軍神アルバルト",
+   "ko": "설마, 붉은 군신 알바르트?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.074",
+   "audio": 1,
+   "start": 119.52,
+   "end": 120.3,
+   "ja": "確か…",
+   "ko": "분명…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.075",
+   "audio": 1,
+   "start": 120.74,
+   "end": 123.52,
+   "ja": "私たちをバカにしたやつ、許さない",
+   "ko": "우릴 바보 취급한 녀석, 용서 못 해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.076",
+   "audio": 1,
+   "start": 126.22,
+   "end": 127.12,
+   "ja": "なんてこった",
+   "ko": "이런 젠장.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.077",
+   "audio": 1,
+   "start": 127.54,
+   "end": 128.28,
+   "ja": "レイファン、",
+   "ko": "레이판,",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.078",
+   "audio": 1,
+   "start": 128.38,
+   "end": 131.3,
+   "ja": "彼女の警備をくぐり抜ける方法はないかしら",
+   "ko": "그녀의 경비를 빠져나갈 방법은 없을까?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.079",
+   "audio": 1,
+   "start": 131.88,
+   "end": 132.7,
+   "ja": "難しいよ",
+   "ko": "어려워.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.080",
+   "audio": 1,
+   "start": 132.7,
+   "end": 136.06,
+   "ja": "いや、彼女は来いと言った",
+   "ko": "아니, 그녀는 오라고 했어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.081",
+   "audio": 1,
+   "start": 136.06,
+   "end": 141.52,
+   "ja": "ブロー、あなたの体はもう限界だわ",
+   "ko": "블로, 네 몸은 이제 한계야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.082",
+   "audio": 1,
+   "start": 142.02,
+   "end": 143.8,
+   "ja": "先にプロトの元へ行きましょう",
+   "ko": "먼저 프로토에게 가자.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.083",
+   "audio": 1,
+   "start": 143.8,
+   "end": 145.74,
+   "ja": "一刻を争っているのよ",
+   "ko": "일분일초가 급해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.084",
+   "audio": 1,
+   "start": 148.06,
+   "end": 150.4,
+   "ja": "アルバルトには必ず会わなければいけない",
+   "ko": "알바르트는 꼭 만나야 해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.085",
+   "audio": 1,
+   "start": 151.42,
+   "end": 153.3,
+   "ja": "彼女には聞きたいことが残っている",
+   "ko": "그녀에게 물어볼 게 남아 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.086",
+   "audio": 1,
+   "start": 153.3,
+   "end": 154.3,
+   "ja": "気をつけて",
+   "ko": "조심해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.087",
+   "audio": 1,
+   "start": 155.32,
+   "end": 156.96,
+   "ja": "できれば戦わないで",
+   "ko": "가능하면 싸우지 마.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.088",
+   "audio": 1,
+   "start": 158.68,
+   "end": 161.4,
+   "ja": "ああ、大丈夫、僕たちは死なない",
+   "ko": "응, 괜찮아. 우린 안 죽어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.089",
+   "audio": 1,
+   "start": 163.44,
+   "end": 164.68,
+   "ja": "いや、死ねないんだ",
+   "ko": "아니, 죽을 수 없어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.090",
+   "audio": 1,
+   "start": 165.58,
+   "end": 167.38,
+   "ja": "お姉さまを助けてあげてね",
+   "ko": "언니를 구해 줘.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.091",
+   "audio": 1,
+   "start": 167.38,
+   "end": 170.26,
+   "ja": "ああ、わかったよ、レイファン",
+   "ko": "응, 알았어, 레이판.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.092",
+   "audio": 1,
+   "start": 170.26,
+   "end": 171.58,
+   "ja": "任しといて",
+   "ko": "맡겨 둬.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.093",
+   "audio": 2,
+   "start": 4.88,
+   "end": 8.02,
+   "ja": "不思議な感じ、何か",
+   "ko": "신기한 느낌… 뭔가",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis5.094",
+   "audio": 2,
+   "start": 9.34,
+   "end": 10.74,
+   "ja": "懐かしいような気分",
+   "ko": "그리운 듯한 기분.",
+   "status": "needs_review"
+  }
+ ]
+}

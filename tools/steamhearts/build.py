@@ -10,7 +10,7 @@ import re
 import shutil
 from pathlib import Path
 
-from . import cdsector, credits, iso9660, logo, lzss, sa, spt
+from . import cdsector, credits, iso9660, logo, lzss, sa, spt, subtitles
 from .disc import TRACK1_SHA1, SourceDisc, parse_cue
 from .writeplan import WritePlan
 
@@ -153,6 +153,31 @@ def credits_file(disc: SourceDisc, files: dict) -> tuple[dict[str, bytes], list[
     return {"SR.SPT": data}, blocks
 
 
+def subtitle_files(disc: SourceDisc, files: dict) -> tuple[dict[str, bytes], dict[str, bytes], list[dict], list[int]]:
+    """(replaced files, new files, translation entries, scene numbers) for the voice subtitles."""
+    specs = sorted((_load_json(str(p.relative_to(ROOT))) for p in (ROOT / "translation/voice").glob("vis*.json")),
+                   key=lambda s: s["scene"])
+    if not specs:
+        raise BuildError("no translation/voice/vis*.json")
+    code = (ROOT / "assets/subtitle/SUB.BIN").read_bytes()
+    new = {"SUB.BIN": code}
+    entries, scenes = [], []
+    try:
+        subtitles.check_code(code)
+        for spec in specs:
+            n = spec["scene"]
+            if n not in subtitles.SCENES or n in scenes:
+                raise BuildError(f"voice translation for unknown or repeated scene {n}")
+            new[subtitles.data_name(n)] = subtitles.build_data(spec)
+            entries += spec["entries"]
+            scenes.append(n)
+        e = files["MAIN.BIN"]
+        main = subtitles.patch_main(disc.read_file(e.lba, e.size), scenes)
+    except subtitles.SubtitleError as ex:
+        raise BuildError(str(ex)) from ex
+    return {"MAIN.BIN": main}, new, entries, scenes
+
+
 def _sha1(path: Path) -> str:
     h = hashlib.sha1()
     with open(path, "rb") as f:
@@ -194,20 +219,48 @@ def _build(disc: SourceDisc, source_cue: Path, out_dir: Path, components: dict[s
     if components.get("title"):
         r, logo_ok = title_file(disc, files)
         replaced.update(r)
+    added: dict[str, bytes] = {}
+    sub_scenes: list[int] = []
+    if components.get("subtitles"):
+        r, added, sub_entries, sub_scenes = subtitle_files(disc, files)
+        replaced.update(r)
+        entries = entries + sub_entries
 
     plan = WritePlan(disc.bin)
     user_writes: dict[int, bytes] = {}
     report = {}
+    sizes: dict[str, int] = {}
     for name, data in sorted(replaced.items()):
         e = files[name]
         secs, size = place(e, data, disc.user)
         merge_sectors(user_writes, secs, name)
         if size != e.size:
+            sizes[name] = size
+        report[name] = {"old_size": e.size, "new_size": size, "stream": len(data)}
+    if added:
+        # new files go after the last file, inside track 1; the root directory is re-packed
+        lba = max(e.lba + e.sectors for e in files.values())
+        placed = []
+        for name, data in added.items():
+            n = (len(data) + 2047) // 2048
+            if lba + n > disc.sectors:
+                raise BuildError(f"no room for {name}: track 1 ends at LBA {disc.sectors}")
+            merge_sectors(user_writes, [(lba + i, data[i * 2048:(i + 1) * 2048].ljust(2048, bytes(1)))
+                                        for i in range(n)], name)
+            placed.append((name, lba, len(data)))
+            report[name] = {"lba": lba, "new_size": len(data)}
+            lba += n
+        try:
+            dir_secs = subtitles.repack_root(disc.user, sizes, placed)
+        except subtitles.SubtitleError as ex:
+            raise BuildError(str(ex)) from ex
+        merge_sectors(user_writes, sorted(dir_secs.items()), "root directory")
+    else:
+        for name, size in sizes.items():
             dl, off = iso9660.record_location(disc.user, name)
             sec = bytearray(user_writes.get(dl, disc.user(dl)))
             sec[off + 10:off + 18] = iso9660.size_field(size)
             user_writes[dl] = bytes(sec)
-        report[name] = {"old_size": e.size, "new_size": size, "stream": len(data)}
     for lba, user in sorted(user_writes.items()):
         raw = disc.raw(lba)
         sec = bytearray(raw)
@@ -240,6 +293,7 @@ def _build(disc: SourceDisc, source_cue: Path, out_dir: Path, components: dict[s
         "output_sha1": _sha1(out_bin),
         "translation_pending": pending,
         "title_logo_approved": logo_ok,
+        "subtitle_scenes": sub_scenes,
         "distribution": bool(entries) and not pending and logo_ok and all(components.values()),
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")

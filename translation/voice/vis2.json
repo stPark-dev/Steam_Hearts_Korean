@@ -1,0 +1,723 @@
+{
+ "scene": 2,
+ "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "note": "start/end는 음성 파일 시작부터의 초. audio는 장면 안에서 재생되는 순서(0부터). 게임에서는 그 음성이 실제로 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
+ "audio": [
+  {
+   "file": "VIS2A.AIF"
+  },
+  {
+   "file": "VIS2B.AIF"
+  }
+ ],
+ "entries": [
+  {
+   "id": "vis2.001",
+   "audio": 0,
+   "start": 0.62,
+   "end": 2.66,
+   "ja": "私は空を守りきれなかった",
+   "ko": "난 하늘을 끝까지 지키지 못했어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.002",
+   "audio": 0,
+   "start": 3.48,
+   "end": 4.2,
+   "ja": "殺せ",
+   "ko": "죽여라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.003",
+   "audio": 0,
+   "start": 7.14,
+   "end": 8.42,
+   "ja": "頭の固いこと",
+   "ko": "머리 한번 굳었네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.004",
+   "audio": 0,
+   "start": 8.42,
+   "end": 9.48,
+   "ja": "殺して",
+   "ko": "죽여 줘.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.005",
+   "audio": 0,
+   "start": 9.48,
+   "end": 13.22,
+   "ja": "あんなシエラみたいな辱めを受けるくらいなら",
+   "ko": "시에라처럼 그런 수치를 당할 바엔",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.006",
+   "audio": 0,
+   "start": 13.84,
+   "end": 15.2,
+   "ja": "死んだほうがマシだわ",
+   "ko": "차라리 죽는 게 나아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.007",
+   "audio": 0,
+   "start": 16.46,
+   "end": 18.34,
+   "ja": "そんな情報まで伝わってるのか",
+   "ko": "그런 정보까지 퍼진 거야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.008",
+   "audio": 0,
+   "start": 18.34,
+   "end": 20.26,
+   "ja": "あら、辱め…",
+   "ko": "어머, 수치라니…",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis2.009",
+   "audio": 0,
+   "start": 22.34,
+   "end": 25.2,
+   "ja": "これは歴とした治療なのよ",
+   "ko": "이건 엄연한 치료야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.010",
+   "audio": 0,
+   "start": 25.2,
+   "end": 29.62,
+   "ja": "そう言われると説得力に欠けるわ",
+   "ko": "그렇게 말하면 설득력이 없는데.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis2.011",
+   "audio": 0,
+   "start": 29.62,
+   "end": 33.2,
+   "ja": "あんな野蛮…無理やりシエラを…",
+   "ko": "그런 야만적인… 억지로 시에라를…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.012",
+   "audio": 0,
+   "start": 33.88,
+   "end": 35.1,
+   "ja": "何が治療よ",
+   "ko": "치료는 무슨!",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.013",
+   "audio": 0,
+   "start": 35.8,
+   "end": 38.26,
+   "ja": "今の君はウイルスに侵されているんだ",
+   "ko": "지금 넌 바이러스에 감염돼 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.014",
+   "audio": 0,
+   "start": 39.52,
+   "end": 41.06,
+   "ja": "だから僕たちが助けに来た",
+   "ko": "그래서 우리가 구하러 왔어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.015",
+   "audio": 0,
+   "start": 41.06,
+   "end": 43.5,
+   "ja": "治療の方が先のようね",
+   "ko": "치료가 먼저겠네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.016",
+   "audio": 0,
+   "start": 55.86,
+   "end": 59.28,
+   "ja": "ファラ、感染レベルを測るから彼女の服を",
+   "ko": "파라, 감염 레벨을 잴 테니 옷을…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.017",
+   "audio": 0,
+   "start": 59.28,
+   "end": 62.82,
+   "ja": "もう、ブローばっかし美味しいとこ取っちゃってさ",
+   "ko": "치, 블로만 맨날 좋은 건 다 챙기고.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.018",
+   "audio": 0,
+   "start": 64.1,
+   "end": 65.3,
+   "ja": "なんでもないわよ",
+   "ko": "아무것도 아니야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.019",
+   "audio": 0,
+   "start": 65.3,
+   "end": 71.02,
+   "ja": "使命を果たせなかった上、",
+   "ko": "사명도 다하지 못한 데다",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.020",
+   "audio": 0,
+   "start": 71.16,
+   "end": 72.84,
+   "ja": "こんな姿にされ…",
+   "ko": "이런 모습이 되다니…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.021",
+   "audio": 0,
+   "start": 73.7,
+   "end": 74.02,
+   "ja": "いや",
+   "ko": "싫어…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.022",
+   "audio": 0,
+   "start": 75.0,
+   "end": 77.38,
+   "ja": "大丈夫だ、僕を信じてくれ",
+   "ko": "괜찮아, 날 믿어 줘.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.023",
+   "audio": 0,
+   "start": 78.7,
+   "end": 79.48,
+   "ja": "なぜ?",
+   "ko": "어째서?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.024",
+   "audio": 0,
+   "start": 80.8,
+   "end": 81.52,
+   "ja": "レベルは…",
+   "ko": "레벨은…",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.025",
+   "audio": 0,
+   "start": 83.72,
+   "end": 85.76,
+   "ja": "危険だ、拒否反応が出てる",
+   "ko": "위험해, 거부 반응이 나타났어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.026",
+   "audio": 0,
+   "start": 87.48,
+   "end": 87.96,
+   "ja": "私は…?",
+   "ko": "나는…?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.027",
+   "audio": 0,
+   "start": 88.72,
+   "end": 89.86,
+   "ja": "そのまま治療に移ろう",
+   "ko": "바로 치료로 넘어가자.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.028",
+   "audio": 0,
+   "start": 99.34,
+   "end": 101.24,
+   "ja": "ファラ、しっかり押さえてて",
+   "ko": "파라, 꽉 붙잡고 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.029",
+   "audio": 0,
+   "start": 101.6,
+   "end": 104.5,
+   "ja": "自分は何をするべきか…",
+   "ko": "자신이 무엇을 해야 하는지…",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis2.030",
+   "audio": 1,
+   "start": 2.16,
+   "end": 3.58,
+   "ja": "やれやれだわ",
+   "ko": "아이고, 힘들다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.031",
+   "audio": 1,
+   "start": 4.78,
+   "end": 5.82,
+   "ja": "少し疲れた",
+   "ko": "조금 지쳤어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.032",
+   "audio": 1,
+   "start": 7.1,
+   "end": 11.46,
+   "ja": "抗体の生成は予想以上に体力の消耗が激しいみたいだ",
+   "ko": "항체를 만드는 데 생각보다 체력이 많이 드나 봐.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.033",
+   "audio": 1,
+   "start": 12.78,
+   "end": 15.68,
+   "ja": "そう、あんまし寄り道はしてらんないわね",
+   "ko": "그래, 너무 한눈팔 수는 없겠네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.034",
+   "audio": 1,
+   "start": 19.29,
+   "end": 21.11,
+   "ja": "気がついたようだね、ホウメイ",
+   "ko": "정신이 들었구나, 호메이.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.035",
+   "audio": 1,
+   "start": 21.95,
+   "end": 24.49,
+   "ja": "僕たちは君を殺すために来たんじゃない",
+   "ko": "우린 널 죽이러 온 게 아니야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.036",
+   "audio": 1,
+   "start": 25.19,
+   "end": 26.41,
+   "ja": "助けるために来たんだ",
+   "ko": "구하러 온 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.037",
+   "audio": 1,
+   "start": 26.41,
+   "end": 28.0,
+   "ja": "何のために?",
+   "ko": "무엇 때문에?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.038",
+   "audio": 1,
+   "start": 30.72,
+   "end": 31.92,
+   "ja": "ウエスティナを救う",
+   "ko": "웨스티나를 구하기 위해서.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.039",
+   "audio": 1,
+   "start": 33.62,
+   "end": 35.84,
+   "ja": "いや、プロトの間違いを正すために",
+   "ko": "아니, 프로토의 잘못을 바로잡기 위해서.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.040",
+   "audio": 1,
+   "start": 35.84,
+   "end": 38.0,
+   "ja": "間違っていると…?",
+   "ko": "잘못됐다고…?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.041",
+   "audio": 1,
+   "start": 42.27,
+   "end": 43.03,
+   "ja": "そうよ",
+   "ko": "그래.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.042",
+   "audio": 1,
+   "start": 43.63,
+   "end": 46.57,
+   "ja": "今のプロトのやっていることは押し付けだわ",
+   "ko": "지금 프로토가 하는 건 강요야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.043",
+   "audio": 1,
+   "start": 47.43,
+   "end": 49.29,
+   "ja": "昔はここまでひどくはなかった",
+   "ko": "예전엔 이렇게까지 심하지 않았어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.044",
+   "audio": 1,
+   "start": 50.97,
+   "end": 52.79,
+   "ja": "私は天空を守るもの",
+   "ko": "나는 하늘을 지키는 자.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.045",
+   "audio": 1,
+   "start": 54.29,
+   "end": 57.35,
+   "ja": "しかし、その使命はもう遂げた",
+   "ko": "하지만 그 사명은 이제 끝났다.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis2.046",
+   "audio": 1,
+   "start": 58.25,
+   "end": 61.35,
+   "ja": "空は穢れ、あなたたちに敗れた私に",
+   "ko": "하늘은 더럽혀지고, 너희에게 진 나에겐",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.047",
+   "audio": 1,
+   "start": 61.75,
+   "end": 63.25,
+   "ja": "生きる意味はもうない",
+   "ko": "더는 살아갈 의미가 없어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.048",
+   "audio": 1,
+   "start": 64.03,
+   "end": 65.25,
+   "ja": "何言ってんのよ",
+   "ko": "무슨 소리야!",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.049",
+   "audio": 1,
+   "start": 65.79,
+   "end": 69.35,
+   "ja": "これからあんたが空を元通りにしなきゃいけないんでしょうが",
+   "ko": "앞으로 네가 하늘을 원래대로 돌려놔야 하잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.050",
+   "audio": 1,
+   "start": 69.87,
+   "end": 71.99,
+   "ja": "勝手に死にたがるんじゃないわよ",
+   "ko": "멋대로 죽으려 들지 마!",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.051",
+   "audio": 1,
+   "start": 71.99,
+   "end": 72.67,
+   "ja": "そうだ",
+   "ko": "맞아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.052",
+   "audio": 1,
+   "start": 73.25,
+   "end": 75.71,
+   "ja": "君は本当の自分を取り戻すことができた",
+   "ko": "넌 진짜 자신을 되찾았어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.053",
+   "audio": 1,
+   "start": 76.73,
+   "end": 79.85,
+   "ja": "だからこれからも空を守らなければいけない",
+   "ko": "그러니 앞으로도 하늘을 지켜야 해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.054",
+   "audio": 1,
+   "start": 82.64,
+   "end": 86.96,
+   "ja": "しかし、なぜ反逆者扱いされてまで他人を救う",
+   "ko": "하지만 어째서 반역자 취급을 받으면서까지 남을 구하지?",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.055",
+   "audio": 1,
+   "start": 87.78,
+   "end": 90.84,
+   "ja": "僕は、これがウエスティナを救うことであり",
+   "ko": "나는 이게 웨스티나를 구하는 일이자",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.056",
+   "audio": 1,
+   "start": 91.42,
+   "end": 93.12,
+   "ja": "自分の使命なんだと思っている",
+   "ko": "내 사명이라고 생각해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.057",
+   "audio": 1,
+   "start": 94.62,
+   "end": 96.72,
+   "ja": "あなたたちの考えは分かったけど",
+   "ko": "너희 생각은 알겠지만",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.058",
+   "audio": 1,
+   "start": 97.58,
+   "end": 100.28,
+   "ja": "それが正しいことなのかどうかは分からないわ",
+   "ko": "그게 옳은 일인지는 모르겠어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.059",
+   "audio": 1,
+   "start": 100.28,
+   "end": 102.0,
+   "ja": "頑固なのね",
+   "ko": "고집이 세구나.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis2.060",
+   "audio": 1,
+   "start": 104.26,
+   "end": 106.02,
+   "ja": "それだけでも分かってくれればいいさ",
+   "ko": "그것만 알아줘도 충분해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.061",
+   "audio": 1,
+   "start": 107.9,
+   "end": 110.06,
+   "ja": "僕たちはこれからファクトリーエリアへ向かう",
+   "ko": "우린 이제 팩토리 에어리어로 갈 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.062",
+   "audio": 1,
+   "start": 110.88,
+   "end": 112.52,
+   "ja": "ルートを教えてほしいんだけど",
+   "ko": "가는 길을 알려 줬으면 하는데.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.063",
+   "audio": 1,
+   "start": 113.5,
+   "end": 115.42,
+   "ja": "マスターエンブリオである私が",
+   "ko": "마스터 엠브리오인 내가",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.064",
+   "audio": 1,
+   "start": 115.96,
+   "end": 118.34,
+   "ja": "反逆者に協力することはできない",
+   "ko": "반역자에게 협력할 수는 없어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.065",
+   "audio": 1,
+   "start": 119.74,
+   "end": 120.32,
+   "ja": "そっか",
+   "ko": "그렇구나.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.066",
+   "audio": 1,
+   "start": 122.63,
+   "end": 123.65,
+   "ja": "88番ゲート",
+   "ko": "88번 게이트.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.067",
+   "audio": 1,
+   "start": 124.47,
+   "end": 126.93,
+   "ja": "そこからなら侵入は簡単だ",
+   "ko": "거기라면 침입하기 쉽다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.068",
+   "audio": 1,
+   "start": 126.93,
+   "end": 129.57,
+   "ja": "ありがとう、ホウメイ",
+   "ko": "고마워, 호메이.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.069",
+   "audio": 1,
+   "start": 130.07,
+   "end": 130.77,
+   "ja": "ブロー!",
+   "ko": "블로!",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.070",
+   "audio": 1,
+   "start": 131.53,
+   "end": 134.59,
+   "ja": "彼女は私たちを完全には信用してないわ",
+   "ko": "저 사람은 우릴 완전히 믿지 않아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.071",
+   "audio": 1,
+   "start": 135.15,
+   "end": 135.91,
+   "ja": "罠かも",
+   "ko": "함정일지도 몰라.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "vis2.072",
+   "audio": 1,
+   "start": 137.35,
+   "end": 138.25,
+   "ja": "信じるさ",
+   "ko": "난 믿어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.073",
+   "audio": 1,
+   "start": 139.05,
+   "end": 140.67,
+   "ja": "ホウメイは何も喋らなかった",
+   "ko": "호메이는 아무 말도 하지 않았어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.074",
+   "audio": 1,
+   "start": 141.49,
+   "end": 144.55,
+   "ja": "僕たちは偶然88番ゲートから侵入する",
+   "ko": "우린 우연히 88번 게이트로 들어가는 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.075",
+   "audio": 1,
+   "start": 145.71,
+   "end": 146.69,
+   "ja": "それでいいじゃないか",
+   "ko": "그거면 되잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.076",
+   "audio": 1,
+   "start": 147.45,
+   "end": 148.89,
+   "ja": "お人よしなんだから",
+   "ko": "정말 사람이 좋다니까.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.077",
+   "audio": 1,
+   "start": 151.02,
+   "end": 152.02,
+   "ja": "行きましょうか",
+   "ko": "가 볼까.",
+   "status": "needs_review"
+  },
+  {
+   "id": "vis2.078",
+   "audio": 1,
+   "start": 157.16,
+   "end": 161.5,
+   "ja": "あなたたちみたいに素直に生きれるのって素敵かもね",
+   "ko": "너희처럼 솔직하게 살 수 있다면 멋질지도 몰라.",
+   "status": "needs_review"
+  }
+ ]
+}
