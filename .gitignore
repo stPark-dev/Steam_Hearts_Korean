@@ -7,3 +7,4 @@ out/
 __pycache__/
 .pytest_cache/
 !assets/subtitle/SUB.BIN
+tools/subtitle/stagetest.h

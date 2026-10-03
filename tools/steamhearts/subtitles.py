@@ -38,6 +38,10 @@ ORIG_STRINGS = {FAST: b"SYS Version 2.53 1997-12-15\0", SLOW: b"CDC Version 1.22
                 NAME: b"BUP Version 1.25 1997-06-20\0"}
 LOADER, WAIT, PLAY, READ = 0x06030E78, 0x0604A500, 0x06010EB8, 0x06010CD4
 
+# picture loader literal inside 0x060164D0 (title logos, ...): loads SUB.BIN right after boot,
+# so it can redirect the vblank handler's last call before any stage runs
+BOOT_LOADER = 0x060165C0
+
 # scene number (1-7) -> (picture-loader literal, vblank-wait literal, voice-player literals)
 SCENES = {
     1: (0x06033CF4, 0x06033D94, (0x06033D20,)),
@@ -112,6 +116,7 @@ def patch_main(main: bytes, scenes) -> bytes:
     for addr, code in ((FAST, FAST_CODE), (SLOW, SLOW_CODE), (NAME, NAME_DATA)):
         assert len(code) == 32
         put(addr, ORIG_STRINGS[addr], code)
+    put(BOOT_LOADER, _longs(LOADER), _longs(FAST))
     for n in scenes:
         loader, wait, plays = SCENES[n]
         put(loader, _longs(LOADER), _longs(FAST))

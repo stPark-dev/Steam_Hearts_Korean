@@ -55,6 +55,7 @@ def _fake_main():
     main = bytearray(0x06070000 - st.MAIN_BASE)
     for addr, s in st.ORIG_STRINGS.items():
         main[addr - st.MAIN_BASE:addr - st.MAIN_BASE + len(s)] = s
+    main[st.BOOT_LOADER - st.MAIN_BASE:st.BOOT_LOADER - st.MAIN_BASE + 4] = struct.pack(">I", st.LOADER)
     for loader, wait, plays in st.SCENES.values():
         for a, v in [(loader, st.LOADER), (wait, st.WAIT)] + [(p, st.PLAY) for p in plays]:
             main[a - st.MAIN_BASE:a - st.MAIN_BASE + 4] = struct.pack(">I", v)
@@ -69,8 +70,9 @@ def test_patch_main_hooks_only_requested_scenes():
     assert all(lit(p) == st.PLAY_HOOK for p in st.SCENES[3][2])
     assert lit(st.SCENES[2][0]) == st.LOADER and lit(st.SCENES[2][1]) == st.WAIT
     assert out[st.FAST - st.MAIN_BASE:st.FAST - st.MAIN_BASE + 32] == st.FAST_CODE
+    assert lit(st.BOOT_LOADER) == st.FAST
     diff = sum(a != b for a, b in zip(main, out))
-    assert diff <= 3 * 32 + 4 * (2 + 1 + 2)
+    assert diff <= 3 * 32 + 4 * (1 + 2 + 1 + 2)
 
 
 def test_patch_main_refuses_unexpected_bytes():

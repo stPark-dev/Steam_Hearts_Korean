@@ -64,8 +64,36 @@ static inline void purge_cache(void)
     *ccr = *ccr | 0x10;
 }
 
+/* the vblank handler ends with a call through this literal; once SUB.BIN is in RAM it is
+   redirected to BASE+0x18 (on the disc it stays untouched: SUB.BIN is not there at boot) */
+#define VBLANK_LITERAL  (*(volatile u32 *)0x06010828)
+#define VBLANK_ORIG     0x06010578u
+#define VBLANK_HOOK     0x06086358u
+/* the VDP2 library's vblank routine 0x0604B928 calls its register upload through this */
+#define UPLOAD_LITERAL  (*(volatile u32 *)0x0604B9E4)
+#define UPLOAD_ORIG     0x0604B728u
+#define UPLOAD_HOOK     0x0608635Cu
+
+static void install_vblank_hook(void)
+{
+    int changed = 0;
+    if (VBLANK_LITERAL == VBLANK_ORIG) {
+        VBLANK_LITERAL = VBLANK_HOOK;
+        changed = 1;
+    }
+    if (UPLOAD_LITERAL == UPLOAD_ORIG) {
+        UPLOAD_LITERAL = UPLOAD_HOOK;
+        changed = 1;
+    }
+    if (changed)
+        purge_cache();
+}
+
 void sub_on_load(const char *picture)
 {
+    install_vblank_hook();
+    if (picture[0] != 'v' || picture[1] != 'i' || picture[2] != 's')
+        return;                 /* title and other pictures: nothing to load */
     /* the scene is the digit in the picture name, "vis3_1s.pxt" -> 3 */
     int scene = picture[3] - '0';
     nplay = 0;                  /* pictures are loaded before the first voice */
@@ -145,6 +173,98 @@ static void draw(int idx)
     VRAM[MARK_POS] = MARK;
     cur = idx;
 }
+
+#ifdef STAGETEST
+#include "stagetest.h"
+#define VDP2_REG(o)  (*(volatile u16 *)(0x25F80000 + (o)))
+#define CRAM16      ((volatile u16 *)0x25F00000)
+#define N3_MAP      0x70000         /* bank B1, unused by the stages */
+#define N3_CHARS    0x74000
+#define N3_PAL      15              /* palette 15 of colour offset 7: CRAM 0x7F0.. */
+#define GAME_MODE   (*(volatile u16 *)0x0605D716)
+static int n3_drawn = 0, n3_on = 0;
+
+/* VDP2 registers are write-only; the library keeps what it uploads in RAM:
+   regs 0x0E..0x27 at 0x060859B0+reg, 0x28..0x6F at 0x060859B8+reg, 0xE0.. at 0x06085B80+reg */
+#define SH(base, reg)  (*(volatile u16 *)((base) + (reg)))
+#define SYS  0x060859B0
+#define NOR  0x060859B8
+#define DAT  0x06085B80
+
+static void n3_regs(void)
+{
+    VDP2_REG(0x20) = SH(SYS, 0x20) | 0x0008;                /* BGON: N3ON */
+    VDP2_REG(0x2A) = SH(NOR, 0x2A) & ~0x0030;               /* CHCTLB: N3 1x1 cell, 16 colours */
+    VDP2_REG(0x36) = 0x8000 | (N3_CHARS >> 15);             /* PNCN3: 1 word, char bits 14..10 */
+    VDP2_REG(0x3A) = SH(NOR, 0x3A) & ~0x00C0;               /* PLSZ: N3 1x1 plane */
+    VDP2_REG(0x3C) = SH(NOR, 0x3C) & ~0x7000;               /* MPOFN: N3 map offset 0 */
+    VDP2_REG(0x4C) = (N3_MAP >> 13) * 0x0101;               /* MPABN3 */
+    VDP2_REG(0x4E) = (N3_MAP >> 13) * 0x0101;               /* MPCDN3 */
+    VDP2_REG(0x94) = 0;                                     /* SCXIN3 */
+    VDP2_REG(0x96) = 0;                                     /* SCYIN3 */
+    VDP2_REG(0xFA) = (SH(DAT, 0xFA) & 0x00FF) | 0x0700;     /* PRINB: N3 priority 7 */
+    VDP2_REG(0xE4) = (SH(DAT, 0xE4) & 0x0FFF) | 0x7000;     /* CRAOFA: N3 colour offset 7 */
+    VDP2_REG(0x1E) = (SH(SYS, 0x1E) & 0x00FF) | 0x3700;     /* CYCB1 T4,T5: N3 name, N3 char */
+}
+
+void sub_after_upload(void)
+{
+    if (n3_on)
+        n3_regs();
+}
+
+static void n3_setup(void)
+{
+    if (!n3_on) {
+        n3_on = 1;
+        n3_regs();
+    }
+}
+
+static void n3_draw(void)
+{
+    static const u16 col[5] = { 0, 0x0000, 0x2108, 0x5294, 0x7FFF };
+    for (int i = 0; i < 5; i++)
+        CRAM16[0x7F0 + i] = col[i];
+    volatile u32 *ch = (volatile u32 *)(0x25E00000 + N3_CHARS);
+    for (int i = 0; i < 8; i++)
+        ch[i] = 0;                                      /* char 0: clear */
+    const u32 *src = (const u32 *)stagetest_cells;
+    for (int i = 0; i < (int)sizeof(stagetest_cells) / 4; i++)
+        ch[8 + i] = src[i];
+    volatile u16 *map = (volatile u16 *)(0x25E00000 + N3_MAP);
+    u16 blank = (N3_PAL << 12) | ((N3_CHARS >> 5) & 0x3FF);
+    for (int i = 0; i < 64 * 64; i++)
+        map[i] = blank;
+    for (int r = 0; r < 2; r++)
+        for (int c = 0; c < 40; c++)
+            map[(15 + r) * 64 + c] = blank + 1 + r * 40 + c;
+    n3_drawn = 1;
+}
+
+void sub_on_vblank(void)
+{
+    if (GAME_MODE == 1) {
+        n3_setup();
+        /* stage start clears VRAM and CRAM: redraw whenever our map or palette is gone */
+        volatile u16 *map = (volatile u16 *)(0x25E00000 + N3_MAP);
+        if (!n3_drawn || map[0] != ((N3_PAL << 12) | ((N3_CHARS >> 5) & 0x3FF))
+            || CRAM16[0x7F4] != 0x7FFF)
+            n3_draw();
+    } else if (n3_on) {
+        n3_on = 0;
+        n3_drawn = 0;
+        VDP2_REG(0x20) = SH(SYS, 0x20);
+    }
+}
+#else
+void sub_on_vblank(void)
+{
+}
+void sub_after_upload(void)
+{
+}
+#endif
 
 #ifdef SUBLOG
 /* diagnostic: per frame after each play call, the key-on state of all 32 SCSP slots */
