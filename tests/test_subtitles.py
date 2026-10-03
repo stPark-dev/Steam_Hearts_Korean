@@ -141,8 +141,12 @@ def test_repack_root_inserts_in_iso_order_and_updates_sizes():
 
 
 def test_voice_translations_build():
-    for path in sorted((ROOT / "translation/voice").glob("vis*.json")):
+    for path in sorted((ROOT / "translation/voice").glob("*.json")):
         spec = json.loads(path.read_text(encoding="utf-8"))
+        if path.name.startswith("st"):
+            assert 1 <= spec["stage"] <= 9
+            assert len(st.build_stage_data(spec)) <= st.STAGE_DATA_LIMIT
+            continue
         assert spec["scene"] in st.SCENES
         assert {e["audio"] for e in spec["entries"]} <= set(range(len(spec["audio"])))
         assert all(e["status"] in ("needs_review", "needs_human_review", "distribution_eligible")
@@ -150,3 +154,32 @@ def test_voice_translations_build():
         ids = [e["id"] for e in spec["entries"]]
         assert len(ids) == len(set(ids))
         assert len(st.build_data(spec)) <= st.DATA_LIMIT
+
+
+def test_stage_wrap_splits_long_lines_at_a_space():
+    short = st.stage_wrap("짧은 줄.")
+    assert short == ["짧은 줄."]
+    long = st.stage_wrap("파라, 우리가 하지 않으면 웨스티나는 멸망하고 말아. 그래도 가야 해.")
+    assert len(long) == 2 and all(long)
+    with pytest.raises(st.SubtitleError):
+        st.stage_wrap("가" * 60)
+
+
+def test_stage_glyph_has_outline_inside_its_box():
+    g = st.render_stage_glyph("한")
+    assert g.shape[0] == st.STAGE_ROWS
+    assert set(np.unique(g)) <= {0, 1, 2, 3} and (g == 1).any() and (g == 3).any()
+    assert not g[:, 0].any() or (g[:, 0] <= 1).all()     # only outline may touch the edge
+
+
+def test_build_stage_data_layout():
+    spec = {"stage": 1, "audio": [{"file": "ST1_00.AIF"}, {"file": "ST1_BD.AIF"}],
+            "entries": [{"id": "a", "audio": 1, "start": 1.0, "end": 2.0, "ko": "목표 파괴."}]}
+    data = st.build_stage_data(spec)
+    magic, naudio, ncues, nglyphs, _, names, cues, glyphs, text, bits = struct.unpack(">I4H5I", data[:32])
+    assert magic == st.STAGE_MAGIC and naudio == 2 and ncues == 1
+    assert data[names:names + 12].rstrip(b"\0") == b"st1_00.aif"
+    assert data[names + 12:names + 24].rstrip(b"\0") == b"st1_bd.aif"
+    audio, nlines, s, e, t, n1, n2, x1, x2 = struct.unpack(">BBHHHHHHH", data[cues:cues + 16])
+    assert audio == 1 and n1 == 0 and n2 == len("목표 파괴.") and 0 < x2 < st.STAGE_W // 2
+    assert len(data) <= st.STAGE_DATA_LIMIT

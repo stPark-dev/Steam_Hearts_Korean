@@ -8,7 +8,6 @@ SECTIONS
     .data : { *(.data .data.*) }
     .bss : { *(.bss .bss.*) *(COMMON) }
     _end = .;
-    .stagetest 0x06087340 : { *(.stagetest) }      /* pilot builds only: lands in the data area */
     /DISCARD/ : { *(.comment) *(.note*) *(.eh_frame*) }
 }
 ASSERT(_end <= 0x06087340, "subtitle code overruns its 4 KB")

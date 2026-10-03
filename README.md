@@ -30,7 +30,7 @@
 | 오프닝 동영상 속 로고 | Cinepak 동영상 안의 그림 | 1차에서는 그대로 둠 (결정 D-2) |
 | 메뉴·옵션 | 원판도 영어 | 그대로 둠 |
 | 비주얼 장면 1–7 음성 (`VIS*.AIF`) | 그림 아래 검은 띠에 한글 자막 한 줄. 새 코드 `SUB.BIN`과 장면별 `SUBn.DAT`를 디스크에 추가 | 7장면 실행 확인, 시각 확인(장면 1 첫 줄 0.08초 먼저), **번역은 받아쓰기 기반 초안** |
-| 스테이지 안 대화 음성 (`ST*.AIF`) | 자막 없음 | 아직 안 함 |
+| 스테이지 안 대화 음성 (`ST*.AIF`) | 비어 있는 NBG3 면에 얼굴 그림 바로 위로 최대 두 줄. 스테이지별 `STGn.DAT` | 스테이지 1 실행 확인(음성에 맞춰 표시), 2–8은 데이터만, **번역은 받아쓰기 기반 초안** |
 
 자세한 조사·확인 기록은 [`docs/initial-survey.md`](docs/initial-survey.md), 음성 자막은 [`docs/subtitle-pilot.md`](docs/subtitle-pilot.md)에 있습니다. 결정 D-5(음성 자막 넣지 않음)는 2026-10-03에 비주얼 장면부터 넣는 것으로 바꿨습니다.
 
@@ -41,7 +41,7 @@
 3. 타이틀 로고 승인 (`assets/title/layout.json`의 `approved`).
 4. 데이터 선택 화면(`SIYO.SA`, `RAM.SA`)과 카트리지 읽는 중 줄의 실제 표시 확인.
 5. 스테이지 지도(`.MAX`) 안에 그림 글자가 없는지 남은 스테이지 확인.
-6. 음성 자막: 일본어 받아쓰기를 원음과 대조해 고치고(`asr_uncertain` 표시 줄 우선) 번역 검수. 정상 플레이로 각 장면에 들어갔을 때의 표시 확인.
+6. 음성 자막: 일본어 받아쓰기를 원음과 대조해 고치고(`asr_uncertain` 표시 줄 우선) 번역 검수. 정상 플레이로 각 장면·스테이지 2–8에 들어갔을 때의 표시 확인.
 
 ## 번역 데이터
 
@@ -50,6 +50,7 @@
 | [`translation/sa.json`](translation/sa.json) | 백업 RAM 안내 17칸 (원문 받아쓰기·번역·상태) |
 | [`translation/credits.json`](translation/credits.json) | 스태프 롤 18블록 |
 | [`translation/voice/vis1.json`](translation/voice/) … `vis7.json` | 비주얼 장면 음성 자막 502줄 (음성 파일, 시작·끝 초, 일본어 받아쓰기, 번역, 상태) |
+| [`translation/voice/st1.json`](translation/voice/) … `st8.json` | 스테이지 안 대화 자막 376줄 (같은 형식, 음성은 파일 이름으로 찾음) |
 | [`assets/sa/layout.json`](assets/sa/layout.json) | 안내 그림별 글자 상자·위치·색 |
 | [`assets/title/layout.json`](assets/title/layout.json) | 타이틀 로고 크기·위치·색 수·승인 여부 |
 

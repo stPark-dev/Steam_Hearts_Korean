@@ -1,0 +1,249 @@
+{
+ "stage": 8,
+ "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
+ "audio": [
+  {
+   "file": "ST8.AIF"
+  }
+ ],
+ "entries": [
+  {
+   "id": "st8.001",
+   "audio": 0,
+   "start": 0.0,
+   "end": 1.44,
+   "ja": "プロト、狭くない?",
+   "ko": "프로토, 좁지 않아?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.002",
+   "audio": 0,
+   "start": 2.08,
+   "end": 2.4,
+   "ja": "大丈夫",
+   "ko": "괜찮아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.003",
+   "audio": 0,
+   "start": 3.42,
+   "end": 4.94,
+   "ja": "船が崩れる?",
+   "ko": "배가 무너지는 거야?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.004",
+   "audio": 0,
+   "start": 5.86,
+   "end": 6.8,
+   "ja": "急げ、ファラ!",
+   "ko": "서둘러, 파라!",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.005",
+   "audio": 0,
+   "start": 11.61,
+   "end": 12.65,
+   "ja": "まだ動いている",
+   "ko": "아직 움직이고 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.006",
+   "audio": 0,
+   "start": 12.65,
+   "end": 13.39,
+   "ja": "どうして?",
+   "ko": "어째서?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.007",
+   "audio": 0,
+   "start": 13.93,
+   "end": 15.89,
+   "ja": "プロトはこっちに乗っているのに",
+   "ko": "프로토는 여기 타고 있는데.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.008",
+   "audio": 0,
+   "start": 15.89,
+   "end": 19.09,
+   "ja": "ウイルス自身が僕たちを殺すっていうのか",
+   "ko": "바이러스 스스로 우리를 죽이려는 건가?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.009",
+   "audio": 0,
+   "start": 37.54,
+   "end": 38.28,
+   "ja": "アルバルト!",
+   "ko": "알바르트!",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.010",
+   "audio": 0,
+   "start": 39.06,
+   "end": 41.7,
+   "ja": "あまりに遅いんで、しびれを切らしたぞ",
+   "ko": "너무 늦어서 기다리다 지쳤다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.011",
+   "audio": 0,
+   "start": 42.28,
+   "end": 43.12,
+   "ja": "恩に着るよ",
+   "ko": "고마워.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st8.012",
+   "audio": 0,
+   "start": 43.54,
+   "end": 45.22,
+   "ja": "ファラ、行けるか?",
+   "ko": "파라, 갈 수 있겠어?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.013",
+   "audio": 0,
+   "start": 45.92,
+   "end": 48.06,
+   "ja": "どうにか、持ちそうよ",
+   "ko": "어떻게든 버틸 것 같아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.014",
+   "audio": 0,
+   "start": 48.56,
+   "end": 49.46,
+   "ja": "早くしろ!",
+   "ko": "서둘러라!",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.015",
+   "audio": 0,
+   "start": 49.46,
+   "end": 52.22,
+   "ja": "私とていつまで持つかわからん",
+   "ko": "나도 언제까지 버틸지 모른다.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st8.016",
+   "audio": 0,
+   "start": 52.72,
+   "end": 54.08,
+   "ja": "君も一緒に",
+   "ko": "너도 같이…",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.017",
+   "audio": 0,
+   "start": 54.08,
+   "end": 54.84,
+   "ja": "先に行け",
+   "ko": "먼저 가라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.018",
+   "audio": 0,
+   "start": 55.38,
+   "end": 57.5,
+   "ja": "こいつはまだ生きている",
+   "ko": "이 녀석은 아직 살아 있다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.019",
+   "audio": 0,
+   "start": 57.5,
+   "end": 58.18,
+   "ja": "でも",
+   "ko": "하지만…",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.020",
+   "audio": 0,
+   "start": 58.18,
+   "end": 60.2,
+   "ja": "どうした、早くしろ",
+   "ko": "왜 그러나, 서둘러라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.021",
+   "audio": 0,
+   "start": 60.2,
+   "end": 63.38,
+   "ja": "お前たちが今までしてきたことを無駄にするつもりか",
+   "ko": "너희가 지금까지 해 온 일을 헛되게 할 셈이냐?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.022",
+   "audio": 0,
+   "start": 65.35,
+   "end": 67.01,
+   "ja": "プロトを助けるのが先だ",
+   "ko": "프로토를 구하는 게 먼저야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.023",
+   "audio": 0,
+   "start": 70.0,
+   "end": 72.94,
+   "ja": "アルバルトの好意を無駄にしたくないんだ",
+   "ko": "알바르트의 호의를 헛되게 하고 싶지 않아.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st8.024",
+   "audio": 0,
+   "start": 72.94,
+   "end": 75.5,
+   "ja": "いい奴らだよ",
+   "ko": "좋은 녀석들이야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.025",
+   "audio": 0,
+   "start": 79.85,
+   "end": 83.0,
+   "ja": "アウトローともっと早くに出会えていたら",
+   "ko": "무법자들과 좀 더 일찍 만났더라면…",
+   "status": "needs_review"
+  },
+  {
+   "id": "st8.026",
+   "audio": 0,
+   "start": 85.47,
+   "end": 88.0,
+   "ja": "必ず生きて帰ってきて",
+   "ko": "꼭 살아서 돌아와.",
+   "status": "needs_review"
+  }
+ ]
+}

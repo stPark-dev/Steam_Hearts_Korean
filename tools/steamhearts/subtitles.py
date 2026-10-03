@@ -267,3 +267,100 @@ def repack_root(read, sizes: dict, new_files) -> dict:
         raise SubtitleError("root directory would need another sector")
     blob = blob.ljust(2048 * len(dir_lbas), b"\0")
     return {lba: bytes(blob[i * 2048:(i + 1) * 2048]) for i, lba in enumerate(dir_lbas)}
+
+
+# --- stages: NBG3 text, 320 px wide, up to two lines ---------------------------------------
+STAGE_MAGIC = 0x4B485431                        # "KHT1"
+STAGE_DATA_LIMIT = 0x0608CC00 - (BASE + 0x1000)  # cell buffer follows the data
+STAGE_ROWS = 16
+STAGE_FONT_PX = 13
+STAGE_W = 320
+STAGE_LINE_W = 304
+
+
+@lru_cache(maxsize=None)
+def render_stage_glyph(ch: str, font_path: str = sa.DEFAULT_FONT) -> np.ndarray:
+    """16 rows of 0 clear / 1 black outline / 2 grey / 3 white; the box holds the outline,
+    so neighbouring glyphs never overlap."""
+    S = 4
+    font = ImageFont.truetype(font_path, STAGE_FONT_PX, index=sa.FONT_INDEX_KR)
+    big = ImageFont.truetype(font_path, STAGE_FONT_PX * S, index=sa.FONT_INDEX_KR)
+    adv = max(1, round(font.getlength(ch)))
+    w = adv + 2
+    im = Image.new("L", (w * S, STAGE_ROWS * S), 0)
+    ImageDraw.Draw(im).text((1 * S, 12.5 * S), ch, font=big, fill=255, anchor="ls")
+    a = np.asarray(im.resize((w, STAGE_ROWS), Image.LANCZOS), dtype=np.float32) / 255
+    lv = np.where(a > 0.6, 3, np.where(a > 0.2, 2, 0)).astype(np.uint8)
+    ink = lv > 0
+    grown = ink.copy()
+    for dy in (-1, 0, 1):
+        for dx in (-1, 0, 1):
+            grown |= np.roll(np.roll(ink, dy, 0), dx, 1)
+    lv[grown & ~ink] = 1
+    return lv
+
+
+def stage_wrap(ko: str, font_path: str = sa.DEFAULT_FONT) -> list[str]:
+    width = lambda t: sum(render_stage_glyph(c, font_path).shape[1] for c in t)
+    ko = ko.strip()
+    if "\n" in ko:
+        lines = [x.strip() for x in ko.split("\n")]
+    elif width(ko) <= STAGE_LINE_W:
+        lines = [ko]
+    else:
+        spaces = [i for i, c in enumerate(ko) if c == " "]
+        if not spaces:
+            raise SubtitleError(f"line too wide and no space to break: {ko}")
+        best = min(spaces, key=lambda i: abs(width(ko[:i]) - width(ko[i + 1:])))
+        lines = [ko[:best], ko[best + 1:]]
+    if len(lines) > 2 or any(width(x) > STAGE_LINE_W for x in lines):
+        raise SubtitleError(f"does not fit in two {STAGE_LINE_W}-px lines: {ko}")
+    return lines
+
+
+def build_stage_data(spec: dict, font_path: str = sa.DEFAULT_FONT) -> bytes:
+    cues = cue_frames(spec)
+    names = [a["file"].lower() for a in spec["audio"]]
+    if any(len(n) > 11 for n in names):
+        raise SubtitleError("voice file name longer than 11 characters")
+    wrapped = [(a, s, t, stage_wrap(ko, font_path), cid) for a, s, t, ko, cid in cues]
+    text_all = "".join("".join(lines) for *_, lines, _ in wrapped)
+    missing = sa.missing_glyphs(text_all, font_path)
+    if missing:
+        raise SubtitleError(f"characters missing from font: {missing}")
+    chars = sorted(set(text_all))
+    ids = {ch: i for i, ch in enumerate(chars)}
+    glyphs = [render_stage_glyph(ch, font_path) for ch in chars]
+    width = lambda t: sum(glyphs[ids[c]].shape[1] for c in t)
+    text, cue_rec = [], []
+    for a, s, t, lines, cid in wrapped:
+        if len(lines) == 1:
+            lines = ["", lines[0]]          # a single line sits on the lower row, next to the faces
+        n1, n2 = len(lines[0]), len(lines[1])
+        x1, x2 = ((STAGE_W - width(x)) // 2 for x in lines)
+        cue_rec.append(struct.pack(">BBHHHHHHH", a, 2, s, t, len(text), n1, n2, x1, x2))
+        text += [ids[c] for c in lines[0] + lines[1]]
+    bits, glyph_rec = bytearray(), []
+    for g in glyphs:
+        glyph_rec.append(struct.pack(">2H", g.shape[1], len(bits)))
+        bits += pack_glyph(g)
+    names_off = 32
+    cues_off = names_off + 12 * len(names)
+    glyphs_off = cues_off + 16 * len(cue_rec)
+    text_off = glyphs_off + 4 * len(glyph_rec)
+    bits_off = text_off + 2 * len(text)
+    bits_off += -bits_off % 4
+    data = struct.pack(">I4H5I", STAGE_MAGIC, len(names), len(cue_rec), len(glyphs), 0,
+                       names_off, cues_off, glyphs_off, text_off, bits_off)
+    data += bytes(names_off - len(data))
+    data += b"".join(n.encode().ljust(12, bytes(1)) for n in names)
+    data += b"".join(cue_rec) + b"".join(glyph_rec) + struct.pack(f">{len(text)}H", *text)
+    data += bytes(bits_off - len(data)) + bits
+    if len(data) > STAGE_DATA_LIMIT:
+        raise SubtitleError(f"stage {spec['stage']}: {len(data)} bytes, limit {STAGE_DATA_LIMIT}")
+    return data
+
+
+def stage_name(stage: int) -> str:
+    return f"STG{stage}.DAT"
+

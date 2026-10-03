@@ -155,8 +155,11 @@ def credits_file(disc: SourceDisc, files: dict) -> tuple[dict[str, bytes], list[
 
 def subtitle_files(disc: SourceDisc, files: dict) -> tuple[dict[str, bytes], dict[str, bytes], list[dict], list[int]]:
     """(replaced files, new files, translation entries, scene numbers) for the voice subtitles."""
-    specs = sorted((_load_json(str(p.relative_to(ROOT))) for p in (ROOT / "translation/voice").glob("vis*.json")),
+    voice_dir = ROOT / "translation/voice"
+    specs = sorted((_load_json(str(p.relative_to(ROOT))) for p in voice_dir.glob("vis*.json")),
                    key=lambda s: s["scene"])
+    stage_specs = sorted((_load_json(str(p.relative_to(ROOT))) for p in voice_dir.glob("st*.json")),
+                         key=lambda s: s["stage"])
     if not specs:
         raise BuildError("no translation/voice/vis*.json")
     code = (ROOT / "assets/subtitle/SUB.BIN").read_bytes()
@@ -171,6 +174,14 @@ def subtitle_files(disc: SourceDisc, files: dict) -> tuple[dict[str, bytes], dic
             new[subtitles.data_name(n)] = subtitles.build_data(spec)
             entries += spec["entries"]
             scenes.append(n)
+        stages = []
+        for spec in stage_specs:
+            n = spec["stage"]
+            if not 1 <= n <= 9 or n in stages:
+                raise BuildError(f"voice translation for unknown or repeated stage {n}")
+            new[subtitles.stage_name(n)] = subtitles.build_stage_data(spec)
+            entries += spec["entries"]
+            stages.append(n)
         e = files["MAIN.BIN"]
         main = subtitles.patch_main(disc.read_file(e.lba, e.size), scenes)
     except subtitles.SubtitleError as ex:

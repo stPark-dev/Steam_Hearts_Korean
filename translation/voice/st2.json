@@ -1,0 +1,220 @@
+{
+ "stage": 2,
+ "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
+ "audio": [
+  {
+   "file": "ST2_00.AIF"
+  },
+  {
+   "file": "ST2_01.AIF"
+  },
+  {
+   "file": "ST2_02.AIF"
+  },
+  {
+   "file": "ST2_03.AIF"
+  },
+  {
+   "file": "ST2_BD.AIF"
+  },
+  {
+   "file": "ST2_FD.AIF"
+  }
+ ],
+ "entries": [
+  {
+   "id": "st2.001",
+   "audio": 0,
+   "start": 0.84,
+   "end": 4.76,
+   "ja": "抜いたコースね",
+   "ko": "빠른 길로 왔네.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st2.002",
+   "audio": 0,
+   "start": 5.12,
+   "end": 8.4,
+   "ja": "バッチリ敵もいないしスイスイ進めるわ",
+   "ko": "적도 하나 없고 술술 나아가네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.003",
+   "audio": 0,
+   "start": 8.4,
+   "end": 11.46,
+   "ja": "さっきのようにすんなり行くといいんだけれどね",
+   "ko": "아까처럼 순순히 풀리면 좋겠는데.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.004",
+   "audio": 0,
+   "start": 12.12,
+   "end": 15.96,
+   "ja": "誰かさんと違ってシエラは賢いわね",
+   "ko": "누구랑은 달리 시에라는 똑똑하네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.005",
+   "audio": 0,
+   "start": 16.7,
+   "end": 17.24,
+   "ja": "ちぇ",
+   "ko": "쳇.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.006",
+   "audio": 1,
+   "start": 1.74,
+   "end": 2.46,
+   "ja": "でかい",
+   "ko": "크다…",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.007",
+   "audio": 1,
+   "start": 3.7,
+   "end": 6.68,
+   "ja": "私は天空を管理するホウメイ",
+   "ko": "나는 하늘을 관리하는 호메이.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st2.008",
+   "audio": 1,
+   "start": 7.38,
+   "end": 11.58,
+   "ja": "空を汚したあなたたちをここから先へ行かせるわけにはいかない",
+   "ko": "하늘을 더럽힌 너희를 여기서 더 보낼 수는 없다.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st2.009",
+   "audio": 1,
+   "start": 12.18,
+   "end": 15.54,
+   "ja": "私たちも先へ行かないわけにはいかないの",
+   "ko": "우리도 앞으로 가지 않을 수는 없어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.010",
+   "audio": 1,
+   "start": 16.0,
+   "end": 19.4,
+   "ja": "ホウメイ、強引に侵入したことは悪いと思ってるけど",
+   "ko": "호메이, 억지로 들어온 건 미안하게 생각하지만",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.011",
+   "audio": 1,
+   "start": 20.16,
+   "end": 22.14,
+   "ja": "僕たちの言い分も聞いてくれないか",
+   "ko": "우리 얘기도 들어 주지 않겠어?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.012",
+   "audio": 1,
+   "start": 22.14,
+   "end": 23.88,
+   "ja": "問答無用、覚悟",
+   "ko": "말이 필요 없다. 각오해라!",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.013",
+   "audio": 1,
+   "start": 24.6,
+   "end": 25.7,
+   "ja": "じゃ、ちょっと話…",
+   "ko": "자, 잠깐 얘기를…",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.014",
+   "audio": 2,
+   "start": 3.27,
+   "end": 5.15,
+   "ja": "仕方ない、やるよファラ",
+   "ko": "어쩔 수 없지. 하자, 파라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.015",
+   "audio": 3,
+   "start": 4.38,
+   "end": 6.02,
+   "ja": "ファラ、彼女を助けるんだ",
+   "ko": "파라, 저 사람을 구하는 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.016",
+   "audio": 3,
+   "start": 6.02,
+   "end": 8.7,
+   "ja": "なんであんなやつを助けるんだ",
+   "ko": "왜 저런 녀석을 구해야 하는데?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.017",
+   "audio": 3,
+   "start": 9.6,
+   "end": 10.98,
+   "ja": "もう、わかったわよ",
+   "ko": "아, 알았다고.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.018",
+   "audio": 4,
+   "start": 0.74,
+   "end": 3.6,
+   "ja": "たわいもないわね",
+   "ko": "별것 아니군.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.019",
+   "audio": 4,
+   "start": 4.7,
+   "end": 7.22,
+   "ja": "ダメだ、火力が違いすぎる",
+   "ko": "안 돼, 화력 차이가 너무 커.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st2.020",
+   "audio": 5,
+   "start": 1.76,
+   "end": 3.98,
+   "ja": "因果応報ってやつかしら",
+   "ko": "인과응보라는 건가.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st2.021",
+   "audio": 5,
+   "start": 4.8,
+   "end": 5.14,
+   "ja": "そんな",
+   "ko": "그런…",
+   "status": "needs_review"
+  }
+ ]
+}

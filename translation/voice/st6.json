@@ -1,0 +1,845 @@
+{
+ "stage": 6,
+ "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
+ "audio": [
+  {
+   "file": "ST6_00.AIF"
+  },
+  {
+   "file": "ST6_01.AIF"
+  },
+  {
+   "file": "ST6_02.AIF"
+  },
+  {
+   "file": "ST6_03.AIF"
+  },
+  {
+   "file": "ST6_04.AIF"
+  },
+  {
+   "file": "ST6_05.AIF"
+  },
+  {
+   "file": "ST6_BD.AIF"
+  },
+  {
+   "file": "ST6_FD.AIF"
+  }
+ ],
+ "entries": [
+  {
+   "id": "st6.001",
+   "audio": 0,
+   "start": 3.53,
+   "end": 4.71,
+   "ja": "星が綺麗",
+   "ko": "별이 예뻐.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.002",
+   "audio": 0,
+   "start": 4.71,
+   "end": 7.99,
+   "ja": "地上でも昔はよく見えたけど",
+   "ko": "땅에서도 예전엔 잘 보였는데",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.003",
+   "audio": 0,
+   "start": 8.99,
+   "end": 10.19,
+   "ja": "比較にならないね",
+   "ko": "비교도 안 되네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.004",
+   "audio": 0,
+   "start": 10.79,
+   "end": 11.55,
+   "ja": "ねえねえ",
+   "ko": "있잖아, 있잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.005",
+   "audio": 0,
+   "start": 12.51,
+   "end": 14.39,
+   "ja": "昔といえば思い出さない?",
+   "ko": "옛날 하니까 생각 안 나?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.006",
+   "audio": 0,
+   "start": 15.15,
+   "end": 18.71,
+   "ja": "よくこうして二人で空を見上げていたじゃない",
+   "ko": "자주 이렇게 둘이서 하늘을 올려다봤잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.007",
+   "audio": 0,
+   "start": 21.5,
+   "end": 22.7,
+   "ja": "赤き軍神か",
+   "ko": "붉은 군신인가.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.008",
+   "audio": 0,
+   "start": 23.32,
+   "end": 24.96,
+   "ja": "苦しい戦いになりそうだ",
+   "ko": "힘든 싸움이 될 것 같아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.009",
+   "audio": 0,
+   "start": 24.96,
+   "end": 28.06,
+   "ja": "ああ、あれ天秤座かしら",
+   "ko": "아, 저거 천칭자리인가?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.010",
+   "audio": 0,
+   "start": 28.7,
+   "end": 29.76,
+   "ja": "サソリ座だろ",
+   "ko": "전갈자리잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.011",
+   "audio": 1,
+   "start": 1.74,
+   "end": 3.3,
+   "ja": "無人ユニットがいないな",
+   "ko": "무인 유닛이 없네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.012",
+   "audio": 1,
+   "start": 3.7,
+   "end": 6.22,
+   "ja": "ブロー、岩がたくさん飛んでくるわ",
+   "ko": "블로, 바위가 잔뜩 날아와.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.013",
+   "audio": 1,
+   "start": 7.6,
+   "end": 8.6,
+   "ja": "スターダストか",
+   "ko": "스타더스트인가.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.014",
+   "audio": 1,
+   "start": 9.5,
+   "end": 11.64,
+   "ja": "こんなに一体どこから",
+   "ko": "이렇게 많이 대체 어디서?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.015",
+   "audio": 1,
+   "start": 12.34,
+   "end": 15.32,
+   "ja": "大昔ウエスティナの周りを回っていた星があって",
+   "ko": "아주 옛날 웨스티나 주위를 돌던 별이 있었는데",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.016",
+   "audio": 1,
+   "start": 15.72,
+   "end": 18.5,
+   "ja": "それが砕けた欠片だって聞いたことあるけど",
+   "ko": "그게 부서진 조각이라고 들은 적 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.017",
+   "audio": 1,
+   "start": 20.32,
+   "end": 21.34,
+   "ja": "そんなものがね",
+   "ko": "그런 게 다 있구나.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.018",
+   "audio": 1,
+   "start": 22.72,
+   "end": 23.6,
+   "ja": "すごい数だ",
+   "ko": "엄청난 수야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.019",
+   "audio": 1,
+   "start": 23.98,
+   "end": 26.46,
+   "ja": "下手な無人ユニットよりも面倒だわ",
+   "ko": "어설픈 무인 유닛보다 성가셔.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.020",
+   "audio": 1,
+   "start": 27.44,
+   "end": 29.64,
+   "ja": "近道に危険はつきものってね",
+   "ko": "지름길엔 위험이 따르는 법이지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.021",
+   "audio": 1,
+   "start": 30.48,
+   "end": 32.3,
+   "ja": "避けながら進むよ。いける?",
+   "ko": "피하면서 갈게. 할 수 있겠어?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.022",
+   "audio": 1,
+   "start": 32.68,
+   "end": 34.3,
+   "ja": "そっちこそ気をつけてよね",
+   "ko": "너야말로 조심해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.023",
+   "audio": 2,
+   "start": 1.66,
+   "end": 2.8,
+   "ja": "やっと抜けたね",
+   "ko": "겨우 빠져나왔네.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.024",
+   "audio": 2,
+   "start": 3.96,
+   "end": 5.9,
+   "ja": "やだやだ、こんなとこ",
+   "ko": "싫다 싫어, 이런 데.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.025",
+   "audio": 2,
+   "start": 6.3,
+   "end": 9.12,
+   "ja": "どうやら本体のお出ましみたいだ",
+   "ko": "아무래도 본진이 나오신 것 같아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.026",
+   "audio": 2,
+   "start": 9.12,
+   "end": 12.34,
+   "ja": "休む暇もないんだから",
+   "ko": "쉴 틈도 없다니까.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.027",
+   "audio": 3,
+   "start": 1.76,
+   "end": 3.44,
+   "ja": "来たか、アウトロー",
+   "ko": "왔나, 무법자.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.028",
+   "audio": 3,
+   "start": 3.44,
+   "end": 7.02,
+   "ja": "約束だ。僕らの話を聞いてもらうよ",
+   "ko": "약속이야. 우리 얘기를 들어 줘야겠어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.029",
+   "audio": 3,
+   "start": 7.64,
+   "end": 11.36,
+   "ja": "レイファンも貴様らの心をスチームハーツだと認めた",
+   "ko": "레이판도 너희 마음을 스팀 하츠라고 인정했다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.030",
+   "audio": 3,
+   "start": 12.04,
+   "end": 16.04,
+   "ja": "そして現にここまで戦い抜くことができたその力",
+   "ko": "그리고 실제로 여기까지 싸워 온 그 힘.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.031",
+   "audio": 3,
+   "start": 16.6,
+   "end": 18.18,
+   "ja": "見逃すわけにはいかんな",
+   "ko": "그냥 넘어갈 수는 없지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.032",
+   "audio": 3,
+   "start": 18.18,
+   "end": 21.14,
+   "ja": "あえてこちらから聞いてやろう",
+   "ko": "굳이 이쪽에서 물어봐 주지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.033",
+   "audio": 3,
+   "start": 22.26,
+   "end": 25.44,
+   "ja": "貴様らはなぜプロトに従わん",
+   "ko": "너희는 왜 프로토를 따르지 않지?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.034",
+   "audio": 3,
+   "start": 25.44,
+   "end": 29.38,
+   "ja": "誰かに縛り付けられて生きるなんてまっぴらごめんだわ",
+   "ko": "누군가에게 얽매여 사는 건 질색이야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.035",
+   "audio": 3,
+   "start": 30.96,
+   "end": 33.04,
+   "ja": "アウトローらしい言い分だ",
+   "ko": "무법자다운 말이군.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.036",
+   "audio": 3,
+   "start": 35.46,
+   "end": 37.36,
+   "ja": "そう、貴様らはアウトロー",
+   "ko": "그래, 너희는 무법자.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.037",
+   "audio": 3,
+   "start": 38.08,
+   "end": 40.8,
+   "ja": "使命を持たずに生まれてきた。なぜか",
+   "ko": "사명 없이 태어났다. 어째서인가.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.038",
+   "audio": 3,
+   "start": 41.34,
+   "end": 44.22,
+   "ja": "ウイルスから、みんなを守るためだ",
+   "ko": "바이러스로부터 모두를 지키기 위해서야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.039",
+   "audio": 3,
+   "start": 44.9,
+   "end": 46.76,
+   "ja": "この星も生き延びたいからね",
+   "ko": "이 별도 살아남고 싶으니까.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.040",
+   "audio": 3,
+   "start": 47.36,
+   "end": 53.92,
+   "ja": "このウエスティナでは、我々はそれぞれみんな、何かの役割を背負って生まれてくる",
+   "ko": "이 웨스티나에서 우리는 저마다 어떤 역할을 짊어지고 태어난다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.041",
+   "audio": 3,
+   "start": 55.12,
+   "end": 59.1,
+   "ja": "海を、空を、ウエスティナを守るために",
+   "ko": "바다를, 하늘을, 웨스티나를 지키기 위해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.042",
+   "audio": 3,
+   "start": 60.4,
+   "end": 64.38,
+   "ja": "そして、貴様たちはウイルスに抗う力を持つことができた",
+   "ko": "그리고 너희는 바이러스에 맞설 힘을 가질 수 있었다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.043",
+   "audio": 3,
+   "start": 66.02,
+   "end": 69.82,
+   "ja": "アルバルト、あなた、まさか",
+   "ko": "알바르트, 당신 설마…",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.044",
+   "audio": 3,
+   "start": 70.44,
+   "end": 72.8,
+   "ja": "貴様らアウトローになかった使命",
+   "ko": "너희 무법자에게 없던 사명.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.045",
+   "audio": 3,
+   "start": 73.86,
+   "end": 78.78,
+   "ja": "それを貴様はウイルスの抗体を他の皆に分かつことに見つけた",
+   "ko": "너는 그것을 바이러스 항체를 모두에게 나누는 데서 찾았다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.046",
+   "audio": 3,
+   "start": 79.42,
+   "end": 80.78,
+   "ja": "それだけではないのか",
+   "ko": "그게 전부 아닌가?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.047",
+   "audio": 3,
+   "start": 80.78,
+   "end": 83.46,
+   "ja": "違う、君なら分かるはずだ",
+   "ko": "아니야, 너라면 알 거야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.048",
+   "audio": 3,
+   "start": 83.96,
+   "end": 87.24,
+   "ja": "プロトをこのままにしておけば、ウエスティナは破滅する",
+   "ko": "프로토를 이대로 두면 웨스티나는 파멸해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.049",
+   "audio": 3,
+   "start": 87.58,
+   "end": 89.14,
+   "ja": "ウエスティナがではない",
+   "ko": "웨스티나가 아니다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.050",
+   "audio": 3,
+   "start": 90.16,
+   "end": 94.18,
+   "ja": "滅びるのは我々エンブリオだけだ。違うか?",
+   "ko": "멸망하는 건 우리 엠브리오뿐이다. 아닌가?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.051",
+   "audio": 3,
+   "start": 95.5,
+   "end": 100.02,
+   "ja": "エンブリオが滅びたらウエスティナも滅びる。そう思っているのか?",
+   "ko": "엠브리오가 멸망하면 웨스티나도 멸망한다고 생각하나?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.052",
+   "audio": 3,
+   "start": 100.42,
+   "end": 102.98,
+   "ja": "あなただって死ぬのは嫌でしょ?",
+   "ko": "당신도 죽는 건 싫잖아?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.053",
+   "audio": 3,
+   "start": 103.96,
+   "end": 106.52,
+   "ja": "僕は僕だ。ウエスティナの一部だ",
+   "ko": "나는 나야. 웨스티나의 일부야.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.054",
+   "audio": 3,
+   "start": 106.62,
+   "end": 109.3,
+   "ja": "我々は作られる命",
+   "ko": "우리는 만들어지는 생명.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.055",
+   "audio": 3,
+   "start": 111.08,
+   "end": 113.58,
+   "ja": "ファクトリーがなければ繁殖もできない",
+   "ko": "팩토리가 없으면 번식도 못 한다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.056",
+   "audio": 3,
+   "start": 113.94,
+   "end": 116.96,
+   "ja": "不自然な命はウエスティナにとっては邪魔者",
+   "ko": "부자연스러운 생명은 웨스티나에겐 방해꾼일 뿐.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.057",
+   "audio": 3,
+   "start": 117.72,
+   "end": 123.08,
+   "ja": "星としてのウエスティナを守ろうとしているプロトこそ自然の意志と呼べるものだと思えんか",
+   "ko": "별로서의 웨스티나를 지키려는 프로토야말로 자연의 의지라 생각되지 않나?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.058",
+   "audio": 3,
+   "start": 123.08,
+   "end": 126.5,
+   "ja": "あなた本当は…",
+   "ko": "당신, 사실은…",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.059",
+   "audio": 3,
+   "start": 127.34,
+   "end": 129.5,
+   "ja": "冥土の土産が過ぎたようだな",
+   "ko": "저승길 선물이 지나쳤던 모양이군.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.060",
+   "audio": 3,
+   "start": 132.51,
+   "end": 137.17,
+   "ja": "もし貴様らに義があるとすれば、その義を力で示してみよ",
+   "ko": "너희에게 정의가 있다면 그 정의를 힘으로 보여 봐라.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.061",
+   "audio": 3,
+   "start": 137.65,
+   "end": 139.15,
+   "ja": "僕たちは話し合える",
+   "ko": "우리는 대화할 수 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.062",
+   "audio": 3,
+   "start": 140.17,
+   "end": 142.11,
+   "ja": "戦う意味がどこにあるんだ",
+   "ko": "싸울 이유가 어디 있어?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.063",
+   "audio": 3,
+   "start": 142.11,
+   "end": 146.03,
+   "ja": "どうした。来なければこっちから仕掛けるぞ",
+   "ko": "왜 그러지? 오지 않으면 이쪽에서 간다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.064",
+   "audio": 4,
+   "start": 2.38,
+   "end": 5.98,
+   "ja": "伊達にここまで来れたわけではないということか",
+   "ko": "괜히 여기까지 온 게 아니란 건가.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.065",
+   "audio": 4,
+   "start": 7.2,
+   "end": 12.08,
+   "ja": "この私と対等にやりあえたのは貴様たちが初めてだよ",
+   "ko": "나와 대등하게 싸운 건 너희가 처음이다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.066",
+   "audio": 4,
+   "start": 12.58,
+   "end": 16.16,
+   "ja": "アルバルト、もうやめてくれ",
+   "ko": "알바르트, 이제 그만해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.067",
+   "audio": 4,
+   "start": 16.62,
+   "end": 17.74,
+   "ja": "もういいでしょ",
+   "ko": "이제 됐잖아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.068",
+   "audio": 4,
+   "start": 18.3,
+   "end": 21.98,
+   "ja": "これ以上戦ったら、あなたも無事じゃ済まないわ",
+   "ko": "더 싸우면 당신도 무사하지 못해.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.069",
+   "audio": 4,
+   "start": 22.48,
+   "end": 23.06,
+   "ja": "まだだ",
+   "ko": "아직이다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.070",
+   "audio": 4,
+   "start": 23.64,
+   "end": 26.38,
+   "ja": "私の本当の力見せてやろう",
+   "ko": "내 진짜 힘을 보여 주마.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.071",
+   "audio": 5,
+   "start": 1.5,
+   "end": 2.56,
+   "ja": "終わりか",
+   "ko": "끝인가.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.072",
+   "audio": 5,
+   "start": 4.2,
+   "end": 8.38,
+   "ja": "私が負けたのか。この私が",
+   "ko": "내가 진 건가. 이 내가.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.073",
+   "audio": 5,
+   "start": 9.32,
+   "end": 10.62,
+   "ja": "大丈夫か、ファラ",
+   "ko": "괜찮아, 파라?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.074",
+   "audio": 5,
+   "start": 10.62,
+   "end": 13.32,
+   "ja": "うん、なんとかね",
+   "ko": "응, 어떻게든.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.075",
+   "audio": 5,
+   "start": 15.46,
+   "end": 17.24,
+   "ja": "なんだこの感じは",
+   "ko": "뭐지, 이 느낌은?",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.076",
+   "audio": 5,
+   "start": 17.24,
+   "end": 19.98,
+   "ja": "船が落ちるわ",
+   "ko": "배가 떨어져!",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st6.077",
+   "audio": 5,
+   "start": 19.98,
+   "end": 23.2,
+   "ja": "アルバルト、話の続きをさせてくれ",
+   "ko": "알바르트, 얘기 마저 하게 해 줘.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.078",
+   "audio": 5,
+   "start": 24.56,
+   "end": 25.44,
+   "ja": "いいだろう",
+   "ko": "좋다.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.079",
+   "audio": 5,
+   "start": 26.24,
+   "end": 29.46,
+   "ja": "案ずるな。こういうことには慣れている",
+   "ko": "걱정 마라. 이런 일엔 익숙하다.",
+   "status": "needs_review",
+   "asr_uncertain": true
+  },
+  {
+   "id": "st6.080",
+   "audio": 5,
+   "start": 31.7,
+   "end": 34.34,
+   "ja": "その侵入角度なら大丈夫か",
+   "ko": "그 진입 각도라면 괜찮겠지.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.081",
+   "audio": 5,
+   "start": 34.84,
+   "end": 37.32,
+   "ja": "ブロー、アルバルトは本当は",
+   "ko": "블로, 알바르트는 사실…",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.082",
+   "audio": 5,
+   "start": 39.08,
+   "end": 40.86,
+   "ja": "うん、彼女には聞きたいことがある",
+   "ko": "응, 그녀에게 묻고 싶은 게 있어.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.083",
+   "audio": 5,
+   "start": 41.66,
+   "end": 42.72,
+   "ja": "一旦下に降りよう",
+   "ko": "일단 아래로 내려가자.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.084",
+   "audio": 5,
+   "start": 42.72,
+   "end": 43.84,
+   "ja": "え、ええ",
+   "ko": "어, 응.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.085",
+   "audio": 6,
+   "start": 1.52,
+   "end": 3.86,
+   "ja": "どうした、その程度か",
+   "ko": "왜 그러지? 그 정도인가.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.086",
+   "audio": 6,
+   "start": 3.86,
+   "end": 6.22,
+   "ja": "ブロー、無理しないで",
+   "ko": "블로, 무리하지 마.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.087",
+   "audio": 6,
+   "start": 6.22,
+   "end": 9.06,
+   "ja": "僕は諦めない",
+   "ko": "난 포기하지 않아.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.088",
+   "audio": 7,
+   "start": 1.72,
+   "end": 4.96,
+   "ja": "貴様たちの義というのも怪しいものだな",
+   "ko": "너희의 정의라는 것도 수상하군.",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.089",
+   "audio": 7,
+   "start": 5.4,
+   "end": 6.92,
+   "ja": "ファラ、下がるんだ",
+   "ko": "파라, 물러서!",
+   "status": "needs_review"
+  },
+  {
+   "id": "st6.090",
+   "audio": 7,
+   "start": 7.6,
+   "end": 11.22,
+   "ja": "強い、強すぎる、勝てない",
+   "ko": "강해… 너무 강해. 이길 수 없어.",
+   "status": "needs_review"
+  }
+ ]
+}

@@ -11,7 +11,7 @@
    BASE+0x14  play hook:   scene's voice player 0x06010EB8(name)
    BASE+0x18  vblank hook: the vblank handler's last call 0x06010578 (staff roll)
    BASE+0x1C  upload hook: the VDP2 library's register upload 0x0604B728
-              (both installed in RAM by SUB.BIN itself once it is loaded, never on the disc)
+              (installed in RAM by SUB.BIN itself once it is loaded, never on the disc)
 */
         .section .text.entry, "ax"
         .global _start
@@ -48,7 +48,7 @@ play_hook:
         sts.l   pr, @-r15
         mov.l   r4, @-r15
         mov.l   .Lon_play, r0
-        jsr     @r0                     /* sub_on_play() */
+        jsr     @r0                     /* sub_on_play(name) */
         nop
         mov.l   @r15+, r4
         lds.l   @r15+, pr
