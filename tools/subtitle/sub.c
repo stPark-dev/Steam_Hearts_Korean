@@ -40,15 +40,16 @@ typedef unsigned int u32;
 #define KEYON_FALLBACK  39
 #define MAX_AUDIO   4
 
-/* ---- small helpers: gcc for SH-4 turns constant shifts into shad, force SH-2 sequences */
-static inline int shr1(int x) { __asm__("shlr %0" : "+r"(x)); return x; }
-static inline int shr2(int x) { __asm__("shlr2 %0" : "+r"(x)); return x; }
-static inline int shr3(int x) { __asm__("shlr2 %0\n\tshlr %0" : "+r"(x)); return x; }
-static inline int shr4(int x) { __asm__("shlr2 %0\n\tshlr2 %0" : "+r"(x)); return x; }
-static inline int shr6(int x) { __asm__("shlr2 %0\n\tshlr2 %0\n\tshlr2 %0" : "+r"(x)); return x; }
-static inline int shl2(int x) { __asm__("shll2 %0" : "+r"(x)); return x; }
-static inline int shl4(int x) { __asm__("shll2 %0\n\tshll2 %0" : "+r"(x)); return x; }
-static inline int shl5(int x) { __asm__("shll2 %0\n\tshll2 %0\n\tshll %0" : "+r"(x)); return x; }
+/* ---- small helpers: gcc for SH-4 turns constant shifts into shad, force SH-2 sequences
+   (shll/shlr set T: the "t" clobber keeps gcc from testing a stale T across them) */
+static inline int shr1(int x) { __asm__("shlr %0" : "+r"(x) : : "t"); return x; }
+static inline int shr2(int x) { __asm__("shlr2 %0" : "+r"(x) : : "t"); return x; }
+static inline int shr3(int x) { __asm__("shlr2 %0\n\tshlr %0" : "+r"(x) : : "t"); return x; }
+static inline int shr4(int x) { __asm__("shlr2 %0\n\tshlr2 %0" : "+r"(x) : : "t"); return x; }
+static inline int shr6(int x) { __asm__("shlr2 %0\n\tshlr2 %0\n\tshlr2 %0" : "+r"(x) : : "t"); return x; }
+static inline int shl2(int x) { __asm__("shll2 %0" : "+r"(x) : : "t"); return x; }
+static inline int shl4(int x) { __asm__("shll2 %0\n\tshll2 %0" : "+r"(x) : : "t"); return x; }
+static inline int shl5(int x) { __asm__("shll2 %0\n\tshll2 %0\n\tshll %0" : "+r"(x) : : "t"); return x; }
 
 static inline void purge_cache(void)
 {
