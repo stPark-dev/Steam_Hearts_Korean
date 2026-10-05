@@ -32,7 +32,7 @@ typedef unsigned int u32;
 #define VDP2_REG(o) (*(volatile u16 *)(0x25F80000 + (o)))
 
 #define VBLANKS     (*(volatile u32 *)0x060730D0)
-#define GAME_MODE   (*(volatile u16 *)0x0605D716)   /* 1 = stage */
+#define GAME_MODE   (*(volatile u16 *)0x0605D716)   /* 1 = stage (visual scenes run in mode 1 too) */
 #define WAIT_VBLANK ((void (*)(void))0x0604A500)
 #define READ_FILE   ((int (*)(const char *, void *))0x06010CD4)
 #define VOICE_SLOT  (*(volatile u16 *)(0x25B00000 + 12 * 0x20))    /* SCSP slot 12, KYONB 0x0800 */
@@ -419,8 +419,13 @@ void sub_on_play(const char *voice)
             }
         }
         start_watch(0);
-    } else if (nplay < MAX_AUDIO) {
-        start_watch(nplay);
-        nplay++;
+    } else {
+        /* scenes run in game mode 1 too; in a stage this is a voice without subtitles
+           (deadblow.aif, ...) whose key-on must not restart the last dialogue's cues */
+        stage_voice = -1;
+        if (nplay < MAX_AUDIO) {
+            start_watch(nplay);
+            nplay++;
+        }
     }
 }
