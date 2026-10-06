@@ -574,6 +574,15 @@ void sub_before_list_end(void)  /* right before the game closes its VDP1 list */
 void sub_on_vblank(void)        /* end of the vblank handler, every frame in every mode */
 {
     u32 now = VBLANKS;
+#ifdef TEST_INVINCIBLE
+    /* verification builds only: keep refilling the invincibility timer the pause-menu cheat
+       (0x06033354) sets, player struct *(0x06077A58) + index * 80 + 0x42 */
+    if (GAME_MODE == 1) {
+        u32 pl = *(volatile u32 *)0x06077A58;
+        if (pl >= 0x06000000 && pl < 0x060FF000)
+            *(volatile u16 *)(pl + *(volatile u16 *)0x06073474 * 80 + 0x42) = 0x4B0;
+    }
+#endif
     watch_keyon(now);
     if (scene_live && now - scene_seen > SCENE_GONE) {
         scene_live = 0;
