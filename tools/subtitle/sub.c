@@ -1,19 +1,36 @@
-/* Voice subtitles (SUB.BIN): visual scenes and in-stage dialogue.
+/* Voice subtitles (SUB.BIN): visual scenes and in-stage dialogue, drawn as VDP1 sprites.
 
    Timing: a cue belongs to one voice file and is counted in real vblanks (the game's vblank
    counter) from the moment that voice starts sounding: the sound driver keys on SCSP slot 12
    when the stream begins, after the CD seek (VIS1A: 39 vblanks after the call, VIS1B: 24).
    If no key-on is seen within KEYON_WAIT vblanks, the call + KEYON_FALLBACK is used.
 
-   Visual scenes (SUBn.DAT, loaded with the scene's first picture): the line goes into the
-   black bar under the picture, VDP2 NBG0 bitmap rows 228..239, written by the CPU from the
-   scene's per-frame wait.  Voices are numbered by play order.
+   Textures: the game's VDP1 VRAM heap ends 8 KB early (MAIN.BIN patch), so VDP1 VRAM
+   0x7E000..0x7FFFF is ours.  A line is assembled in RAM (TEXBUF, 4 bits per pixel) and
+   copied there; a signature word at the end of the reserve shows if anyone cleared it.
 
-   Stages (STGn.DAT, loaded when the first voice of stage n is played, "st3_01.aif" -> 3;
-   the stage counter does not map 1:1 onto the voice files): up to two lines on
-   NBG3, which the stages leave unused, drawn from the vblank handler.  Voices are found by
-   file name.  VDP2 registers are write-only and re-uploaded every frame by the game's VDP2
-   library from RAM copies, so our NBG3 fields are written right after that upload.
+   Visual scenes (SUBn.DAT, loaded with the scene's first picture): VDP1 draws nothing during
+   a scene, so SUB.BIN writes its own command list at VDP1 VRAM 0 (system clip, local
+   coordinates, one or two sprites, end) from the scene's per-frame wait.  The line sits over
+   the bottom of the picture (rows 212..225) with a black outline, inside the 224 lines every
+   display shows.  The scene setup (0x06035364) turns on additive sprite colour calculation
+   (CCCTL 0x0540), which would add our black outline to the picture and make it vanish, so
+   SPCCEN is cleared (register and the VDP2 library's RAM copy) while a scene runs.  Voices are numbered
+   by play order.
+
+   Stages (STGn.DAT, loaded when the first voice of stage n is played, "st3_01.aif" -> 3):
+   the game collects VDP1 commands in RAM in 64 priority lists and its frame end routine
+   (0x060112F4) closes and DMAs them to VDP1 VRAM.  Our sprites are added to the last list
+   right before that.  Up to two lines, above the faces.  Voices are found by file name.
+   The pause loop (0x0603355C..) saves the lists once (0x0601123C), stops the voice stream and
+   then restores the saved lists every frame (0x06011298): the cue clock and the texture are
+   held while that happens.  Our sprites in a saved copy are switched off when it is saved;
+   fresh ones are added on top every frame.
+
+   An earlier version drew the stage text on VDP2 NBG3.  That only works in emulators: the
+   stages use every VRAM read slot (NBG0/1 at 1/2 reduction), and the NBG3 character read
+   we scheduled at T5 after a T4 pattern-name read breaks the VDP2 timing rules (ST-058
+   Table 3.4), so a real Saturn showed nothing.
 
    Built with sh4-linux-gnu-gcc -m4-nofpu -mb; check_sh2.py rejects any opcode the SH-2
    does not have.  No libc, no division, no variable shifts. */
@@ -23,22 +40,28 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 
 #define BASE        0x06086340u
-#define DATA        ((const u8 *)0x06087340)    /* BASE + 0x1000 */
+#define DATA        ((const u8 *)0x06087540)    /* BASE + 0x1200 */
 #define SCENE_MAGIC 0x4B485332u                 /* "KHS2" */
 #define STAGE_MAGIC 0x4B485431u                 /* "KHT1" */
-#define CELLBUF     ((u32 *)0x0608CC00)         /* 160 NBG3 cells, up to 0x0608E000 */
-#define VRAM        ((volatile u16 *)0x25E00000)
+#define TEXBUF      ((u8 *)0x0608CC00)          /* 5 KB up to the game heap at 0x0608E000 */
 #define CRAM16      ((volatile u16 *)0x25F00000)
-#define VDP2_REG(o) (*(volatile u16 *)(0x25F80000 + (o)))
+#define VDP1_VRAM   ((volatile u16 *)0x25C00000)
+#define TEX_VRAM    0x7E000                     /* reserved: 0x7E000..0x7FFFF */
+#define TEX_SIG     ((0x80000 - 2) >> 1)        /* word index of the signature */
+#define SIG         0x4B48
+#define SPRITE_MAX_W 504                        /* CMDSIZE holds width / 8 in 6 bits */
 
 #define VBLANKS     (*(volatile u32 *)0x060730D0)
 #define GAME_MODE   (*(volatile u16 *)0x0605D716)   /* 1 = stage (visual scenes run in mode 1 too) */
 #define WAIT_VBLANK ((void (*)(void))0x0604A500)
 #define READ_FILE   ((int (*)(const char *, void *))0x06010CD4)
+#define LIST_PTR    (*(u8 **)0x0606D85C)            /* next free command in the RAM list */
+#define ADD_CMD     ((void (*)(int, void *))0x060113D0)   /* (priority list 0..63, command) */
 #define VOICE_SLOT  (*(volatile u16 *)(0x25B00000 + 12 * 0x20))    /* SCSP slot 12, KYONB 0x0800 */
 #define KEYON_WAIT      120
 #define KEYON_FALLBACK  39
 #define MAX_AUDIO   4
+#define SCENE_GONE  30          /* vblanks without the scene's frame wait: the scene is over */
 
 /* ---- small helpers: gcc for SH-4 turns constant shifts into shad, force SH-2 sequences
    (shll/shlr set T: the "t" clobber keeps gcc from testing a stale T across them) */
@@ -47,9 +70,8 @@ static inline int shr2(int x) { __asm__("shlr2 %0" : "+r"(x) : : "t"); return x;
 static inline int shr3(int x) { __asm__("shlr2 %0\n\tshlr %0" : "+r"(x) : : "t"); return x; }
 static inline int shr4(int x) { __asm__("shlr2 %0\n\tshlr2 %0" : "+r"(x) : : "t"); return x; }
 static inline int shr6(int x) { __asm__("shlr2 %0\n\tshlr2 %0\n\tshlr2 %0" : "+r"(x) : : "t"); return x; }
-static inline int shl2(int x) { __asm__("shll2 %0" : "+r"(x) : : "t"); return x; }
 static inline int shl4(int x) { __asm__("shll2 %0\n\tshll2 %0" : "+r"(x) : : "t"); return x; }
-static inline int shl5(int x) { __asm__("shll2 %0\n\tshll2 %0\n\tshll %0" : "+r"(x) : : "t"); return x; }
+static inline int shl8(int x) { __asm__("shll8 %0" : "+r"(x)); return x; }
 
 static inline void purge_cache(void)
 {
@@ -63,11 +85,17 @@ static int lower(int c) { return c >= 'A' && c <= 'Z' ? c + 32 : c; }
 struct hook { u32 addr, orig, hook; };
 static const struct hook hooks[] = {
     { 0x06010828, 0x06010578, BASE + 0x18 },    /* vblank handler's last call */
-    { 0x0604B9E4, 0x0604B728, BASE + 0x1C },    /* VDP2 library register upload */
     { 0x0601AD98, 0x06010EB8, BASE + 0x14 },    /* stage dialogue: voice player */
     { 0x0601AF10, 0x06010EB8, BASE + 0x14 },
     { 0x0601B080, 0x06010EB8, BASE + 0x14 },
     { 0x0601B29C, 0x06010EB8, BASE + 0x14 },
+    { 0x06032104, 0x060112F4, BASE + 0x1C },    /* VDP1 list close + DMA (frame end) */
+    { 0x06032660, 0x060112F4, BASE + 0x1C },
+    { 0x06033434, 0x060112F4, BASE + 0x1C },
+    { 0x06033678, 0x060112F4, BASE + 0x1C },
+    { 0x06033680, 0x06011298, BASE + 0x20 },    /* pause loop: restore the frozen lists */
+    { 0x06032564, 0x0601123C, BASE + 0x24 },    /* list save (game over / continue) */
+    { 0x06033460, 0x0601123C, BASE + 0x24 },    /* list save (pause) */
 };
 
 static void install_hooks(void)
@@ -121,7 +149,10 @@ static void start_watch(int slot)
     watch = slot;
 }
 
-static void watch_keyon(u32 now)
+#define NOINLINE __attribute__((noinline))
+
+/* the helpers below stay real functions: smaller code, and easy to read in the listing */
+static NOINLINE void watch_keyon(u32 now)
 {
     int a = watch;
     if (a < 0 || started[a])
@@ -140,23 +171,218 @@ static void watch_keyon(u32 now)
 }
 
 /* ======================================================================================== */
-/* visual scenes: black bar under the picture                                                */
+/* textures                                                                                  */
+
+struct glyph { u16 width, bits; };
+
+/* one 4-bit pixel of a linear texture `w` pixels wide */
+static void tex_put(u8 *tex, int w, int x, int y, int v)
+{
+    u8 *p = tex + y * shr1(w) + shr1(x);
+    if (x & 1)
+        *p = (u8)((*p & 0xF0) | v);
+    else
+        *p = (u8)((*p & 0x0F) | shl4(v));
+}
+
+static int tex_get(const u8 *tex, int w, int x, int y)
+{
+    int b = tex[y * shr1(w) + shr1(x)];
+    return (x & 1) ? (b & 15) : shr4(b);
+}
+
+/* glyphs (2 bits per pixel, `rows` rows) into a texture at (x, y0); a glyph's 1s (outline)
+   never cover the ink of its neighbours */
+static NOINLINE void tex_text(u8 *tex, int tw, int y0, const struct glyph *gl, const u8 *bits0,
+                     const u16 *text, int n, int x, int rows)
+{
+    for (int i = 0; i < n; i++) {
+        const struct glyph *g = gl + text[i];
+        int w = g->width, pitch = shr2(w + 3);
+        const u8 *bits = bits0 + g->bits;
+        for (int y = 0; y < rows; y++, bits += pitch)
+            for (int px = 0; px < w; px++) {
+                int b = bits[shr2(px)];
+                switch (px & 3) {
+                case 0: b = shr6(b); break;
+                case 1: b = shr4(b); break;
+                case 2: b = shr2(b); break;
+                }
+                b &= 3;
+                int sx = x + px;
+                if (!b || sx < 0 || sx >= tw)
+                    continue;
+                if (b == 1 && tex_get(tex, tw, sx, y0 + y))
+                    continue;
+                tex_put(tex, tw, sx, y0 + y, b);
+            }
+        x += w;
+    }
+}
+
+/* black outline around the ink: two columns sideways, one row up and down (a scene pixel is
+   twice as tall as wide).  Runs once per line change inside the scene's frame wait, so it
+   only visits ink pixels and touches bytes directly. */
+static NOINLINE void tex_outline(u8 *tex, int tw, int th)
+{
+    int pitch = shr1(tw);
+    for (int y = 0; y < th; y++) {
+        const u8 *row = tex + y * pitch;
+        for (int x = 0; x < tw; x++) {
+            int b = row[shr1(x)];
+            int v = (x & 1) ? (b & 15) : shr4(b);
+            if (v < 2)
+                continue;
+            for (int yy = y - 1; yy <= y + 1; yy++) {
+                if ((unsigned)yy >= (unsigned)th)
+                    continue;
+                u8 *r = tex + yy * pitch;
+                for (int xx = x - 2; xx <= x + 2; xx++) {
+                    if ((unsigned)xx >= (unsigned)tw)
+                        continue;
+                    u8 *p = r + shr1(xx);
+                    if (xx & 1) {
+                        if (!(*p & 0x0F))
+                            *p |= 0x01;
+                    } else if (!(*p & 0xF0)) {
+                        *p |= 0x10;
+                    }
+                }
+            }
+        }
+    }
+}
+
+static void tex_clear(u8 *tex, int bytes)
+{
+    u32 *p = (u32 *)tex;
+    for (int i = 0; i < shr2(bytes); i++)
+        p[i] = 0;
+}
+
+/* copy columns [x0, x0 + w) of a linear texture to VDP1 VRAM as a w-wide sprite texture */
+static NOINLINE void tex_upload(const u8 *tex, int tw, int th, int x0, int w, u32 vram)
+{
+    volatile u16 *dst = VDP1_VRAM + shr1(vram);
+    for (int y = 0; y < th; y++) {
+        const u8 *src = tex + y * shr1(tw) + shr1(x0);
+        for (int i = 0; i < shr1(w); i += 2)
+            *dst++ = (u16)(shl8(src[i]) | src[i + 1]);
+    }
+}
+
+static void tex_sign(void) { VDP1_VRAM[TEX_SIG] = SIG; }
+static int tex_signed(void) { return VDP1_VRAM[TEX_SIG] == SIG; }
+
+/* a VDP1 normal sprite, colour bank mode (4 bits per dot), end codes off, dot 0 clear */
+static void put_sprite(volatile u16 *c, u16 colr, u32 vram, int w, int h, int x, int y)
+{
+    c[0] = 0x0000;
+    c[1] = 0;
+    c[2] = 0x0080;
+    c[3] = colr;
+    c[4] = (u16)shr3((int)vram);
+    c[5] = (u16)(shl8(shr3(w)) | h);
+    c[6] = (u16)x;
+    c[7] = (u16)y;
+    for (int i = 8; i < 16; i++)
+        c[i] = 0;
+}
+
+static int round8(int x) { return (x + 7) & ~7; }
+
+/* ======================================================================================== */
+/* visual scenes: own VDP1 list over the picture                                             */
 
 struct scene_header { u32 magic; u16 ncues, nglyphs; u32 cues, glyphs, text, bits; };
 struct scene_cue { u8 audio, pad; u16 start, end, text, nchars, x; };
-struct glyph { u16 width, bits; };
 
-#define STRIDE      1024
-#define BAR_Y       228
-#define BAR_H       12
-#define SCREEN_W    640
-#define MARK_POS    ((BAR_Y + BAR_H - 1) * STRIDE + SCREEN_W - 1)
-#define MARK        0x0001
-#define BG          0x0000
+#define SCENE_Y     212
+#define SCENE_ROWS  14          /* 12 glyph rows + outline */
+#define SCENE_MARGIN 2
+#define SCENE_COLR  0x0070      /* 8-bit sprites: priority bit 0 (S0 over NBG0), CRAM 0x70.. */
+#define SCENE_CRAM  0x70
+
+#define CCCTL_COPY  (*(volatile u16 *)0x06085C6C)   /* 0x06085B80 + 0xEC: the library's copy */
+#define CCCTL_REG   (*(volatile u16 *)0x25F800EC)   /* write-only; scenes do not re-upload */
+#define SPCCEN      0x0040
 
 static int bar_cur = -1;
-static const u16 bar_pal[4] = { BG, 0x8000 | 10 << 10 | 10 << 5 | 10,
-                                0x8000 | 21 << 10 | 21 << 5 | 21, 0xFFFF };
+static int scene_live = 0;
+static int cc_cleared = -1;     /* CCCTL copy as we left it, -1 = untouched */
+static u32 scene_seen = 0;
+static int scene_tw = 0;
+
+static const u16 text_pal[4] = { 0, 0x0000, 0x5294, 0x7FFF };
+
+static int list_ours(void) { return VDP1_VRAM[0] == 0x0009 && VDP1_VRAM[14] == SIG; }
+
+static void scene_list_end(void)
+{
+    if (list_ours())
+        VDP1_VRAM[0] = 0x8000;
+}
+
+static void scene_cram(void)
+{
+    for (int i = 0; i < 4; i++)
+        CRAM16[SCENE_CRAM + i] = text_pal[i];
+}
+
+static int scene_cram_ok(void) { return CRAM16[SCENE_CRAM + 3] == 0x7FFF && CRAM16[SCENE_CRAM + 2] == 0x5294; }
+
+/* commands: 0 system clip, 1 local coordinates, 2..3 sprites, then end; command 0 is
+   written last so VDP1 never sees half a list */
+static NOINLINE void scene_list(int x)
+{
+    volatile u16 *c = VDP1_VRAM;
+    int w0 = scene_tw < SPRITE_MAX_W ? scene_tw : SPRITE_MAX_W;
+    int w1 = scene_tw - w0;
+    c[0] = 0x8000;
+    c[16] = 0x000A;                             /* local coordinates 0,0 */
+    for (int i = 17; i < 32; i++)
+        c[i] = 0;
+    put_sprite(c + 32, SCENE_COLR, TEX_VRAM, w0, SCENE_ROWS, x, SCENE_Y);
+    int end = 48;
+    if (w1) {
+        put_sprite(c + 48, SCENE_COLR, TEX_VRAM + shr1(w0 * SCENE_ROWS), w1, SCENE_ROWS, x + w0, SCENE_Y);
+        end = 64;
+    }
+    c[end] = 0x8000;
+    for (int i = 1; i < 16; i++)
+        c[i] = 0;
+    c[10] = 639;                                /* system clip: whole 640x240 screen */
+    c[11] = 239;
+    c[14] = SIG;
+    c[0] = 0x0009;
+}
+
+static NOINLINE void scene_show(int idx)
+{
+    bar_cur = idx;
+    if (idx < 0) {
+        scene_list_end();
+        return;
+    }
+    const struct scene_header *h = (const struct scene_header *)DATA;
+    const struct scene_cue *c = (const struct scene_cue *)(DATA + h->cues) + idx;
+    const u16 *text = (const u16 *)(DATA + h->text) + c->text;
+    const struct glyph *gl = (const struct glyph *)(DATA + h->glyphs);
+    int w = 0;
+    for (int i = 0; i < c->nchars; i++)
+        w += gl[text[i]].width;
+    scene_tw = round8(w + 2 * SCENE_MARGIN);
+    tex_clear(TEXBUF, shr1(scene_tw * SCENE_ROWS));
+    tex_text(TEXBUF, scene_tw, 1, gl, DATA + h->bits, text, c->nchars, SCENE_MARGIN, SCENE_ROWS - 2);
+    tex_outline(TEXBUF, scene_tw, SCENE_ROWS);
+    int w0 = scene_tw < SPRITE_MAX_W ? scene_tw : SPRITE_MAX_W;
+    tex_upload(TEXBUF, scene_tw, SCENE_ROWS, 0, w0, TEX_VRAM);
+    if (scene_tw > w0)
+        tex_upload(TEXBUF, scene_tw, SCENE_ROWS, w0, scene_tw - w0, TEX_VRAM + shr1(w0 * SCENE_ROWS));
+    tex_sign();
+    scene_cram();
+    scene_list(c->x);
+}
 
 void sub_on_load(const char *picture)
 {
@@ -174,47 +400,21 @@ void sub_on_load(const char *picture)
     load(scene_name, 1, scene);
 }
 
-static void bar_draw(int idx)
-{
-    const struct scene_header *h = (const struct scene_header *)DATA;
-    volatile u32 *row32 = (volatile u32 *)(VRAM + BAR_Y * STRIDE);
-    for (int y = 0; y < BAR_H; y++, row32 += STRIDE / 2)
-        for (int x = 0; x < SCREEN_W / 2; x++)
-            row32[x] = BG << 16 | BG;
-    if (idx >= 0) {
-        const struct scene_cue *c = (const struct scene_cue *)(DATA + h->cues) + idx;
-        const u16 *text = (const u16 *)(DATA + h->text) + c->text;
-        const struct glyph *gl = (const struct glyph *)(DATA + h->glyphs);
-        int x = c->x;
-        for (int i = 0; i < c->nchars; i++) {
-            const struct glyph *g = gl + text[i];
-            int w = g->width, pitch = shr2(w + 3);
-            const u8 *bits = DATA + h->bits + g->bits;
-            volatile u16 *dst = VRAM + BAR_Y * STRIDE + x;
-            for (int y = 0; y < BAR_H; y++, bits += pitch, dst += STRIDE)
-                for (int bx = 0; bx < pitch; bx++) {
-                    int b = bits[bx];
-                    volatile u16 *d = dst + shl2(bx);
-                    if (b & 0xC0) d[0] = bar_pal[shr6(b) & 3];
-                    if (b & 0x30) d[1] = bar_pal[shr4(b) & 3];
-                    if (b & 0x0C) d[2] = bar_pal[shr2(b) & 3];
-                    if (b & 0x03) d[3] = bar_pal[b & 3];
-                }
-            x += w;
-        }
-    }
-    VRAM[MARK_POS] = MARK;
-    bar_cur = idx;
-}
-
 void sub_on_frame(void)         /* the scene's per-frame wait */
 {
     WAIT_VBLANK();
+    u32 now = VBLANKS;
+    scene_seen = now;
+    scene_live = 1;
+    if (CCCTL_COPY & SPCCEN) {
+        CCCTL_COPY = CCCTL_COPY & ~SPCCEN;
+        cc_cleared = CCCTL_COPY;
+        CCCTL_REG = (u16)cc_cleared;
+    }
     if (loaded_kind != 1)
         return;
     const struct scene_header *h = (const struct scene_header *)DATA;
     const struct scene_cue *c = (const struct scene_cue *)(DATA + h->cues);
-    u32 now = VBLANKS;
     int idx = -1;
     for (int i = 0; i < h->ncues; i++) {
         int a = c[i].audio;
@@ -226,139 +426,91 @@ void sub_on_frame(void)         /* the scene's per-frame wait */
             break;
         }
     }
-    /* redraw when the line changes, or when something repainted the bar */
-    if (idx != bar_cur || (bar_cur >= 0 && VRAM[MARK_POS] != MARK))
-        bar_draw(idx);
+    /* redraw when the line changes, or when something replaced our list, texture or colours */
+    if (idx != bar_cur || (idx >= 0 && (!list_ours() || !tex_signed() || !scene_cram_ok())))
+        scene_show(idx);
 }
 
 /* ======================================================================================== */
-/* stages: NBG3 text layer                                                                   */
+/* stages: sprites added to the game's own VDP1 list                                         */
 
 struct stage_header { u32 magic; u16 naudio, ncues, nglyphs, pad; u32 names, cues, glyphs, text, bits; };
 struct stage_cue { u8 audio, nlines; u16 start, end, text, n1, n2, x1, x2; };
 
-#define N3_MAP      0x70000         /* VRAM bank B1, unused by the stages */
-#define N3_CHARS    0x74000
-#define N3_PAL      15              /* palette 15 at colour offset 7: CRAM 0x7F0.. */
-#define N3_BLANK    ((N3_PAL << 12) | ((N3_CHARS >> 5) & 0x3FF))
-#define N3_ROW      12              /* first map row of the two text lines (y = 96..127, above the faces) */
-#define N3_CELLS    160             /* 2 lines x 2 cell rows x 40 */
-#define GLYPH_ROWS  16
+#define STAGE_ROWS  16
+#define STAGE_Y0    96          /* the two lines: rows 96..111 and 112..127, above the faces */
+#define STAGE_LINE_BYTES 2432   /* 304 x 16 / 2: second line's texture offset */
+#define STAGE_COLR  0x07F0      /* 16-bit sprite type 5: priority S0 (top), CRAM 0x7F0.. */
+#define STAGE_CRAM  0x7F0
+#define STAGE_LIST  63          /* the game's last priority list: drawn on top */
+#define PAUSE_GAP   2           /* vblanks since the pause loop's restore that mean "paused" */
 
-/* registers the library uploads from RAM: 0x0E..0x27 at 0x060859B0+reg, 0x28..0x6F at
-   0x060859B8+reg, 0xE0.. at 0x06085B80+reg */
-#define SH(base, reg)  (*(volatile u16 *)((base) + (reg)))
-#define SYS  0x060859B0
-#define NOR  0x060859B8
-#define DAT  0x06085B80
+static int stg_cur = -2;        /* cue in the texture, -1 = none, -2 = unknown */
+static u32 last_pause = 0;      /* vblank of the pause loop's last list restore */
+static volatile u16 *added[2] = { 0 };   /* our commands in the RAM lists this frame */
+static int nadded = 0;
+static int stg_n = 0;           /* sprites to add: 0..2 */
+static int stg_w[2] = { 0 }, stg_x[2] = { 0 }, stg_y[2] = { 0 };
+static u32 stg_vram[2] = { 0 };
+static int stg_want = -1;       /* cue the vblank handler wants shown */
 
-static int n3_on = 0;
-static int n3_cur = -2;         /* cue in the cells, -1 = blank, -2 = unknown */
-
-static void n3_regs(void)
+static void stage_cram(void)
 {
-    VDP2_REG(0x20) = SH(SYS, 0x20) | 0x0008;                /* BGON: N3ON */
-    VDP2_REG(0x2A) = SH(NOR, 0x2A) & ~0x0030;               /* CHCTLB: N3 1x1 cell, 16 colours */
-    VDP2_REG(0x36) = 0x8000 | (N3_CHARS >> 15);             /* PNCN3: 1 word, char bits 14..10 */
-    VDP2_REG(0x3A) = SH(NOR, 0x3A) & ~0x00C0;               /* PLSZ: N3 1x1 plane */
-    VDP2_REG(0x3C) = SH(NOR, 0x3C) & ~0x7000;               /* MPOFN: N3 map offset 0 */
-    VDP2_REG(0x4C) = (N3_MAP >> 13) * 0x0101;               /* MPABN3 */
-    VDP2_REG(0x4E) = (N3_MAP >> 13) * 0x0101;               /* MPCDN3 */
-    VDP2_REG(0x94) = 0;                                     /* SCXIN3 */
-    VDP2_REG(0x96) = 0;                                     /* SCYIN3 */
-    VDP2_REG(0xFA) = (SH(DAT, 0xFA) & 0x00FF) | 0x0700;     /* PRINB: N3 priority 7 */
-    VDP2_REG(0xE4) = (SH(DAT, 0xE4) & 0x0FFF) | 0x7000;     /* CRAOFA: N3 colour offset 7 */
-    VDP2_REG(0x1E) = (SH(SYS, 0x1E) & 0x00FF) | 0x3700;     /* CYCB1 T4,T5: N3 name, N3 char */
-}
-
-void sub_after_upload(void)
-{
-    if (n3_on)
-        n3_regs();
-}
-
-/* map and palette; the stage start clears VRAM and CRAM, so this is redone when they vanish */
-static void n3_layout(void)
-{
-    static const u16 col[4] = { 0, 0x0000, 0x5294, 0x7FFF };
     for (int i = 0; i < 4; i++)
-        CRAM16[0x7F0 + i] = col[i];
-    volatile u32 *ch = (volatile u32 *)(0x25E00000 + N3_CHARS);
-    for (int i = 0; i < 8; i++)
-        ch[i] = 0;                                          /* char 0: clear */
-    volatile u16 *map = (volatile u16 *)(0x25E00000 + N3_MAP);
-    for (int i = 0; i < 64 * 64; i++)
-        map[i] = N3_BLANK;
-    for (int r = 0; r < 4; r++)
-        for (int c = 0; c < 40; c++)
-            map[(N3_ROW + r) * 64 + c] = N3_BLANK + 1 + r * 40 + c;
-    n3_cur = -2;
+        CRAM16[STAGE_CRAM + i] = text_pal[i];
 }
 
-static int n3_layout_ok(void)
+static NOINLINE void stage_upload(void)
 {
-    volatile u16 *map = (volatile u16 *)(0x25E00000 + N3_MAP);
-    return map[0] == N3_BLANK && map[N3_ROW * 64] == N3_BLANK + 1 && CRAM16[0x7F3] == 0x7FFF;
+    for (int i = 0; i < stg_n; i++)
+        tex_upload(TEXBUF + (stg_vram[i] - TEX_VRAM), stg_w[i], STAGE_ROWS, 0, stg_w[i], stg_vram[i]);
+    tex_sign();
 }
 
-/* one line of glyphs into the cell buffer: line 0 = cells 0..79, line 1 = 80..159 */
-static void n3_line(int line, const u16 *text, int n, int x)
+/* one text line (`count` > 0 glyphs) into sprite slot n; second == 1 for the lower row */
+static NOINLINE void stage_line(int n, int second, const u16 *text, int count, int x)
 {
     const struct stage_header *h = (const struct stage_header *)DATA;
     const struct glyph *gl = (const struct glyph *)(DATA + h->glyphs);
-    u8 *buf = (u8 *)CELLBUF;
-    int base = line ? 80 : 0;
-    for (int i = 0; i < n; i++) {
-        const struct glyph *g = gl + text[i];
-        int w = g->width, pitch = shr2(w + 3);
-        const u8 *bits = DATA + h->bits + g->bits;
-        for (int y = 0; y < GLYPH_ROWS; y++, bits += pitch) {
-            int rowcell = base + (y < 8 ? 0 : 40);
-            int yoff = shl2(y & 7);
-            for (int px = 0; px < w; px++) {
-                int b = bits[shr2(px)];
-                switch (px & 3) {
-                case 0: b = shr6(b); break;
-                case 1: b = shr4(b); break;
-                case 2: b = shr2(b); break;
-                }
-                b &= 3;
-                if (!b)
-                    continue;
-                int sx = x + px;
-                if (sx < 0 || sx >= 320)
-                    continue;
-                u8 *p = buf + shl5(rowcell + shr3(sx)) + yoff + shr1(sx & 7);
-                if (sx & 1)
-                    *p = (u8)((*p & 0xF0) | b);
-                else
-                    *p = (u8)((*p & 0x0F) | shl4(b));
-            }
-        }
-        x += w;
-    }
+    int w = 0;
+    for (int i = 0; i < count; i++)
+        w += gl[text[i]].width;
+    u32 off = second ? STAGE_LINE_BYTES : 0;
+    int tw = round8(w);
+    stg_w[n] = tw;
+    stg_x[n] = x;
+    stg_y[n] = second ? STAGE_Y0 + STAGE_ROWS : STAGE_Y0;
+    stg_vram[n] = TEX_VRAM + off;
+    tex_clear(TEXBUF + off, shr1(tw * STAGE_ROWS));
+    tex_text(TEXBUF + off, tw, 0, gl, DATA + h->bits, text, count, 0, STAGE_ROWS);
 }
 
-static void n3_draw(int idx)
+static NOINLINE void stage_show(int idx)
 {
-    for (int i = 0; i < N3_CELLS * 8; i++)
-        CELLBUF[i] = 0;
-    if (idx >= 0) {
-        const struct stage_header *h = (const struct stage_header *)DATA;
-        const struct stage_cue *c = (const struct stage_cue *)(DATA + h->cues) + idx;
-        const u16 *text = (const u16 *)(DATA + h->text) + c->text;
-        if (c->n1)
-            n3_line(0, text, c->n1, c->x1);
-        if (c->n2)
-            n3_line(1, text + c->n1, c->n2, c->x2);
+    stg_n = 0;                  /* the frame end hook may run in between: publish n last */
+    stg_cur = idx;
+    if (idx < 0)
+        return;
+    const struct stage_header *h = (const struct stage_header *)DATA;
+    const struct stage_cue *c = (const struct stage_cue *)(DATA + h->cues) + idx;
+    const u16 *text = (const u16 *)(DATA + h->text) + c->text;
+    int n = 0;
+    if (c->n1 > 0) {
+        stage_line(n, 0, text, c->n1, c->x1);
+        n++;
     }
-    volatile u32 *ch = (volatile u32 *)(0x25E00000 + N3_CHARS) + 8;    /* chars 1.. */
-    for (int i = 0; i < N3_CELLS * 8; i++)
-        ch[i] = CELLBUF[i];
-    n3_cur = idx;
+    if (c->n2 > 0) {
+        stage_line(n, 1, text + c->n1, c->n2, c->x2);
+        n++;
+    }
+    if (n > 0) {
+        stg_n = n;
+        stage_upload();
+        stage_cram();
+    }
 }
 
-static int stage_cue_now(u32 now)
+static NOINLINE int stage_cue_now(u32 now)
 {
     int a = stage_voice;
     if (a < 0 || !started[0])
@@ -372,23 +524,79 @@ static int stage_cue_now(u32 now)
     return -1;
 }
 
+void sub_on_pause_frame(void)   /* the pause loop restores the lists saved when it began */
+{
+    last_pause = VBLANKS;
+}
+
+static int paused(u32 now) { return now - last_pause <= PAUSE_GAP; }
+
+/* the game saves its lists (pause, game over) and redraws the saved copy every frame after;
+   our sprites in that copy would keep pointing at a texture that changes, so they are turned
+   into skipped commands first (the copy keeps its links) */
+void sub_before_list_save(void)
+{
+    u8 *lo = *(u8 **)0x0606D860;            /* this frame's list buffer start */
+    for (int i = 0; i < nadded; i++)
+        if ((u8 *)added[i] >= lo && (u8 *)added[i] < LIST_PTR)
+            added[i][0] |= 0x4000;
+    nadded = 0;
+}
+
+void sub_before_list_end(void)  /* right before the game closes its VDP1 list */
+{
+    nadded = 0;
+    if (!(GAME_MODE == 1 && loaded_kind == 2))
+        return;
+    /* textures are built here in the game's main loop, not in the vblank handler */
+    int want = stg_want;
+    if (want != stg_cur)
+        stage_show(want);
+    else if (stg_n) {
+        /* the stage start clears VRAM and CRAM: put the texture and colours back */
+        if (!tex_signed())
+            stage_upload();
+        if (CRAM16[STAGE_CRAM + 3] != 0x7FFF)
+            stage_cram();
+    }
+    if (!stg_n)
+        return;
+    u8 *p = LIST_PTR;
+    for (int i = 0; i < stg_n; i++) {
+        put_sprite((volatile u16 *)p, STAGE_COLR, stg_vram[i], stg_w[i], STAGE_ROWS, stg_x[i], stg_y[i]);
+        ADD_CMD(STAGE_LIST, p);
+        added[nadded++] = (volatile u16 *)p;
+        p += 32;
+    }
+    LIST_PTR = p;
+}
+
 void sub_on_vblank(void)        /* end of the vblank handler, every frame in every mode */
 {
     u32 now = VBLANKS;
     watch_keyon(now);
-    if (GAME_MODE == 1 && loaded_kind == 2) {
-        if (!n3_on) {
-            n3_on = 1;
-            n3_regs();
+    if (scene_live && now - scene_seen > SCENE_GONE) {
+        scene_live = 0;
+        bar_cur = -1;
+        scene_list_end();
+        /* nobody set it since, and no stage has taken over: put it back */
+        if (cc_cleared >= 0 && CCCTL_COPY == cc_cleared && loaded_kind == 1) {
+            CCCTL_COPY = CCCTL_COPY | SPCCEN;
+            CCCTL_REG = CCCTL_COPY;
         }
-        if (!n3_layout_ok())
-            n3_layout();
-        int idx = stage_cue_now(now);
-        if (idx != n3_cur)
-            n3_draw(idx);
-    } else if (n3_on) {
-        n3_on = 0;
-        VDP2_REG(0x20) = SH(SYS, 0x20);
+        cc_cleared = -1;
+    }
+    if (GAME_MODE == 1 && loaded_kind == 2) {
+        /* the pause loop stops the voice stream and redraws the lists saved when it began
+           (our sprites included): hold the cue clock and leave the texture as it is */
+        if (paused(now)) {
+            anchor[0]++;
+            called[0]++;
+            return;
+        }
+        stg_want = stage_cue_now(now);
+    } else {
+        stg_want = -1;
     }
 }
 
@@ -400,14 +608,15 @@ void sub_on_play(const char *voice)
         int no = voice[2] - '0';
         stage_voice = -1;
         if (loaded_kind != 2 || loaded_no != no) {
-            n3_cur = -2;
+            stg_n = 0;
+            stg_cur = -2;
             stage_name[3] = (char)voice[2];
             if (!load(stage_name, 2, no))
                 return;
         }
+        start_watch(0);         /* before stage_voice: the vblank handler pairs them */
         const struct stage_header *h = (const struct stage_header *)DATA;
         const char *names = (const char *)(DATA + h->names);
-        stage_voice = -1;
         for (int i = 0; i < h->naudio; i++) {
             const char *n = names + i * 12;
             int k = 0;
@@ -418,7 +627,6 @@ void sub_on_play(const char *voice)
                 break;
             }
         }
-        start_watch(0);
     } else {
         /* scenes run in game mode 1 too; in a stage this is a voice without subtitles
            (deadblow.aif, ...) whose key-on must not restart the last dialogue's cues */

@@ -56,6 +56,7 @@ def _fake_main():
     for addr, s in st.ORIG_STRINGS.items():
         main[addr - st.MAIN_BASE:addr - st.MAIN_BASE + len(s)] = s
     main[st.BOOT_LOADER - st.MAIN_BASE:st.BOOT_LOADER - st.MAIN_BASE + 4] = struct.pack(">I", st.LOADER)
+    main[st.VDP1_POOL_END - st.MAIN_BASE:st.VDP1_POOL_END - st.MAIN_BASE + 4] = struct.pack(">I", st.VDP1_POOL_END_ORIG)
     for loader, wait, plays in st.SCENES.values():
         for a, v in [(loader, st.LOADER), (wait, st.WAIT)] + [(p, st.PLAY) for p in plays]:
             main[a - st.MAIN_BASE:a - st.MAIN_BASE + 4] = struct.pack(">I", v)
@@ -72,7 +73,15 @@ def test_patch_main_hooks_only_requested_scenes():
     assert out[st.FAST - st.MAIN_BASE:st.FAST - st.MAIN_BASE + 32] == st.FAST_CODE
     assert lit(st.BOOT_LOADER) == st.FAST
     diff = sum(a != b for a, b in zip(main, out))
-    assert diff <= 3 * 32 + 4 * (1 + 2 + 1 + 2)
+    assert diff <= 3 * 32 + 4 * (1 + 2 + 1 + 2 + 1)
+
+
+def test_patch_main_reserves_the_top_of_vdp1_vram_for_subtitles():
+    out = st.patch_main(_fake_main(), [])
+    lit = struct.unpack(">I", out[st.VDP1_POOL_END - st.MAIN_BASE:st.VDP1_POOL_END - st.MAIN_BASE + 4])[0]
+    assert lit == 0x05C00000 + st.VDP1_TEX                 # the game's VDP1 heap now stops there
+    assert st.VDP1_TEX + st.VDP1_TEX_SIZE == 0x80000         # ...and the reserve ends with VRAM
+    assert st.VDP1_TEX_SIZE >= max((st.MAX_LINE_W + 7) // 8 * 8 * st.TEX_ROWS // 2, 2 * st.STAGE_LINE_W * st.STAGE_ROWS // 2)
 
 
 def test_patch_main_refuses_unexpected_bytes():
@@ -116,7 +125,7 @@ def test_build_data_layout_round_trips():
     audio, _, s, e, t, n, x = struct.unpack(">BBHHHHH", data[cues:cues + 12])
     ids = struct.unpack(f">{n}H", data[text + 2 * t:text + 2 * t + 2 * n])
     widths = [struct.unpack(">2H", data[glyphs + 4 * i:glyphs + 4 * i + 4])[0] for i in ids]
-    assert x == (st.SCREEN_W - sum(widths)) // 2
+    assert x == (st.SCREEN_W - (sum(widths) + 2 * st.GLYPH_MARGIN)) // 2
     # first glyph decodes back to the rendered levels
     w, off = struct.unpack(">2H", data[glyphs + 4 * ids[0]:glyphs + 4 * ids[0] + 4])
     pitch = (w + 3) // 4
@@ -165,6 +174,24 @@ def test_stage_wrap_splits_long_lines_at_a_space():
         st.stage_wrap("가" * 60)
 
 
+def test_scene_glyph_is_ink_only_and_outline_stays_in_the_texture():
+    g = st.render_glyph("한")
+    assert g.shape[0] == st.ROWS and set(np.unique(g)) <= {0, 2, 3} and (g == 3).any()
+    line = np.zeros((st.TEX_ROWS, g.shape[1] + 2 * st.GLYPH_MARGIN), np.uint8)
+    line[1:-1, st.GLYPH_MARGIN:-st.GLYPH_MARGIN] = g
+    o = st.outline(line)
+    assert (o[line > 1] == line[line > 1]).all()          # ink untouched
+    assert (o == 1).any()
+    assert not (o[0] > 1).any() and not (o[-1] > 1).any() # only outline in the margin rows
+
+
+def test_texture_buffer_and_vram_reserve_hold_a_full_line():
+    w = (st.MAX_LINE_W + 7) // 8 * 8
+    assert w * st.TEX_ROWS // 2 <= 0x0608E000 - st.TEXBUF
+    assert 2 * st.STAGE_LINE_W * st.STAGE_ROWS // 2 <= 0x0608E000 - st.TEXBUF
+    assert st.SCENE_Y >= 12 and st.SCENE_Y + st.TEX_ROWS <= 228    # over the picture, inside 8..231
+
+
 def test_stage_glyph_has_outline_inside_its_box():
     g = st.render_stage_glyph("한")
     assert g.shape[0] == st.STAGE_ROWS
@@ -183,3 +210,17 @@ def test_build_stage_data_layout():
     audio, nlines, s, e, t, n1, n2, x1, x2 = struct.unpack(">BBHHHHHHH", data[cues:cues + 16])
     assert audio == 1 and n1 == 0 and n2 == len("목표 파괴.") and 0 < x2 < st.STAGE_W // 2
     assert len(data) <= st.STAGE_DATA_LIMIT
+
+
+def test_sub_c_constants_match_the_data_builder():
+    import re
+    src = (ROOT / "tools/subtitle/sub.c").read_text()
+    val = lambda name: int(re.search(rf"#define {name}\s+\(?\(?(?:\(const u8 \*\)|\(u8 \*\))?(0x[0-9A-Fa-f]+|\d+)", src).group(1), 0)
+    assert val("SCENE_Y") == st.SCENE_Y
+    assert val("SCENE_ROWS") == st.TEX_ROWS
+    assert val("SCENE_MARGIN") == st.GLYPH_MARGIN
+    assert val("STAGE_ROWS") == st.STAGE_ROWS
+    assert val("STAGE_LINE_BYTES") == st.STAGE_LINE_W * st.STAGE_ROWS // 2
+    assert val("TEX_VRAM") == st.VDP1_TEX
+    assert val("TEXBUF") == st.TEXBUF
+    assert val("DATA") == st.BASE + st.CODE_LIMIT

@@ -10,4 +10,4 @@ SECTIONS
     _end = .;
     /DISCARD/ : { *(.comment) *(.note*) *(.eh_frame*) }
 }
-ASSERT(_end <= 0x06087340, "subtitle code overruns its 4 KB")
+ASSERT(_end <= 0x06087540, "subtitle code overruns its 4.5 KB")

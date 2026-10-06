@@ -3,10 +3,12 @@
 Pieces put on the disc:
   SUB.BIN    subtitle code (assets/subtitle/SUB.BIN, built from tools/subtitle/), loaded once
              into RAM nobody uses (0x06086340..0x0608E000, between BSS end and the game heap)
-  SUBn.DAT   one per scene: glyphs used by the scene + cues, loaded at BASE + 0x1000
+  SUBn.DAT   one per scene: glyphs used by the scene + cues, loaded at BASE + 0x1200
+  STGn.DAT   one per stage, same idea, loaded with the stage's first voice
   MAIN.BIN   three unreferenced library version strings become a 32-byte stub pair and the
              file name; in every subtitled scene function three literals are redirected:
-             picture loader -> stub, vblank wait -> frame hook, voice player -> play hook.
+             picture loader -> stub, vblank wait -> frame hook, voice player -> play hook;
+             the game's VDP1 texture heap ends 8 KB early so SUB.BIN owns 0x7E000..0x7FFFF.
 
 Cue timing is in real vblanks from the moment the n-th voice of the scene starts sounding
 (SUB.BIN watches the sound driver key on the stream slot), at 59.826 Hz (Saturn NTSC).
@@ -21,17 +23,28 @@ from . import iso9660, sa
 
 MAIN_BASE = 0x06010000
 BASE = 0x06086340
-DATA_LIMIT = 0x0608E000 - (BASE + 0x1000)       # 27,840 bytes per scene
-CODE_LIMIT = 0x1000
+CODE_LIMIT = 0x1200                             # SUB.BIN; its data follows
+TEXBUF = 0x0608CC00                             # RAM where SUB.BIN assembles a subtitle texture
+DATA_LIMIT = TEXBUF - (BASE + CODE_LIMIT)       # 22,208 bytes per scene
+# The text is drawn as VDP1 sprites (VDP2 has no free VRAM read slot for another layer in the
+# stages, see docs/subtitle-pilot.md 10).  The game's VDP1 VRAM heap (pool 2, set up by
+# 0x06031674) ends 8 KB early so the top of VDP1 VRAM holds the subtitle textures.
+VDP1_POOL_END = 0x06031730
+VDP1_POOL_END_ORIG = 0x05C80000
+VDP1_TEX = 0x7E000
+VDP1_TEX_SIZE = 0x2000
 CODE_MAGIC = 0x4B485355                         # "KHSU" at BASE + 0x10
 DATA_MAGIC = 0x4B485332                         # "KHS2"
 FRAME_HOOK = BASE + 0x0A
 PLAY_HOOK = BASE + 0x14
 FPS = 59.826
-ROWS = 12
+ROWS = 12                                       # glyph rows; SUB.BIN adds the outline
+TEX_ROWS = ROWS + 2                             # one outline row above and below
 FONT_PX = 22
-MAX_LINE_W = 624
+GLYPH_MARGIN = 2                                # outline columns left and right of the line
+MAX_LINE_W = 624                                # text + margins; texture width rounds up to 8
 SCREEN_W = 640
+SCENE_Y = 212                                   # texture top: rows 212..225, inside a 224-line view
 
 FAST, SLOW, NAME = 0x06054398, 0x06059560, 0x0605A36C
 ORIG_STRINGS = {FAST: b"SYS Version 2.53 1997-12-15\0", SLOW: b"CDC Version 1.22 1997-02-27\0",
@@ -117,6 +130,7 @@ def patch_main(main: bytes, scenes) -> bytes:
         assert len(code) == 32
         put(addr, ORIG_STRINGS[addr], code)
     put(BOOT_LOADER, _longs(LOADER), _longs(FAST))
+    put(VDP1_POOL_END, _longs(VDP1_POOL_END_ORIG), _longs(0x05C00000 + VDP1_TEX))
     for n in scenes:
         loader, wait, plays = SCENES[n]
         put(loader, _longs(LOADER), _longs(FAST))
@@ -137,18 +151,39 @@ def _font(path: str):
     return ImageFont.truetype(path, FONT_PX, index=sa.FONT_INDEX_KR)
 
 
+@lru_cache(maxsize=None)
 def render_glyph(ch: str, font_path: str = sa.DEFAULT_FONT) -> np.ndarray:
-    """12 rows of 0..3: drawn square on 24 rows, then halved (a 640x240 pixel is 1:2)."""
+    """ROWS rows of 0 clear / 2 grey / 3 white: drawn square on 24 rows, then halved (a
+    640x240 pixel is 1:2).  Value 1 is the black outline, added by SUB.BIN around the
+    assembled line (two columns sideways, one row up and down) so the data stays small."""
     font = _font(font_path)
     adv = max(1, round(font.getlength(ch)))
     im = Image.new("L", (adv + 2, 2 * ROWS), 0)
     ImageDraw.Draw(im).text((1, 19), ch, font=font, fill=255, anchor="ls")
     a = np.asarray(im, dtype=np.float32)
-    a = (a[0::2] + a[1::2]) / 2
-    lv = np.clip(np.rint(a / 255 * 3), 0, 3).astype(np.uint8)
+    a = (a[0::2] + a[1::2]) / 2 / 255
+    lv = np.where(a > 0.55, 3, np.where(a > 0.2, 2, 0)).astype(np.uint8)
     cols = np.flatnonzero(lv.any(axis=0))
     w = adv if ch == " " or not len(cols) else max(adv, cols[-1] + 1)
     return lv[:, :w]
+
+
+def outline(lv: np.ndarray) -> np.ndarray:
+    """Reference for SUB.BIN's outline pass on an assembled line (with its margins)."""
+    ink = lv > 1
+    grown = ink.copy()
+    for dy in (-1, 0, 1):
+        for dx in range(-GLYPH_MARGIN, GLYPH_MARGIN + 1):
+            sh = np.zeros_like(ink)
+            ys = slice(max(dy, 0), lv.shape[0] + min(dy, 0))
+            yd = slice(max(-dy, 0), lv.shape[0] + min(-dy, 0))
+            xs = slice(max(dx, 0), lv.shape[1] + min(dx, 0))
+            xd = slice(max(-dx, 0), lv.shape[1] + min(-dx, 0))
+            sh[yd, xd] = ink[ys, xs]
+            grown |= sh
+    out = lv.copy()
+    out[grown & (lv == 0)] = 1
+    return out
 
 
 def pack_glyph(lv: np.ndarray) -> bytes:
@@ -191,7 +226,7 @@ def build_data(spec: dict, font_path: str = sa.DEFAULT_FONT) -> bytes:
     glyphs = [render_glyph(ch, font_path) for ch in chars]
     text, cue_rec = [], []
     for a, s, t, ko, cid in cues:
-        w = sum(glyphs[ids[ch]].shape[1] for ch in ko)
+        w = sum(glyphs[ids[ch]].shape[1] for ch in ko) + 2 * GLYPH_MARGIN
         if w > MAX_LINE_W:
             raise SubtitleError(f"{cid}: line is {w} px, limit {MAX_LINE_W}: {ko}")
         cue_rec.append(struct.pack(">BBHHHHH", a, 0, s, t, len(text), len(ko), (SCREEN_W - w) // 2))
@@ -269,9 +304,9 @@ def repack_root(read, sizes: dict, new_files) -> dict:
     return {lba: bytes(blob[i * 2048:(i + 1) * 2048]) for i, lba in enumerate(dir_lbas)}
 
 
-# --- stages: NBG3 text, 320 px wide, up to two lines ---------------------------------------
+# --- stages: VDP1 sprites over the 320 px stage screen, up to two lines --------------------
 STAGE_MAGIC = 0x4B485431                        # "KHT1"
-STAGE_DATA_LIMIT = 0x0608CC00 - (BASE + 0x1000)  # cell buffer follows the data
+STAGE_DATA_LIMIT = TEXBUF - (BASE + CODE_LIMIT)  # texture buffer follows the data
 STAGE_ROWS = 16
 STAGE_FONT_PX = 13
 STAGE_W = 320
