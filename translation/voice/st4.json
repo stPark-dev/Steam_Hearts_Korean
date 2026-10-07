@@ -1,6 +1,6 @@
 {
  "stage": 4,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -33,8 +33,7 @@
    "end": 2.88,
    "ja": "地殻変動か",
    "ko": "지각 변동인가.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.002",
@@ -43,7 +42,7 @@
    "end": 6.32,
    "ja": "この辺って街があったんじゃ",
    "ko": "이 근처에 마을이 있지 않았어?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.003",
@@ -52,7 +51,7 @@
    "end": 10.8,
    "ja": "うん、全部飲み込まれてしまったのかな",
    "ko": "응, 전부 삼켜져 버린 걸까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.004",
@@ -60,18 +59,19 @@
    "start": 11.36,
    "end": 15.62,
    "ja": "ひどい。このエリアのマスターエンブリオは誰",
-   "ko": "심하다. 이 지역의 마스터 엠브리오는 누구야?",
-   "status": "needs_review"
+   "ko": "끔찍해. 이 지역의 마스터 엠브리오는 누구야?",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.005",
    "audio": 0,
-   "start": 15.62,
-   "end": 18.5,
-   "ja": "チェルノだね",
-   "ko": "체르노야.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "start": 18.29,
+   "end": 20.99,
+   "ja": "チェルノ。バストーガー・チェルノだね",
+   "ko": "첼노. 바스토가 첼노야.",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "두 모델 모두 「チェルノ。バストーガー(バストーが)チェルノだね」로 들음. 「バストーガー」는 마스터 엠브리오 칭호로 보이나 소리대로 음차함."
   },
   {
    "id": "st4.006",
@@ -80,7 +80,7 @@
    "end": 25.11,
    "ja": "あのフニフニ娘ね",
    "ko": "그 말랑말랑한 애 말이지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.007",
@@ -89,7 +89,7 @@
    "end": 27.37,
    "ja": "は? 何それ",
    "ko": "뭐? 그게 뭐야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.008",
@@ -98,7 +98,7 @@
    "end": 31.01,
    "ja": "フニフニって感じするじゃない",
    "ko": "말랑말랑한 느낌이잖아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.009",
@@ -107,16 +107,18 @@
    "end": 32.83,
    "ja": "フニフニ…",
    "ko": "말랑말랑…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.010",
    "audio": 1,
    "start": 0.76,
    "end": 5.81,
-   "ja": "赤い機体、まさか",
-   "ko": "붉은 기체… 설마.",
-   "status": "needs_review"
+   "ja": "ブロー、あれ! 赤い機体…まさか",
+   "ko": "블로, 저거! 붉은 기체… 설마.",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "lv3 cue 「ブロー、アレン!」·kotoba 「ブローあれ」로 앞에 부르는 말이 있음. 화자가 둘인지 불분명하고 나눌 시각 근거가 없어 한 줄로 둠."
   },
   {
    "id": "st4.011",
@@ -125,16 +127,16 @@
    "end": 9.95,
    "ja": "貴様らか、反乱分子というのは",
    "ko": "너희인가, 반란 분자라는 게.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.012",
    "audio": 1,
-   "start": 11.67,
+   "start": 10.89,
    "end": 14.53,
    "ja": "違う、僕たちはウエスティナを守るために",
    "ko": "아니야, 우리는 웨스티나를 지키려고",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.013",
@@ -143,7 +145,7 @@
    "end": 17.47,
    "ja": "義は我にありか",
    "ko": "정의는 자기 편이라 이건가.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.014",
@@ -152,7 +154,7 @@
    "end": 20.91,
    "ja": "アウトロー風情が英雄気取り",
    "ko": "무법자 주제에 영웅 행세라니.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.015",
@@ -161,7 +163,7 @@
    "end": 22.61,
    "ja": "笑わせるな",
    "ko": "웃기지 마라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.016",
@@ -170,7 +172,7 @@
    "end": 24.15,
    "ja": "僕の話を聞いてくれ",
    "ko": "내 얘기를 들어 줘.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.017",
@@ -178,8 +180,8 @@
    "start": 24.15,
    "end": 26.05,
    "ja": "お前は何様のつもりだ",
-   "ko": "네가 뭔데?",
-   "status": "needs_review"
+   "ko": "네가 뭐라도 되는 줄 아느냐.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.018",
@@ -188,7 +190,7 @@
    "end": 31.43,
    "ja": "貴様たちはウエスティナを守るという大義名分を掲げて",
    "ko": "너희는 웨스티나를 지킨다는 대의명분을 내세워",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.019",
@@ -197,7 +199,7 @@
    "end": 34.33,
    "ja": "反逆を正当化したいだけではないのか",
    "ko": "반역을 정당화하고 싶을 뿐 아닌가?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.020",
@@ -206,17 +208,16 @@
    "end": 35.21,
    "ja": "何",
    "ko": "뭐?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.021",
    "audio": 1,
    "start": 36.31,
    "end": 40.01,
-   "ja": "あいにく、私は忙しいのでな",
-   "ko": "공교롭게도 나는 바빠서 말이지.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ja": "おあいにくさま、私は忙しいのでな",
+   "ko": "유감이지만 나는 바빠서 말이지.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.022",
@@ -225,7 +226,7 @@
    "end": 44.95,
    "ja": "せいぜい頑張ってみるんだな、アウトロー",
    "ko": "어디 열심히 해 봐라, 무법자.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.023",
@@ -234,7 +235,7 @@
    "end": 46.39,
    "ja": "逃げる気",
    "ko": "도망칠 셈이야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.024",
@@ -243,7 +244,7 @@
    "end": 50.81,
    "ja": "ほう、この私に勝負を挑むというのか",
    "ko": "호오, 이 나에게 승부를 걸겠다는 건가.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.025",
@@ -251,8 +252,8 @@
    "start": 51.51,
    "end": 53.13,
    "ja": "無鉄砲にも程がある",
-   "ko": "무모해도 정도가 있지.",
-   "status": "needs_review"
+   "ko": "무모함에도 정도가 있지.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.026",
@@ -261,7 +262,34 @@
    "end": 55.95,
    "ja": "こいつ強い",
    "ko": "이 녀석, 강해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st4.026n1",
+   "audio": 1,
+   "start": 58.93,
+   "end": 63.55,
+   "ja": "アルバルトさん、アウトローの皆さん",
+   "ko": "알바르트 씨, 무법자 여러분.",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st4.026n2",
+   "audio": 1,
+   "start": 64.41,
+   "end": 67.51,
+   "ja": "ここは私の管理地域です",
+   "ko": "여기는 제 관리 지역이에요.",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st4.026n3",
+   "audio": 1,
+   "start": 67.51,
+   "end": 70.33,
+   "ja": "すぐに立ち去ってください",
+   "ko": "당장 떠나 주세요.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.027",
@@ -269,8 +297,8 @@
    "start": 71.98,
    "end": 73.1,
    "ja": "チェルノか",
-   "ko": "체르노인가.",
-   "status": "needs_review"
+   "ko": "첼노인가.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.028",
@@ -279,7 +307,7 @@
    "end": 76.52,
    "ja": "さらばだ、アウトロー",
    "ko": "잘 있어라, 무법자.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.029",
@@ -288,7 +316,7 @@
    "end": 79.56,
    "ja": "貴様たちはこの世界の異端者",
    "ko": "너희는 이 세계의 이단자다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.030",
@@ -297,7 +325,7 @@
    "end": 82.02,
    "ja": "考えてみるがいい",
    "ko": "생각해 봐라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.031",
@@ -306,7 +334,7 @@
    "end": 86.72,
    "ja": "そして、その答えが出たとき、私のもとへ来い",
    "ko": "그리고 답이 나오면 내게로 와라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.032",
@@ -315,7 +343,7 @@
    "end": 88.68,
    "ja": "行っちゃった",
    "ko": "가 버렸어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.033",
@@ -324,7 +352,7 @@
    "end": 90.6,
    "ja": "ブロー?",
    "ko": "블로?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.034",
@@ -333,7 +361,7 @@
    "end": 96.46,
    "ja": "僕は、僕は間違っちゃいない",
    "ko": "나는… 나는 틀리지 않았어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.035",
@@ -342,7 +370,7 @@
    "end": 99.1,
    "ja": "気にしないで、ブロー",
    "ko": "신경 쓰지 마, 블로.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.036",
@@ -351,7 +379,7 @@
    "end": 102.46,
    "ja": "所詮私たちはアウトロー扱いなんだから",
    "ko": "어차피 우린 무법자 취급이니까",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.037",
@@ -360,16 +388,34 @@
    "end": 105.36,
    "ja": "真面目に取り合ってくれないだけなんだわ",
    "ko": "제대로 상대해 주지 않을 뿐이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.038",
    "audio": 2,
-   "start": 0.66,
-   "end": 2.5,
-   "ja": "くそー",
+   "start": 1.6,
+   "end": 2.74,
+   "ja": "危ない、ファラ!",
+   "ko": "위험해, 파라!",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st4.038n1",
+   "audio": 2,
+   "start": 2.96,
+   "end": 4.42,
+   "ja": "いや!何これ!",
+   "ko": "싫어! 이게 뭐야!",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st4.038n2",
+   "audio": 2,
+   "start": 4.76,
+   "end": 5.32,
+   "ja": "くそっ!",
    "ko": "젠장!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.039",
@@ -378,7 +424,7 @@
    "end": 8.47,
    "ja": "しつこい奴は嫌われるのよ",
    "ko": "끈질긴 녀석은 미움받는다고.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.040",
@@ -387,7 +433,7 @@
    "end": 2.78,
    "ja": "ウイルスの反応だ",
    "ko": "바이러스 반응이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.041",
@@ -395,17 +441,26 @@
    "start": 3.64,
    "end": 4.9,
    "ja": "あれがチェルノか",
-   "ko": "저게 체르노인가.",
-   "status": "needs_review"
+   "ko": "저게 첼노인가.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.042",
    "audio": 3,
    "start": 5.62,
    "end": 9.65,
-   "ja": "あのー、見たんですか",
-   "ko": "저기… 봤어요?",
-   "status": "needs_review"
+   "ja": "あのー、当たってくれなかったんですか?",
+   "ko": "저기… 안 맞아 준 거예요?",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st4.042n",
+   "audio": 3,
+   "start": 10.28,
+   "end": 12.74,
+   "ja": "当たり前でしょ!",
+   "ko": "당연하지!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.043",
@@ -414,7 +469,25 @@
    "end": 15.66,
    "ja": "じゃあこれなんかどうです",
    "ko": "그럼 이건 어때요?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st4.043n1",
+   "audio": 4,
+   "start": 2.58,
+   "end": 7.16,
+   "ja": "いやー、やだー。動かないです",
+   "ko": "싫어, 싫어! 안 움직여요.",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st4.043n2",
+   "audio": 4,
+   "start": 7.16,
+   "end": 9.78,
+   "ja": "まったくもう",
+   "ko": "아이참, 정말.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.044",
@@ -423,7 +496,7 @@
    "end": 12.44,
    "ja": "髪の毛焦げちゃったじゃないのよ",
    "ko": "머리카락이 타 버렸잖아!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.045",
@@ -432,7 +505,7 @@
    "end": 4.06,
    "ja": "あなたたちがいけないんですよ",
    "ko": "당신들이 잘못한 거예요.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.046",
@@ -441,16 +514,16 @@
    "end": 7.28,
    "ja": "僕は間違っちゃいない",
    "ko": "나는 틀리지 않았어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.047",
    "audio": 6,
-   "start": 3.17,
+   "start": 1.52,
    "end": 4.09,
-   "ja": "なんですか?",
-   "ko": "뭐예요?",
-   "status": "needs_review"
+   "ja": "もう終わりなんですか?",
+   "ko": "벌써 끝인가요?",
+   "status": "distribution_eligible"
   },
   {
    "id": "st4.048",
@@ -459,7 +532,7 @@
    "end": 7.27,
    "ja": "こんなとこで死ぬのは嫌よ",
    "ko": "이런 데서 죽기는 싫어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }

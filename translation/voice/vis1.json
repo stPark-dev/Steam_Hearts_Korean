@@ -1,6 +1,6 @@
 {
  "scene": 1,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "start/end는 음성 파일 시작부터의 초. audio는 장면 안에서 재생되는 순서(0부터). 게임에서는 그 음성이 실제로 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -16,9 +16,9 @@
    "audio": 0,
    "start": 14.67,
    "end": 18.03,
-   "ja": "さっさととどめをさせば良いものを、馬鹿な人たち、",
+   "ja": "さっさととどめをさせば良いものを。馬鹿な人たち。",
    "ko": "얼른 숨통을 끊으면 될 것을. 어리석긴.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.002",
@@ -27,7 +27,7 @@
    "end": 21.73,
    "ja": "あなたたちが何をたくらんでいるのか知らないけど、",
    "ko": "무슨 꿍꿍이인지는 모르겠지만,",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.003",
@@ -36,7 +36,7 @@
    "end": 25.87,
    "ja": "この世界中にあなたたちの逃げ場は、どこにもないわ。",
    "ko": "이 세상 어디에도 너희가 숨을 곳은 없어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.004",
@@ -44,8 +44,8 @@
    "start": 27.69,
    "end": 29.71,
    "ja": "手ぐすね引いて待ち構えている。",
-   "ko": "단단히 벼르고 기다리고 있었군.",
-   "status": "needs_review"
+   "ko": "다들 단단히 벼르고 기다리고 있어.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.005",
@@ -54,7 +54,7 @@
    "end": 36.06,
    "ja": "それは好都合ね。わざわざ探す手間が省けるわ。",
    "ko": "잘됐네. 일부러 찾아다닐 수고를 덜었어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.006",
@@ -63,7 +63,7 @@
    "end": 37.66,
    "ja": "何ですって?",
    "ko": "뭐라고?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.007",
@@ -72,7 +72,7 @@
    "end": 42.94,
    "ja": "僕たちの目的は、シエラ、君たちに会うことなんだよ。",
    "ko": "우리 목적은 말이야, 시에라, 너희를 만나는 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.008",
@@ -81,7 +81,7 @@
    "end": 44.62,
    "ja": "どういうこと",
    "ko": "무슨 소리야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.009",
@@ -90,7 +90,7 @@
    "end": 47.38,
    "ja": "君たちは病気なんだ",
    "ko": "너희는 병에 걸린 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.010",
@@ -99,7 +99,7 @@
    "end": 50.98,
    "ja": "ウイルスに感染して意識を歪められている",
    "ko": "바이러스에 감염돼서 의식이 비틀려 있어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.011",
@@ -108,7 +108,7 @@
    "end": 54.86,
    "ja": "今のプロトのやり方も疑わないほどに",
    "ko": "지금 프로토의 방식을 의심조차 못 할 만큼.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.012",
@@ -117,16 +117,16 @@
    "end": 56.22,
    "ja": "意識まで…",
    "ko": "의식까지…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.013",
    "audio": 0,
    "start": 56.72,
    "end": 59.82,
-   "ja": "おそらくさっきシエラと話したときに分かった",
-   "ko": "아까 시에라와 얘기하면서 알 수 있었어.",
-   "status": "needs_review"
+   "ja": "おそらく。さっきシエラと話したときに分かった",
+   "ko": "아마도. 아까 시에라와 얘기하면서 알았어.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.014",
@@ -135,7 +135,7 @@
    "end": 60.72,
    "ja": "ウイルス…",
    "ko": "바이러스…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.015",
@@ -144,16 +144,16 @@
    "end": 66.38,
    "ja": "シエラ、しっかりするんだ",
    "ko": "시에라, 정신 차려!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.016",
    "audio": 0,
    "start": 70.8,
    "end": 71.46,
-   "ja": "抑えてて",
-   "ko": "붙잡고 있어!",
-   "status": "needs_review"
+   "ja": "ファラ、押さえてて",
+   "ko": "파라, 붙잡고 있어!",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.017",
@@ -162,7 +162,7 @@
    "end": 79.46,
    "ja": "シエラ、落ち着いてくれ",
    "ko": "시에라, 진정해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.018",
@@ -171,7 +171,7 @@
    "end": 81.14,
    "ja": "これは治療なんだ",
    "ko": "이건 치료야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.019",
@@ -180,7 +180,7 @@
    "end": 82.62,
    "ja": "ブロー?",
    "ko": "블로?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.020",
@@ -189,7 +189,7 @@
    "end": 87.2,
    "ja": "あんた、妙に服を脱がす手つきが慣れてるわね。",
    "ko": "너, 옷 벗기는 손놀림이 묘하게 익숙하다?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.021",
@@ -198,7 +198,7 @@
    "end": 89.62,
    "ja": "えっ、そんなことないよ。",
    "ko": "어, 그, 그렇지 않아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.022",
@@ -207,7 +207,7 @@
    "end": 92.58,
    "ja": "なぜ服を?いや…",
    "ko": "왜 옷을…? 싫어…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.023",
@@ -216,7 +216,7 @@
    "end": 95.24,
    "ja": "ウイルスの感染レベルは?どうなの?",
    "ko": "바이러스 감염 레벨은? 어때?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.024",
@@ -225,7 +225,7 @@
    "end": 98.96,
    "ja": "レベル4。他のエンブリオと比べると高めだ。",
    "ko": "레벨 4. 다른 엠브리오보다 높은 편이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.025",
@@ -234,7 +234,7 @@
    "end": 101.94,
    "ja": "よし、抗体を照射しよう。",
    "ko": "좋아, 항체를 쬐자.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.026",
@@ -243,7 +243,7 @@
    "end": 104.5,
    "ja": "ブロー、早いとこやっちゃって。",
    "ko": "블로, 얼른 해치워.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.027",
@@ -252,7 +252,7 @@
    "end": 107.7,
    "ja": "今、君の体の中では、",
    "ko": "지금 네 몸속에서는",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.028",
@@ -261,7 +261,7 @@
    "end": 110.42,
    "ja": "ウイルスに君自身の意識が抵抗している。",
    "ko": "네 의식이 바이러스에 맞서 싸우고 있어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.029",
@@ -270,7 +270,7 @@
    "end": 113.72,
    "ja": "シエラ、意識を集中するんだ",
    "ko": "시에라, 의식을 집중해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.030",
@@ -279,7 +279,7 @@
    "end": 115.88,
    "ja": "本当の自分の…",
    "ko": "진짜 너 자신의…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.031",
@@ -288,7 +288,7 @@
    "end": 121.77,
    "ja": "服を脱がせて悪いとは思ってるけど",
    "ko": "옷을 벗긴 건 미안하게 생각하지만",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.032",
@@ -297,16 +297,25 @@
    "end": 124.63,
    "ja": "これはウイルスの抗体を照射するためなんだよ",
    "ko": "바이러스 항체를 쬐기 위해서야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
-   "id": "vis1.033",
+   "id": "vis1.033a",
    "audio": 0,
-   "start": 126.11,
-   "end": 128.6,
-   "ja": "ごめんね、落ち着いて",
-   "ko": "미안해. 진정해.",
-   "status": "needs_review"
+   "start": 126.07,
+   "end": 126.9,
+   "ja": "ごめんね",
+   "ko": "미안해.",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis1.033b",
+   "audio": 0,
+   "start": 132.02,
+   "end": 132.9,
+   "ja": "落ち着いて",
+   "ko": "진정해.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.034",
@@ -314,8 +323,8 @@
    "start": 134.0,
    "end": 135.66,
    "ja": "いいかい、行くよ",
-   "ko": "자, 간다.",
-   "status": "needs_review"
+   "ko": "됐지? 간다.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.035",
@@ -324,7 +333,7 @@
    "end": 144.18,
    "ja": "ずいぶん苦しそうだけど",
    "ko": "꽤 괴로워 보이는데,",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.036",
@@ -333,7 +342,7 @@
    "end": 146.96,
    "ja": "思ったよりウイルスの抵抗が激しいみたいだ",
    "ko": "바이러스의 저항이 생각보다 거센 것 같아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.037",
@@ -342,7 +351,7 @@
    "end": 4.44,
    "ja": "気がついたみたいよ",
    "ko": "정신이 든 것 같아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.038",
@@ -351,7 +360,7 @@
    "end": 7.54,
    "ja": "私は…",
    "ko": "나는…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.039",
@@ -360,16 +369,16 @@
    "end": 10.0,
    "ja": "気分はどうだい、シエラ",
    "ko": "기분은 어때, 시에라?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.040",
    "audio": 1,
-   "start": 10.0,
-   "end": 12.8,
-   "ja": "何か夢を見ていたような…",
-   "ko": "뭔가 꿈을 꾸고 있었던 것 같아…",
-   "status": "needs_review"
+   "start": 10.28,
+   "end": 16.09,
+   "ja": "ぼーっとするけど、何か夢を見ていたような…",
+   "ko": "멍하지만, 뭔가 꿈을 꾸고 있었던 것 같아…",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.041",
@@ -378,7 +387,7 @@
    "end": 20.29,
    "ja": "君はウイルスに意識を乗っ取られようとしていた",
    "ko": "넌 바이러스에 의식을 빼앗길 뻔했어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.042",
@@ -387,7 +396,7 @@
    "end": 27.63,
    "ja": "夢っていうのは多分意識下であなた自身が感じていた現実よ",
    "ko": "그 꿈은 아마 네가 무의식중에 느끼던 현실일 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.043",
@@ -396,16 +405,16 @@
    "end": 30.71,
    "ja": "私、なんてことを…",
    "ko": "내가 무슨 짓을…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.044",
    "audio": 1,
    "start": 31.35,
    "end": 32.41,
-   "ja": "(聞き取り不確か)",
-   "ko": "앗…",
-   "status": "needs_review"
+   "ja": "海を汚(けが)して…",
+   "ko": "바다를 더럽히고…",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.045",
@@ -414,7 +423,7 @@
    "end": 35.75,
    "ja": "ああ、まだ無理しない方がいい",
    "ko": "아직 무리하지 않는 게 좋아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.046",
@@ -423,16 +432,16 @@
    "end": 39.29,
    "ja": "そのまま聞いてくれ、シエラ",
    "ko": "그대로 들어 줘, 시에라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.047",
    "audio": 1,
    "start": 40.93,
    "end": 43.3,
-   "ja": "僕たちはウィルスに侵されてしまったマスターエンブリオの",
+   "ja": "僕たちはウイルスに侵されてしまったマスターエンブリオの",
    "ko": "우린 바이러스에 감염된 마스터 엠브리오들을",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.048",
@@ -441,7 +450,7 @@
    "end": 45.71,
    "ja": "みんなを助けに行きたいんだ",
    "ko": "모두 구하러 가고 싶어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.049",
@@ -450,16 +459,16 @@
    "end": 48.37,
    "ja": "決してプロトを倒そうとしているわけじゃない",
    "ko": "프로토를 쓰러뜨리려는 게 결코 아니야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.050",
    "audio": 1,
    "start": 48.71,
    "end": 49.43,
-   "ja": "ウィルス…",
+   "ja": "ウイルス…",
    "ko": "바이러스…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.051",
@@ -468,7 +477,7 @@
    "end": 54.55,
    "ja": "さっきのあなたみたいに、みんな本当の自分を見失っているの",
    "ko": "아까 너처럼 다들 진짜 자신을 잃어버렸어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.052",
@@ -477,7 +486,7 @@
    "end": 57.35,
    "ja": "私を助けてくれたの?",
    "ko": "날 구해 준 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.053",
@@ -486,16 +495,16 @@
    "end": 59.81,
    "ja": "そういうことになるかしら",
    "ko": "뭐, 그렇게 되려나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.054",
    "audio": 1,
    "start": 60.99,
    "end": 63.6,
-   "ja": "君にはこれからウィルスの抗体を",
+   "ja": "君にはこれからウイルスの抗体を",
    "ko": "이제부터 네가 관리하는 엠브리오들에게",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.055",
@@ -504,7 +513,7 @@
    "end": 66.65,
    "ja": "自分の管理下のエンブリオたちに散布してほしい",
    "ko": "바이러스 항체를 뿌려 줬으면 해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.056",
@@ -513,7 +522,7 @@
    "end": 67.79,
    "ja": "頼む",
    "ko": "부탁해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.057",
@@ -522,7 +531,7 @@
    "end": 71.47,
    "ja": "あなたたちに会いに行くっていうのはこういう意味よ",
    "ko": "너희를 만나러 간다는 건 이런 뜻이었어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.058",
@@ -531,7 +540,7 @@
    "end": 73.63,
    "ja": "助けてくれてありがとう",
    "ko": "구해 줘서 고마워.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.059",
@@ -540,7 +549,7 @@
    "end": 77.85,
    "ja": "私、ずっと何かに囚われていたようで怖かった",
    "ko": "줄곧 뭔가에 사로잡혀 있던 것 같아서 무서웠어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.060",
@@ -549,7 +558,7 @@
    "end": 80.17,
    "ja": "でも今は違う",
    "ko": "하지만 지금은 달라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.061",
@@ -558,7 +567,7 @@
    "end": 83.19,
    "ja": "何か温かいような…",
    "ko": "뭔가 따뜻한 것 같은…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.062",
@@ -567,7 +576,7 @@
    "end": 84.97,
    "ja": "もう君は大丈夫だ",
    "ko": "이제 넌 괜찮아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.063",
@@ -576,7 +585,7 @@
    "end": 87.07,
    "ja": "さて、ファラ、行こうか",
    "ko": "자, 파라, 가 볼까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.064",
@@ -585,7 +594,7 @@
    "end": 88.09,
    "ja": "ま、待って",
    "ko": "자, 잠깐만.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.065",
@@ -594,7 +603,7 @@
    "end": 88.93,
    "ja": "何?",
    "ko": "왜?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.066",
@@ -603,7 +612,7 @@
    "end": 93.13,
    "ja": "ブロー、もうちょっとそばにいてあげなさいよ",
    "ko": "블로, 좀 더 곁에 있어 줘.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.067",
@@ -612,7 +621,7 @@
    "end": 99.21,
    "ja": "だいぶ良くなってきたわ",
    "ko": "많이 좋아졌어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.068",
@@ -621,7 +630,7 @@
    "end": 104.24,
    "ja": "ああ、あなたたちはエンブリオたちを治すために行くのね",
    "ko": "아, 너희는 엠브리오들을 고치러 가는 거구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.069",
@@ -630,7 +639,7 @@
    "end": 104.92,
    "ja": "ああ",
    "ko": "응.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.070",
@@ -639,7 +648,7 @@
    "end": 108.07,
    "ja": "ファクトリーエリア…",
    "ko": "팩토리 에어리어…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.071",
@@ -648,7 +657,7 @@
    "end": 111.55,
    "ja": "なるほどね",
    "ko": "그렇구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.072",
@@ -657,7 +666,7 @@
    "end": 115.29,
    "ja": "この星のエンブリオ、ユニットたちすべてを作る場所",
    "ko": "이 별의 엠브리오와 유닛을 모두 만드는 곳.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.073",
@@ -666,7 +675,7 @@
    "end": 116.29,
    "ja": "確かに、",
    "ko": "맞아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.074",
@@ -675,7 +684,7 @@
    "end": 120.35,
    "ja": "早くそこを抑えないと僕たちはどんどん不利になる",
    "ko": "빨리 거길 장악하지 않으면 점점 불리해질 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.075",
@@ -684,7 +693,7 @@
    "end": 122.43,
    "ja": "ありがとう、シエラ",
    "ko": "고마워, 시에라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.076",
@@ -693,7 +702,7 @@
    "end": 124.91,
    "ja": "一つ聞いていいかしら",
    "ko": "하나 물어봐도 될까?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.077",
@@ -702,7 +711,7 @@
    "end": 125.75,
    "ja": "ん?",
    "ko": "응?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.078",
@@ -711,7 +720,7 @@
    "end": 129.41,
    "ja": "なぜ危険を犯してまでみんなを助けようとするの?",
    "ko": "왜 위험을 무릅쓰면서까지 모두를 구하려는 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.079",
@@ -720,7 +729,7 @@
    "end": 134.59,
    "ja": "さてね、僕たちの使命ってとこかな",
    "ko": "글쎄, 우리의 사명이라고 해 둘까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.080",
@@ -729,7 +738,7 @@
    "end": 138.17,
    "ja": "私はブローに付き合ってやってるだけですからね",
    "ko": "난 블로한테 어울려 주는 것뿐이니까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.081",
@@ -738,7 +747,7 @@
    "end": 142.39,
    "ja": "ブロー、そろそろ行きましょう",
    "ko": "블로, 슬슬 가자.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.082",
@@ -747,7 +756,7 @@
    "end": 147.31,
    "ja": "うん、じゃあこのエリアの後の処理は頼んだよ、シエラ",
    "ko": "응. 그럼 이 지역 뒷수습은 부탁할게, 시에라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.083",
@@ -756,7 +765,7 @@
    "end": 152.01,
    "ja": "ええ、ファクトリーへは上空から行った方が手薄だと思うわ",
    "ko": "그래. 팩토리는 하늘로 가는 게 경비가 허술할 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis1.084",
@@ -765,7 +774,7 @@
    "end": 155.73,
    "ja": "あなたたちも気をつけて",
    "ko": "너희도 조심해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }

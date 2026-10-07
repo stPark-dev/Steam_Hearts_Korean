@@ -1,6 +1,6 @@
 {
  "scene": 6,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "start/end는 음성 파일 시작부터의 초. audio는 장면 안에서 재생되는 순서(0부터). 게임에서는 그 음성이 실제로 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -18,7 +18,7 @@
    "end": 1.38,
    "ja": "アルバルト…",
    "ko": "알바르트…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.002",
@@ -27,7 +27,7 @@
    "end": 2.92,
    "ja": "どうした",
    "ko": "왜 그러지?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.003",
@@ -36,7 +36,7 @@
    "end": 6.56,
    "ja": "私にも治療とやらをするんじゃないのか",
    "ko": "나한테도 치료인지 뭔지를 하려는 것 아닌가?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.004",
@@ -45,7 +45,7 @@
    "end": 9.44,
    "ja": "あ、いや、その…",
    "ko": "아, 아니, 그…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.005",
@@ -54,7 +54,7 @@
    "end": 11.5,
    "ja": "照れてる場合じゃないでしょ",
    "ko": "부끄러워할 때가 아니잖아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.006",
@@ -63,7 +63,7 @@
    "end": 14.08,
    "ja": "さっさと犯すなり殺すなりすればいい",
    "ko": "어서 범하든 죽이든 마음대로 해라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.007",
@@ -72,16 +72,16 @@
    "end": 15.72,
    "ja": "覚悟はできている",
    "ko": "각오는 되어 있다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.008",
    "audio": 0,
-   "start": 15.72,
-   "end": 16.12,
+   "start": 16.14,
+   "end": 16.62,
    "ja": "そんな…",
    "ko": "그런…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.009",
@@ -90,7 +90,7 @@
    "end": 19.5,
    "ja": "どうであれ、私にとっては屈辱的な行為であることに",
    "ko": "어쨌든 나에겐 굴욕적인 행위라는 것엔",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.010",
@@ -99,7 +99,7 @@
    "end": 21.4,
    "ja": "変わりはない",
    "ko": "변함이 없다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.011",
@@ -108,7 +108,7 @@
    "end": 23.84,
    "ja": "ああ、もうじれったいわね",
    "ko": "아, 정말 답답하네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.012",
@@ -117,7 +117,7 @@
    "end": 25.3,
    "ja": "さあ、脱いで",
    "ko": "자, 벗어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.013",
@@ -126,16 +126,34 @@
    "end": 26.98,
    "ja": "ごめんよ",
    "ko": "미안해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis6.013n1",
+   "audio": 0,
+   "start": 30.32,
+   "end": 30.68,
+   "ja": "いや…",
+   "ko": "싫다…",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis6.013n2",
+   "audio": 0,
+   "start": 31.7,
+   "end": 32.34,
+   "ja": "どうしたの?",
+   "ko": "왜 그래?",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.014",
    "audio": 0,
-   "start": 36.33,
-   "end": 37.15,
-   "ja": "恥ずかしい",
-   "ko": "부끄럽군…",
-   "status": "needs_review"
+   "start": 34.2,
+   "end": 37.12,
+   "ja": "やっぱり、恥ずかしい",
+   "ko": "역시 부끄럽군…",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.015",
@@ -144,7 +162,7 @@
    "end": 38.73,
    "ja": "アルバルト…",
    "ko": "알바르트…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.016",
@@ -153,7 +171,7 @@
    "end": 39.8,
    "ja": "ファラ、",
    "ko": "파라,",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.017",
@@ -162,7 +180,7 @@
    "end": 43.4,
    "ja": "レベルは?",
    "ko": "레벨은?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.018",
@@ -171,7 +189,7 @@
    "end": 46.6,
    "ja": "ゼロよ、感染もしていないわ",
    "ko": "0이야. 감염도 안 됐어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.019",
@@ -180,7 +198,7 @@
    "end": 49.26,
    "ja": "どうした?",
    "ko": "왜 그래?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.020",
@@ -188,8 +206,8 @@
    "start": 50.04,
    "end": 53.6,
    "ja": "ファラ、抗体の照射を最低レベルで",
-   "ko": "파라, 항체 조사를 최저 레벨로.",
-   "status": "needs_review"
+   "ko": "파라, 항체는 최저 레벨로 쬐어 줘.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.021",
@@ -198,7 +216,7 @@
    "end": 54.7,
    "ja": "ええ",
    "ko": "응.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.022",
@@ -207,7 +225,7 @@
    "end": 4.14,
    "ja": "アルバルト、僕たちはただ、",
    "ko": "알바르트, 우린 그저",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.023",
@@ -216,7 +234,7 @@
    "end": 6.64,
    "ja": "みんなをウイルスから守りたい",
    "ko": "모두를 바이러스로부터 지키고 싶어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.024",
@@ -225,7 +243,7 @@
    "end": 11.6,
    "ja": "それが、昔のウエスティナを取り戻すことなんだと",
    "ko": "그게 옛 웨스티나를 되찾는 일이라고.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.025",
@@ -234,7 +252,9 @@
    "end": 17.11,
    "ja": "貴様に敗れた私には、もう興味のないことだ",
    "ko": "너에게 패한 나에겐 이제 관심 없는 일이다.",
-   "status": "needs_review"
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "large-v3는 「興味のない」로 들었으나 다음 줄 「関係なくなんかない!」로 보아 「関係のない」일 수도 있음."
   },
   {
    "id": "vis6.026",
@@ -242,8 +262,8 @@
    "start": 17.33,
    "end": 18.39,
    "ja": "関係なくなんかない!",
-   "ko": "관계없지 않아!",
-   "status": "needs_review"
+   "ko": "상관없지 않아!",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.027",
@@ -252,7 +272,7 @@
    "end": 22.19,
    "ja": "あなたにだって、使命があるんでしょ?",
    "ko": "당신에게도 사명이 있잖아?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.028",
@@ -261,7 +281,7 @@
    "end": 27.99,
    "ja": "かつてお前たちと同じだった",
    "ko": "나도 한때는 너희와 같았다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.029",
@@ -270,7 +290,7 @@
    "end": 32.45,
    "ja": "自分にだけ与えられなかった使命を求めて、",
    "ko": "나에게만 주어지지 않은 사명을 찾아",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.030",
@@ -278,17 +298,28 @@
    "start": 32.59,
    "end": 34.49,
    "ja": "この星を彷徨っていた",
-   "ko": "이 별을 헤매었지.",
-   "status": "needs_review"
+   "ko": "이 별을 헤매고 있었다.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.031",
    "audio": 1,
-   "start": 34.49,
-   "end": 37.5,
+   "start": 37.9,
+   "end": 40.58,
    "ja": "自分の存在に疑問を持ったことも",
    "ko": "내 존재에 의문을 품은 적도…",
-   "status": "needs_review"
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "원래 구간(34.49~)에선 두 모델 모두 「何?」만 들려 시각을 전체 받아쓰기 기준으로 옮김. 앞의 「何?」 화자는 불명."
+  },
+  {
+   "id": "vis6.031n",
+   "audio": 1,
+   "start": 41.08,
+   "end": 45.16,
+   "ja": "しかし、戦いが始まった時に見つけた",
+   "ko": "그러나 싸움이 시작됐을 때 찾아냈다.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.032",
@@ -297,7 +328,7 @@
    "end": 49.72,
    "ja": "戦うことこそが私の使命であると",
    "ko": "싸우는 것이야말로 내 사명이라고.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.033",
@@ -306,7 +337,7 @@
    "end": 55.48,
    "ja": "だからこそ私はお前たちに問うた",
    "ko": "그래서 나는 너희에게 물었다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.034",
@@ -315,7 +346,16 @@
    "end": 59.12,
    "ja": "自分の意思で生きるとはどういうことか",
    "ko": "자신의 의지로 산다는 게 무엇인지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis6.034n",
+   "audio": 1,
+   "start": 60.44,
+   "end": 61.2,
+   "ja": "アルバルト…",
+   "ko": "알바르트…",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.035",
@@ -324,7 +364,7 @@
    "end": 65.13,
    "ja": "我々作られた不自然な命に",
    "ko": "만들어진 부자연스러운 생명인 우리에게",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.036",
@@ -333,34 +373,34 @@
    "end": 67.57,
    "ja": "この星で生きる権利があるのか",
    "ko": "이 별에서 살 권리가 있는지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.037",
    "audio": 1,
    "start": 67.57,
-   "end": 68.37,
-   "ja": "それを…",
-   "ko": "그것을…",
-   "status": "needs_review"
+   "end": 71.16,
+   "ja": "それを、お前たちに答えてほしかった",
+   "ko": "그 답을 너희에게서 듣고 싶었다.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.038",
    "audio": 1,
-   "start": 74.48,
+   "start": 72.14,
    "end": 75.72,
-   "ja": "君と出会えていたら",
-   "ko": "너와 만났더라면",
-   "status": "needs_review"
+   "ja": "もっと早く君と出会えていたら",
+   "ko": "좀 더 일찍 너와 만났더라면",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.039",
    "audio": 1,
-   "start": 75.72,
-   "end": 78.5,
-   "ja": "理解しあえたかもしれない",
-   "ko": "서로 이해할 수 있었을지도 모르지.",
-   "status": "needs_review"
+   "start": 76.74,
+   "end": 79.92,
+   "ja": "私たちは理解しあえたかもしれない",
+   "ko": "우린 서로 이해할 수 있었을지도 모르지.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.040",
@@ -369,7 +409,7 @@
    "end": 85.48,
    "ja": "プロトは軌道上の戦艦ニルバーナにいる",
    "ko": "프로토는 궤도 위의 전함 니르바나에 있다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.041",
@@ -378,7 +418,7 @@
    "end": 86.52,
    "ja": "行け",
    "ko": "가라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.042",
@@ -387,7 +427,7 @@
    "end": 89.36,
    "ja": "あとは自分の目で確かめればいい",
    "ko": "나머지는 네 눈으로 확인해라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.043",
@@ -396,7 +436,7 @@
    "end": 93.36,
    "ja": "すべてはプロトだけが知っているというの",
    "ko": "모든 건 프로토만 안다는 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.044",
@@ -405,7 +445,7 @@
    "end": 97.38,
    "ja": "僕たちだって生きてるんだ",
    "ko": "우리도 살아 있어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.045",
@@ -414,7 +454,7 @@
    "end": 99.98,
    "ja": "プロトが運命を決める世界なんて",
    "ko": "프로토가 운명을 정하는 세상 따윈",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis6.046",
@@ -423,7 +463,7 @@
    "end": 101.62,
    "ja": "私は嫌よ",
    "ko": "난 싫어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }

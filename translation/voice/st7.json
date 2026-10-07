@@ -1,6 +1,6 @@
 {
  "stage": 7,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -45,7 +45,7 @@
    "end": 4.24,
    "ja": "これが最後の戦いなのね",
    "ko": "이게 마지막 싸움이구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.002",
@@ -54,7 +54,7 @@
    "end": 5.32,
    "ja": "ああ",
    "ko": "응.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.003",
@@ -63,7 +63,7 @@
    "end": 10.94,
    "ja": "僕らが勝っても負けても、これで全てが終わるんだ",
    "ko": "우리가 이기든 지든 이걸로 모든 게 끝나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.004",
@@ -72,7 +72,7 @@
    "end": 15.74,
    "ja": "私たちはウエスティナの運命に抗っているだけなのかしら",
    "ko": "우린 그저 웨스티나의 운명에 맞서고 있을 뿐일까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.005",
@@ -81,7 +81,7 @@
    "end": 17.6,
    "ja": "そうかもしれない",
    "ko": "그럴지도 몰라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.006",
@@ -90,7 +90,7 @@
    "end": 21.66,
    "ja": "でも僕たちのできることは",
    "ko": "하지만 우리가 할 수 있는 건…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.007",
@@ -99,7 +99,7 @@
    "end": 22.82,
    "ja": "来たわ",
    "ko": "왔어!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.008",
@@ -108,7 +108,7 @@
    "end": 26.26,
    "ja": "ほんと悩む暇もないのよね",
    "ko": "정말 고민할 틈도 없다니까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.009",
@@ -117,7 +117,7 @@
    "end": 3.94,
    "ja": "ファラ、ここから奥に行けそうだ",
    "ko": "파라, 여기서 안쪽으로 갈 수 있을 것 같아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.010",
@@ -126,7 +126,7 @@
    "end": 6.76,
    "ja": "ここまで来たら後には引けないわ",
    "ko": "여기까지 왔으면 물러설 수 없어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.011",
@@ -134,8 +134,8 @@
    "start": 7.56,
    "end": 9.22,
    "ja": "どこまでも一緒よ",
-   "ko": "어디까지든 함께야.",
-   "status": "needs_review"
+   "ko": "끝까지 함께야.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.012",
@@ -144,7 +144,7 @@
    "end": 2.58,
    "ja": "いよいよだね",
    "ko": "드디어구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.013",
@@ -153,7 +153,7 @@
    "end": 6.9,
    "ja": "ことが済んだらサラダ食べたいわ",
    "ko": "일이 끝나면 샐러드 먹고 싶어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.014",
@@ -162,16 +162,25 @@
    "end": 4.92,
    "ja": "我が神聖なる領域を汚す者は誰か",
    "ko": "나의 신성한 영역을 더럽히는 자는 누구냐.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
-   "id": "st7.015",
+   "id": "st7.015a",
    "audio": 3,
    "start": 5.8,
+   "end": 7.68,
+   "ja": "僕の名はブロー",
+   "ko": "내 이름은 블로.",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st7.015b",
+   "audio": 3,
+   "start": 8.34,
    "end": 9.56,
-   "ja": "僕の名はブロー。私はファラ",
-   "ko": "내 이름은 블로. 나는 파라.",
-   "status": "needs_review"
+   "ja": "私はファラ",
+   "ko": "나는 파라.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.016",
@@ -179,18 +188,19 @@
    "start": 10.78,
    "end": 15.42,
    "ja": "僕たちはプロト、あなたの間違いを正すために来た",
-   "ko": "우린 프로토, 당신의 잘못을 바로잡으러 왔어.",
-   "status": "needs_review"
+   "ko": "프로토, 우린 당신의 잘못을 바로잡으러 왔어.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.017",
    "audio": 3,
    "start": 16.42,
    "end": 20.08,
-   "ja": "わからぬことを。聞いた通りの不届き者が",
+   "ja": "わからぬことを。聞いた通りの不逞者が",
    "ko": "알 수 없는 소리를. 듣던 대로 괘씸한 놈들이군.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "두 모델 모두 「不定が(ふていが)」로 들어 「不逞者が」로 보았으나 끝부분 단어가 확실하지 않음."
   },
   {
    "id": "st7.018",
@@ -198,8 +208,8 @@
    "start": 20.54,
    "end": 24.46,
    "ja": "この世界があんたの思い通りになるなんて大間違いよ",
-   "ko": "이 세상이 당신 뜻대로 된다면 큰 착각이야.",
-   "status": "needs_review"
+   "ko": "세상이 당신 뜻대로 될 거란 건 큰 착각이야!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.019",
@@ -208,7 +218,7 @@
    "end": 26.44,
    "ja": "恐れも知らぬとは",
    "ko": "두려움도 모르다니.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.020",
@@ -217,7 +227,7 @@
    "end": 30.96,
    "ja": "ウエスティナを乱す不埒者め、覚悟するがいい",
    "ko": "웨스티나를 어지럽히는 괘씸한 놈들, 각오해라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.021",
@@ -226,7 +236,7 @@
    "end": 5.52,
    "ja": "ニルバーナ・プロトの姿",
    "ko": "니르바나 프로토의 모습.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.022",
@@ -235,7 +245,7 @@
    "end": 10.46,
    "ja": "ウエスティナを乱す不埒者め、覚悟するがいい",
    "ko": "웨스티나를 어지럽히는 괘씸한 놈들, 각오해라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.023",
@@ -243,8 +253,8 @@
    "start": 1.86,
    "end": 3.58,
    "ja": "もう戦いは無意味のはずだ",
-   "ko": "이제 싸움은 무의미할 거야.",
-   "status": "needs_review"
+   "ko": "이제 싸움은 무의미할 텐데.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.024",
@@ -253,7 +263,7 @@
    "end": 5.42,
    "ja": "話を聞いてくれ",
    "ko": "얘기를 들어 줘.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.025",
@@ -262,7 +272,7 @@
    "end": 8.68,
    "ja": "ウエスティナの自然を守ることこそ我が使命",
    "ko": "웨스티나의 자연을 지키는 것이야말로 나의 사명.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.026",
@@ -271,7 +281,7 @@
    "end": 11.56,
    "ja": "我の理想を邪魔する者は許さぬ",
    "ko": "나의 이상을 방해하는 자는 용서치 않는다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.027",
@@ -280,7 +290,7 @@
    "end": 12.58,
    "ja": "何が理想だ",
    "ko": "이상은 무슨!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.028",
@@ -289,7 +299,7 @@
    "end": 15.88,
    "ja": "そのために他人を犠牲にするっていうのか",
    "ko": "그걸 위해 남을 희생시키겠다는 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.029",
@@ -298,7 +308,7 @@
    "end": 19.58,
    "ja": "我こそがウエスティナを正しく導くことができるのだ",
    "ko": "나야말로 웨스티나를 올바르게 이끌 수 있다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.030",
@@ -307,7 +317,7 @@
    "end": 21.7,
    "ja": "あんたは神様だとでも",
    "ko": "당신이 신이라도 된다는 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.031",
@@ -316,7 +326,7 @@
    "end": 25.6,
    "ja": "我は使命を受けウエスティナを守る者",
    "ko": "나는 사명을 받아 웨스티나를 지키는 자.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.032",
@@ -325,7 +335,7 @@
    "end": 28.16,
    "ja": "使命",
    "ko": "사명…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.033",
@@ -334,7 +344,7 @@
    "end": 32.04,
    "ja": "あんたは一体誰の使命を受けているっていうの?",
    "ko": "당신은 대체 누구의 사명을 받았다는 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.034",
@@ -343,7 +353,7 @@
    "end": 33.16,
    "ja": "どういうことだ",
    "ko": "무슨 뜻이냐.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.035",
@@ -352,7 +362,7 @@
    "end": 39.22,
    "ja": "貴様ら出来損ないはウエスティナに存在してはならんということがわからんのか",
    "ko": "너희 같은 실패작은 웨스티나에 있어선 안 된다는 걸 모르겠나?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.036",
@@ -361,7 +371,7 @@
    "end": 42.5,
    "ja": "私たちにだって命があるわ",
    "ko": "우리에게도 생명이 있어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.037",
@@ -370,7 +380,7 @@
    "end": 45.94,
    "ja": "僕は誰かの操り人形じゃない",
    "ko": "나는 누군가의 꼭두각시가 아니야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.038",
@@ -379,7 +389,7 @@
    "end": 49.66,
    "ja": "まだ十分に生きちゃいないんだ",
    "ko": "아직 충분히 살지도 못했어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.039",
@@ -387,8 +397,8 @@
    "start": 1.64,
    "end": 6.24,
    "ja": "僕たちはプロト、あなたを正すために来たんだ",
-   "ko": "우린 프로토, 당신을 바로잡으러 왔어.",
-   "status": "needs_review"
+   "ko": "프로토, 우린 당신을 바로잡으러 왔어.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.040",
@@ -397,7 +407,7 @@
    "end": 10.56,
    "ja": "戦いたくない。分かってくれ",
    "ko": "싸우고 싶지 않아. 알아줘.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.041",
@@ -406,7 +416,7 @@
    "end": 16.6,
    "ja": "なぜだ。なぜお前たちは我の目の前に現れた",
    "ko": "어째서냐. 어째서 너희는 내 앞에 나타났지?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.042",
@@ -415,7 +425,7 @@
    "end": 22.26,
    "ja": "それとも我がアウトローを生んだ元だというのか",
    "ko": "아니면 내가 무법자를 낳은 근원이란 말인가.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.043",
@@ -424,7 +434,7 @@
    "end": 25.37,
    "ja": "スチームハーツ",
    "ko": "스팀 하츠…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.044",
@@ -433,7 +443,7 @@
    "end": 28.61,
    "ja": "再び我を滅ぼすというのか",
    "ko": "다시 나를 멸하겠다는 건가.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.045",
@@ -442,7 +452,7 @@
    "end": 33.25,
    "ja": "分からない、わからない、わからない",
    "ko": "모르겠다, 모르겠다, 모르겠다…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.046",
@@ -450,8 +460,8 @@
    "start": 1.66,
    "end": 5.04,
    "ja": "我は絶対なる者。間違ってなぞおらぬ",
-   "ko": "나는 절대적인 자. 틀리지 않았다.",
-   "status": "needs_review"
+   "ko": "나는 절대적인 자. 틀렸을 리 없다.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.047",
@@ -460,7 +470,7 @@
    "end": 9.02,
    "ja": "全身全霊をもって異端者を排除する",
    "ko": "온 힘을 다해 이단자를 배제한다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.048",
@@ -469,7 +479,7 @@
    "end": 11.2,
    "ja": "この頑固者",
    "ko": "이 고집불통!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.049",
@@ -478,7 +488,7 @@
    "end": 2.72,
    "ja": "死にたくない",
    "ko": "죽고 싶지 않아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.050",
@@ -486,8 +496,8 @@
    "start": 4.32,
    "end": 5.92,
    "ja": "排除すべきものは何",
-   "ko": "배제해야 할 것은 무엇…",
-   "status": "needs_review"
+   "ko": "배제해야 할 건 뭐지?",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.051",
@@ -496,7 +506,7 @@
    "end": 9.46,
    "ja": "頭の中を黒いものが",
    "ko": "머릿속을 검은 것이…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.052",
@@ -504,8 +514,8 @@
    "start": 10.54,
    "end": 13.02,
    "ja": "スチームハーツ、私を助けて",
-   "ko": "스팀 하츠, 나를 도와줘.",
-   "status": "needs_review"
+   "ko": "스팀 하츠, 날 도와줘!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.053",
@@ -514,8 +524,7 @@
    "end": 4.9,
    "ja": "滅せよ、ウエスティナに災いを呼びし者",
    "ko": "사라져라, 웨스티나에 재앙을 부른 자여.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.054",
@@ -524,7 +533,7 @@
    "end": 6.86,
    "ja": "死んじゃだめ、ブロー",
    "ko": "죽으면 안 돼, 블로!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.055",
@@ -533,7 +542,7 @@
    "end": 10.72,
    "ja": "ここで、ここで終わるわけにはいかないんだ",
    "ko": "여기서… 여기서 끝낼 수는 없어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.056",
@@ -542,7 +551,7 @@
    "end": 4.82,
    "ja": "自らの犯した罪を思い知るがいい",
    "ko": "스스로 지은 죄를 깨달아라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.057",
@@ -551,7 +560,7 @@
    "end": 7.48,
    "ja": "ファラ、君だけでも逃げろ",
    "ko": "파라, 너만이라도 도망쳐!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st7.058",
@@ -560,7 +569,7 @@
    "end": 11.92,
    "ja": "ここまで来て負けるなんて",
    "ko": "여기까지 와서 지다니…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }

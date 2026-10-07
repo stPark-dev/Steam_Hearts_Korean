@@ -1,6 +1,6 @@
 {
  "scene": 3,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "start/end는 음성 파일 시작부터의 초. audio는 장면 안에서 재생되는 순서(0부터). 게임에서는 그 음성이 실제로 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -21,7 +21,7 @@
    "end": 5.62,
    "ja": "確かに気絶してるみたいだね",
    "ko": "확실히 기절한 것 같네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.002",
@@ -30,7 +30,7 @@
    "end": 6.98,
    "ja": "どうしよう",
    "ko": "어떡하지?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.003",
@@ -39,7 +39,7 @@
    "end": 9.2,
    "ja": "決まってるわ、治療でしょ",
    "ko": "뻔하잖아, 치료지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.004",
@@ -48,7 +48,7 @@
    "end": 11.52,
    "ja": "今度は私に任せて",
    "ko": "이번엔 나한테 맡겨.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.005",
@@ -57,7 +57,7 @@
    "end": 14.42,
    "ja": "でも寝てる間に勝手にってのも",
    "ko": "그래도 자는 동안 멋대로 하는 건 좀…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.006",
@@ -66,7 +66,7 @@
    "end": 16.38,
    "ja": "何躊躇してんの",
    "ko": "뭘 망설여?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.007",
@@ -75,7 +75,7 @@
    "end": 19.98,
    "ja": "脱がせるの手伝ってよ。この子重たくて",
    "ko": "벗기는 것 좀 도와줘. 얘 무거워서.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.008",
@@ -84,7 +84,7 @@
    "end": 22.36,
    "ja": "なんか張り切ってんな",
    "ko": "왠지 신났네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.009",
@@ -93,7 +93,16 @@
    "end": 29.3,
    "ja": "てこずらせてくれたお礼はたっぷりしてあげるわ",
    "ko": "애먹인 보답은 톡톡히 해 줄게.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.009n",
+   "audio": 0,
+   "start": 31.18,
+   "end": 33.7,
+   "ja": "こんなとこで目を覚まされると…",
+   "ko": "이런 데서 깨어나면…",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.010",
@@ -102,17 +111,18 @@
    "end": 36.9,
    "ja": "まずい",
    "ko": "큰일이다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.011",
    "audio": 0,
    "start": 37.3,
    "end": 38.66,
-   "ja": "気がついたみたい",
+   "ja": "気がついたようだ",
    "ko": "정신이 든 것 같아.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "두 모델 모두 「気がついたように」로 들어 끝부분이 「ようだ/ようね」 중 무엇인지 불확실함."
   },
   {
    "id": "vis3.012",
@@ -121,7 +131,7 @@
    "end": 46.68,
    "ja": "ちょっと何してるのよ",
    "ko": "잠깐, 뭐 하는 거야!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.013",
@@ -130,7 +140,7 @@
    "end": 48.4,
    "ja": "ああ、暴れないでくれ",
    "ko": "아, 날뛰지 마.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.014",
@@ -139,7 +149,16 @@
    "end": 55.77,
    "ja": "いいから黙ってなさいよ、これは治療なんだってば",
    "ko": "됐으니까 가만있어. 이건 치료라니까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.014n",
+   "audio": 0,
+   "start": 58.9,
+   "end": 61.6,
+   "ja": "もうお嫁に行けないよ",
+   "ko": "이제 시집 못 가겠어.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.015",
@@ -148,7 +167,7 @@
    "end": 66.94,
    "ja": "ごめんね、でも僕たちの使命を果たすためには",
    "ko": "미안해. 하지만 우리 사명을 다하려면",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.016",
@@ -156,17 +175,17 @@
    "start": 67.32,
    "end": 71.56,
    "ja": "このファクトリーエリアのマスターエンブリオである君を治療しないと",
-   "ko": "이 지역의 마스터 엠브리오인 널 치료해야 해.",
-   "status": "needs_review"
+   "ko": "이 팩토리 지역의 마스터 엠브리오인 널 치료해야 해.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.017",
    "audio": 0,
    "start": 71.56,
    "end": 77.52,
-   "ja": "なによそれ、私を裸にすることとどういう関係があるのよ",
-   "ko": "그게 뭐야? 날 알몸으로 만드는 거랑 무슨 상관인데?",
-   "status": "needs_review"
+   "ja": "なによ!それと私を裸にすることと、どういう関係があるのよ",
+   "ko": "뭐야! 그거랑 날 알몸으로 만드는 거랑 무슨 상관인데?",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.018",
@@ -175,7 +194,7 @@
    "end": 80.8,
    "ja": "治療するには裸にして",
    "ko": "치료하려면 알몸으로 만들어서",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.019",
@@ -184,7 +203,7 @@
    "end": 83.78,
    "ja": "ウイルスの抗体を照射する方法をとってんの",
    "ko": "바이러스 항체를 쬐는 방법을 쓰거든.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.020",
@@ -193,7 +212,7 @@
    "end": 84.52,
    "ja": "わかった?",
    "ko": "알겠어?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.021",
@@ -202,8 +221,7 @@
    "end": 90.79,
    "ja": "ファラ、ウイルスの感染レベルは?",
    "ko": "파라, 바이러스 감염 레벨은?",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.022",
@@ -212,7 +230,16 @@
    "end": 96.21,
    "ja": "うーんと、レベル1。まだ発病してないみたいね",
    "ko": "음… 레벨 1. 아직 발병하진 않았나 봐.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.022n",
+   "audio": 0,
+   "start": 96.4,
+   "end": 97.46,
+   "ja": "そうか",
+   "ko": "그렇구나.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.023",
@@ -221,7 +248,7 @@
    "end": 99.63,
    "ja": "意識は正常なんだね",
    "ko": "의식은 멀쩡하구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.024",
@@ -230,7 +257,7 @@
    "end": 102.71,
    "ja": "さっきからウイルスだとか治療だとか",
    "ko": "아까부터 바이러스니 치료니…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.025",
@@ -239,7 +266,7 @@
    "end": 105.21,
    "ja": "私はどこも悪くないわ",
    "ko": "난 아무 데도 아프지 않아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.026",
@@ -248,7 +275,7 @@
    "end": 109.45,
    "ja": "じゃあ話だけでも聞いてくれない?",
    "ko": "그럼 얘기라도 들어 줄래?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.027",
@@ -257,7 +284,7 @@
    "end": 113.49,
    "ja": "不良のあんたたちの話なんて聞けないわ",
    "ko": "불량품인 너희 얘기 따윈 못 들어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.028",
@@ -266,7 +293,7 @@
    "end": 117.99,
    "ja": "あんたたちは使命を持たずに生まれてきた不良品なんだから",
    "ko": "너흰 사명 없이 태어난 불량품이니까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.029",
@@ -275,7 +302,16 @@
    "end": 120.27,
    "ja": "え?何のこと?",
    "ko": "응? 무슨 소리야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.029n",
+   "audio": 0,
+   "start": 121.03,
+   "end": 121.75,
+   "ja": "不良品?",
+   "ko": "불량품?",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.030",
@@ -284,7 +320,7 @@
    "end": 124.68,
    "ja": "ここで生まれるあたしたちエンブリオは",
    "ko": "여기서 태어나는 우리 엠브리오는",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.031",
@@ -293,7 +329,7 @@
    "end": 128.64,
    "ja": "みんな何かの使命、目的を背負って生まれているでしょ",
    "ko": "모두 무언가의 사명, 목적을 짊어지고 태어나잖아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.032",
@@ -302,7 +338,7 @@
    "end": 132.04,
    "ja": "でもあんたたちにはその使命がなかった",
    "ko": "하지만 너희에겐 그 사명이 없었지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.033",
@@ -311,7 +347,7 @@
    "end": 134.7,
    "ja": "だからアウトローになったんじゃなくて?",
    "ko": "그래서 무법자가 된 거 아니야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.034",
@@ -320,7 +356,7 @@
    "end": 136.26,
    "ja": "じゃあ何?",
    "ko": "그럼 뭐야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.035",
@@ -329,7 +365,7 @@
    "end": 140.12,
    "ja": "あたしたちは間違って生まれてきたとでも言いたいわけ?",
    "ko": "우리가 잘못 태어났다고 말하고 싶은 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.036",
@@ -338,7 +374,7 @@
    "end": 141.58,
    "ja": "その通りよ",
    "ko": "바로 그거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.037",
@@ -346,8 +382,8 @@
    "start": 141.58,
    "end": 144.56,
    "ja": "だってあんたたちはプロトに反逆してるじゃない",
-   "ko": "너흰 프로토에게 반역하고 있잖아.",
-   "status": "needs_review"
+   "ko": "그야 너흰 프로토에게 반역하고 있잖아.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.038",
@@ -356,7 +392,7 @@
    "end": 145.12,
    "ja": "違う",
    "ko": "아니야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.039",
@@ -365,7 +401,7 @@
    "end": 148.2,
    "ja": "生きる目的は自分で決めるものだ",
    "ko": "살아갈 목적은 스스로 정하는 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.040",
@@ -374,7 +410,7 @@
    "end": 150.44,
    "ja": "誰かに強制されるものじゃない",
    "ko": "누가 강요하는 게 아니라고.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.041",
@@ -383,7 +419,7 @@
    "end": 154.9,
    "ja": "私だって生まれる前から目的が決められているなんて",
    "ko": "나도 태어나기 전부터 목적이 정해져 있다니",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.042",
@@ -392,7 +428,7 @@
    "end": 155.8,
    "ja": "真っ平だわ",
    "ko": "질색이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.043",
@@ -401,7 +437,7 @@
    "end": 158.24,
    "ja": "プロトの強制はおかしいわよ",
    "ko": "프로토의 강요는 잘못됐어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.044",
@@ -410,7 +446,7 @@
    "end": 162.46,
    "ja": "それはアウトローの理屈でしょ。道理に反してるわ",
    "ko": "그건 무법자의 논리지. 도리에 어긋나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.045",
@@ -419,7 +455,7 @@
    "end": 164.72,
    "ja": "100人いれば100人とも",
    "ko": "백 명이 있으면 백 명 모두",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.046",
@@ -428,7 +464,7 @@
    "end": 167.3,
    "ja": "あんたたちの方が間違いだと思うわよ",
    "ko": "너희가 틀렸다고 생각할걸.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.047",
@@ -437,7 +473,7 @@
    "end": 170.56,
    "ja": "僕は使命を見つけた",
    "ko": "나는 사명을 찾았어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.048",
@@ -446,7 +482,7 @@
    "end": 173.92,
    "ja": "ウイルスからみんなを救うことに",
    "ko": "바이러스로부터 모두를 구하는 것.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.049",
@@ -455,7 +491,7 @@
    "end": 178.0,
    "ja": "そんなの単なるあなたの自己満足だわ",
    "ko": "그건 그냥 네 자기만족일 뿐이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.050",
@@ -464,7 +500,7 @@
    "end": 182.46,
    "ja": "マスターエンブリオがウイルスにやられているっていうのは事実よ",
    "ko": "마스터 엠브리오가 바이러스에 당한 건 사실이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.051",
@@ -473,7 +509,7 @@
    "end": 186.02,
    "ja": "幸いあなたはまだ意識を保っているけど",
    "ko": "다행히 넌 아직 의식이 온전하지만",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.052",
@@ -482,7 +518,7 @@
    "end": 189.12,
    "ja": "僕は君を助けたい",
    "ko": "난 널 돕고 싶어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.053",
@@ -491,7 +527,7 @@
    "end": 195.36,
    "ja": "なんかどうでもよくなっちゃった",
    "ko": "왠지 다 상관없어졌어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.054",
@@ -500,17 +536,18 @@
    "end": 199.13,
    "ja": "私はあなたに敗北したわ",
    "ko": "난 너한테 졌어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.055",
    "audio": 0,
    "start": 200.17,
    "end": 203.35,
-   "ja": "つまりあなたに従わなければならないってことよね",
-   "ko": "즉 너를 따라야 한다는 거지.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ja": "それはあなたに従わなければならないってことよね",
+   "ko": "그건 너를 따라야 한다는 거지.",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "첫 cue 두 모델은 「俺は」, 구간 다시 받아쓰기 두 모델은 「これは」로 들어 여자 대사에 맞는 「それ/これは」로 둠. 첫머리 확인 필요."
   },
   {
    "id": "vis3.056",
@@ -519,7 +556,7 @@
    "end": 207.07,
    "ja": "え?急におとなしくなったわね",
    "ko": "어? 갑자기 얌전해졌네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.057",
@@ -528,7 +565,7 @@
    "end": 4.09,
    "ja": "僕たちの目的は",
    "ko": "우리 목적은…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.058",
@@ -536,8 +573,8 @@
    "start": 4.09,
    "end": 6.53,
    "ja": "要するにプロトに会いたいんでしょ",
-   "ko": "결국 프로토를 만나고 싶은 거지?",
-   "status": "needs_review"
+   "ko": "요컨대 프로토를 만나고 싶은 거지?",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.059",
@@ -546,7 +583,7 @@
    "end": 10.13,
    "ja": "ああ、結局はそうだけど",
    "ko": "응, 결국은 그렇지만.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.060",
@@ -555,7 +592,7 @@
    "end": 11.75,
    "ja": "そんなことよりも",
    "ko": "그보다도",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.061",
@@ -564,7 +601,7 @@
    "end": 16.09,
    "ja": "私を裸にしておいて、ただで済むつもり?",
    "ko": "날 알몸으로 만들어 놓고 그냥 넘어갈 셈이야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.062",
@@ -573,7 +610,7 @@
    "end": 16.89,
    "ja": "え?",
    "ko": "응?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.063",
@@ -582,7 +619,7 @@
    "end": 19.69,
    "ja": "責任は取ってもらうわよ",
    "ko": "책임은 져야지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.064",
@@ -591,7 +628,7 @@
    "end": 20.09,
    "ja": "は?",
    "ko": "뭐?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.065",
@@ -600,7 +637,7 @@
    "end": 22.19,
    "ja": "だってそうじゃない",
    "ko": "당연하잖아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.066",
@@ -609,7 +646,7 @@
    "end": 25.25,
    "ja": "年頃の女の子に乱暴なことして",
    "ko": "한창 나이의 여자애한테 험한 짓을 해 놓고.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.067",
@@ -617,8 +654,8 @@
    "start": 26.49,
    "end": 28.15,
    "ja": "私、初めての人に",
-   "ko": "난 처음인 사람에게",
-   "status": "needs_review"
+   "ko": "난 첫 상대에게",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.068",
@@ -627,7 +664,7 @@
    "end": 30.87,
    "ja": "全てを捧げるって決めていたもの",
    "ko": "모든 걸 바치기로 마음먹었는걸.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.069",
@@ -636,16 +673,16 @@
    "end": 32.91,
    "ja": "ちょ、ちょっと待ってくれよ",
    "ko": "자, 잠깐만 기다려 봐.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.070",
    "audio": 1,
    "start": 32.91,
-   "end": 36.0,
+   "end": 37.29,
    "ja": "なんか話が変な方向に",
    "ko": "왠지 얘기가 이상한 쪽으로…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.071",
@@ -654,7 +691,7 @@
    "end": 39.65,
    "ja": "ど、どうしようファラ",
    "ko": "어, 어떡하지, 파라?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.072",
@@ -663,7 +700,7 @@
    "end": 41.79,
    "ja": "私に聞かないでよ",
    "ko": "나한테 묻지 마.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.073",
@@ -672,7 +709,7 @@
    "end": 45.77,
    "ja": "あの子が興味を持ったのはブローの方みたいだし",
    "ko": "저 애가 관심 있는 건 블로 쪽인 것 같고.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.074",
@@ -681,7 +718,7 @@
    "end": 49.77,
    "ja": "うーん、発病していないとはいえ治療はしないと",
    "ko": "음, 발병하진 않았어도 치료는 해야 하는데.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.075",
@@ -690,7 +727,7 @@
    "end": 52.79,
    "ja": "でもあの子本気みたいよ",
    "ko": "그래도 저 애, 진심인 것 같아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.076",
@@ -699,7 +736,7 @@
    "end": 56.53,
    "ja": "なーに二人でひそひそ話してるのよ",
    "ko": "둘이서 뭘 소곤거리는 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.077",
@@ -708,7 +745,7 @@
    "end": 58.49,
    "ja": "よし、ファラ",
    "ko": "좋아, 파라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.078",
@@ -717,7 +754,7 @@
    "end": 62.59,
    "ja": "僕が彼女を治療すると見せかけて情報を聞き出すから",
    "ko": "내가 치료하는 척하면서 정보를 캐낼 테니",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.079",
@@ -726,7 +763,7 @@
    "end": 66.77,
    "ja": "君が後ろから抗体の照射レベルをきつめにして治療してくれ",
    "ko": "넌 뒤에서 항체를 세게 쬐어서 치료해 줘.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.080",
@@ -735,16 +772,25 @@
    "end": 68.39,
    "ja": "うんうん、それで?",
    "ko": "응응, 그래서?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.081",
    "audio": 1,
    "start": 69.15,
-   "end": 71.81,
-   "ja": "おそらく彼女はしばらく動けなくなるから",
-   "ko": "아마 저 애는 한동안 못 움직일 테니까.",
-   "status": "needs_review"
+   "end": 73.27,
+   "ja": "おそらく彼女はしばらく動けなくなるから、その隙に逃げよう",
+   "ko": "저 애는 한동안 못 움직일 테니, 그 틈에 도망치자.",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.081n",
+   "audio": 1,
+   "start": 73.9,
+   "end": 75.0,
+   "ja": "ひどい!",
+   "ko": "너무해!",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.082",
@@ -753,7 +799,16 @@
    "end": 79.61,
    "ja": "いや、君の治療をさせてくれ",
    "ko": "아니, 네 치료를 하게 해 줘.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.082n",
+   "audio": 1,
+   "start": 80.1,
+   "end": 81.14,
+   "ja": "どうすればいいの?",
+   "ko": "어떻게 하면 되는데?",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.083",
@@ -762,7 +817,7 @@
    "end": 82.61,
    "ja": "こっちへ来て",
    "ko": "이리 와.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.084",
@@ -771,7 +826,7 @@
    "end": 84.5,
    "ja": "一つ聞いていいかい?",
    "ko": "하나 물어봐도 될까?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.085",
@@ -780,7 +835,7 @@
    "end": 86.6,
    "ja": "何?",
    "ko": "뭔데?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.086",
@@ -789,17 +844,27 @@
    "end": 90.78,
    "ja": "プロトの居場所が知りたい",
    "ko": "프로토가 있는 곳을 알고 싶어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.087",
    "audio": 1,
-   "start": 91.7,
-   "end": 92.54,
-   "ja": "ウエスティナ?",
-   "ko": "웨스티나?",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "start": 91.66,
+   "end": 94.14,
+   "ja": "ウエスティナのクルンバって知ってる?",
+   "ko": "웨스티나의 쿠룬바라고 알아?",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "두 모델 모두 「ウエスティ(好きな)のクルンバ…知ってる?」로 들어 프로토 거처를 묻는 말에 대한 대답으로 보이나, 「クルンバ」가 지명인지 무슨 말인지 불확실함."
+  },
+  {
+   "id": "vis3.087n",
+   "audio": 1,
+   "start": 95.3,
+   "end": 96.18,
+   "ja": "うん、知ってる",
+   "ko": "응, 알아.",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.088",
@@ -808,35 +873,45 @@
    "end": 99.22,
    "ja": "禁断の古代遺跡だ",
    "ko": "금단의 고대 유적이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.089",
    "audio": 1,
    "start": 99.9,
    "end": 101.18,
-   "ja": "聞いたことがあるよ",
+   "ja": "聞いたことがあるの",
    "ko": "들어 본 적 있어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.090",
    "audio": 1,
    "start": 101.72,
-   "end": 103.66,
-   "ja": "夢を見ながら街に至る",
-   "ko": "꿈을 꾸며 거리에 이른다…",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "end": 104.54,
+   "ja": "夢を見ながら街に至るって話",
+   "ko": "꿈을 꾸며 거리에 이른다는 이야기.",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.090n",
+   "audio": 1,
+   "start": 105.96,
+   "end": 108.44,
+   "ja": "彼女もはっきりとは知らないんだな",
+   "ko": "저 애도 확실히는 모르는구나.",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "두 모델 모두 「彼女にはっきりとか知らないんだな」로 들음. 문맥상 「彼女も/はっきりとは」로 추정."
   },
   {
    "id": "vis3.091",
    "audio": 1,
-   "start": 103.66,
-   "end": 105.5,
+   "start": 110.52,
+   "end": 111.12,
    "ja": "そうか",
    "ko": "그렇구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.092",
@@ -845,7 +920,7 @@
    "end": 112.52,
    "ja": "ありがとう",
    "ko": "고마워.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.093",
@@ -854,7 +929,34 @@
    "end": 116.52,
    "ja": "じゃあ治療するよ",
    "ko": "그럼 치료할게.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.093n1",
+   "audio": 1,
+   "start": 133.1,
+   "end": 135.3,
+   "ja": "こんなの初めて",
+   "ko": "이런 거 처음이야…",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.093n2",
+   "audio": 1,
+   "start": 138.2,
+   "end": 139.75,
+   "ja": "苦しい",
+   "ko": "괴로워…",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "vis3.093n3",
+   "audio": 1,
+   "start": 139.8,
+   "end": 141.9,
+   "ja": "だ、だめ…",
+   "ko": "아, 안 돼…",
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.094",
@@ -863,7 +965,7 @@
    "end": 3.76,
    "ja": "いきなり疲れちゃった",
    "ko": "갑자기 피곤해졌어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.095",
@@ -872,7 +974,7 @@
    "end": 6.46,
    "ja": "ブローの苦労がわかるわ",
    "ko": "블로가 고생하는 걸 알겠어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.096",
@@ -881,7 +983,7 @@
    "end": 11.0,
    "ja": "僕は首を折られるかと思った",
    "ko": "난 목이 부러지는 줄 알았어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.097",
@@ -890,7 +992,7 @@
    "end": 15.58,
    "ja": "こんな残酷なことしたんだから当然よね",
    "ko": "이런 잔인한 짓을 했으니 당연하지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.098",
@@ -899,7 +1001,7 @@
    "end": 17.62,
    "ja": "仕方ないじゃないか",
    "ko": "어쩔 수 없잖아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.099",
@@ -908,7 +1010,7 @@
    "end": 23.84,
    "ja": "まずい、早く行こう",
    "ko": "큰일이다, 빨리 가자.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "vis3.100",
@@ -917,7 +1019,7 @@
    "end": 25.02,
    "ja": "そうね",
    "ko": "그래.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }

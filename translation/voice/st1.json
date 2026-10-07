@@ -1,6 +1,6 @@
 {
  "stage": 1,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -36,7 +36,7 @@
    "end": 2.38,
    "ja": "ブロー!",
    "ko": "블로!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.002",
@@ -45,7 +45,7 @@
    "end": 5.82,
    "ja": "本気で勝てると思ってるの?",
    "ko": "정말로 이길 수 있다고 생각해?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.003",
@@ -54,7 +54,7 @@
    "end": 10.74,
    "ja": "ファラ、僕たちがやらなければウエスティナは滅びてしまう",
    "ko": "파라, 우리가 하지 않으면 웨스티나는 멸망하고 말아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.004",
@@ -63,7 +63,7 @@
    "end": 12.44,
    "ja": "だからって!",
    "ko": "그렇다고!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.005",
@@ -72,7 +72,7 @@
    "end": 14.74,
    "ja": "これは反逆よ",
    "ko": "이건 반역이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.006",
@@ -81,7 +81,7 @@
    "end": 18.94,
    "ja": "たった一人でウエスティナ中のみんなを敵に回してしまうのよ",
    "ko": "혼자서 웨스티나 전체를 적으로 돌리는 거라고.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.007",
@@ -90,7 +90,7 @@
    "end": 22.9,
    "ja": "一人じゃない、君にも手伝ってほしいんだ、ファラ",
    "ko": "혼자가 아니야. 너도 도와줬으면 해, 파라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.008",
@@ -99,7 +99,7 @@
    "end": 26.38,
    "ja": "無茶だわ、私たちには関係ないじゃない",
    "ko": "무모해. 우리랑은 상관없잖아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.009",
@@ -108,7 +108,7 @@
    "end": 29.32,
    "ja": "わざわざ殺されに行くようなものよ",
    "ko": "일부러 죽으러 가는 거나 마찬가지야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.010",
@@ -117,7 +117,7 @@
    "end": 31.04,
    "ja": "関係ないことないよ",
    "ko": "상관없지 않아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.011",
@@ -126,7 +126,7 @@
    "end": 35.38,
    "ja": "何もしなければ他のみんながいずれ死んでしまう",
    "ko": "아무것도 안 하면 다른 모두가 언젠가 죽고 말아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.012",
@@ -135,7 +135,7 @@
    "end": 38.46,
    "ja": "みんなを救うことができるのは僕たちだけ",
    "ko": "모두를 구할 수 있는 건 우리뿐이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.013",
@@ -144,7 +144,7 @@
    "end": 41.84,
    "ja": "これは使命だと思うんだ",
    "ko": "이건 사명이라고 생각해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.014",
@@ -153,7 +153,7 @@
    "end": 42.9,
    "ja": "そんな",
    "ko": "그런…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.015",
@@ -161,9 +161,8 @@
    "start": 43.74,
    "end": 45.08,
    "ja": "一つだけ勝算がある",
-   "ko": "승산은 하나 있어.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ko": "승산이 하나 있어.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.016",
@@ -172,16 +171,16 @@
    "end": 51.02,
    "ja": "マスターエンブリオのみんなは僕たちをただの落ちこぼれ、アウトローとしか思っていない",
    "ko": "마스터 엠브리오들은 우리를 그저 낙오자, 무법자로만 여기고 있어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.017",
    "audio": 0,
    "start": 53.46,
    "end": 54.6,
-   "ja": "それはそうだけど",
-   "ko": "그건 그렇지만.",
-   "status": "needs_review"
+   "ja": "それはそうだけど…",
+   "ko": "그건 그렇지만…",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.018",
@@ -190,7 +189,7 @@
    "end": 58.54,
    "ja": "その隙に一気にマスターエンブリオの元まで行くんだ",
    "ko": "그 틈에 단숨에 마스터 엠브리오에게 가는 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.019",
@@ -199,16 +198,16 @@
    "end": 60.52,
    "ja": "急げばなんとかなるさ",
    "ko": "서두르면 어떻게든 될 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.020",
    "audio": 0,
    "start": 60.92,
    "end": 61.66,
-   "ja": "行こう、ファラ",
-   "ko": "가자, 파라.",
-   "status": "needs_review"
+   "ja": "さあ、行こう、ファラ",
+   "ko": "자, 가자, 파라.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.021",
@@ -217,7 +216,7 @@
    "end": 65.46,
    "ja": "君がいないとこの計画は成功しない",
    "ko": "네가 없으면 이 계획은 성공 못 해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.022",
@@ -226,7 +225,7 @@
    "end": 69.4,
    "ja": "もうわかったわよ",
    "ko": "아, 알았어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.023",
@@ -235,7 +234,7 @@
    "end": 72.52,
    "ja": "あんたってなんでそうお人よしなの",
    "ko": "너는 어쩜 그렇게 사람이 좋아?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.024",
@@ -244,7 +243,7 @@
    "end": 75.28,
    "ja": "他人のことなんてほっとけばいいのに",
    "ko": "남의 일 따위 내버려 두면 될 텐데.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.025",
@@ -252,8 +251,8 @@
    "start": 76.66,
    "end": 80.3,
    "ja": "きっとファラが僕をほっておけないのと同じさ",
-   "ko": "파라가 날 내버려 두지 못하는 거랑 같은 거야.",
-   "status": "needs_review"
+   "ko": "분명 파라가 날 내버려 두지 못하는 거랑 같은 거야.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.026",
@@ -262,17 +261,18 @@
    "end": 4.72,
    "ja": "さて、このエリアのマスターエンブリオは",
    "ko": "자, 이 지역의 마스터 엠브리오는",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.027",
    "audio": 1,
    "start": 5.3,
    "end": 9.24,
-   "ja": "海王シエラね",
-   "ko": "해왕 시에라지.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ja": "キエクスライ・シエラ。海王シエラね",
+   "ko": "키에크스라이 시에라. 해왕 시에라지.",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "「海王シエラね」 앞의 「キエクスライ」는 두 모델 모두 같은 소리로 받아썼으나 무슨 말(이름·칭호)인지 확인 필요."
   },
   {
    "id": "st1.028",
@@ -281,7 +281,7 @@
    "end": 13.46,
    "ja": "この辺りの海はまだ汚染されていない",
    "ko": "이 근처 바다는 아직 오염되지 않았어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.029",
@@ -290,7 +290,7 @@
    "end": 15.6,
    "ja": "綺麗だ",
    "ko": "아름답다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.030",
@@ -299,7 +299,7 @@
    "end": 21.92,
    "ja": "マスターエンブリオともなると、いいところに住んでるものね",
    "ko": "마스터 엠브리오쯤 되면 좋은 데 사는구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.031",
@@ -307,8 +307,8 @@
    "start": 24.02,
    "end": 27.84,
    "ja": "そろそろシエラの管理エリアに突入するわね",
-   "ko": "슬슬 시에라의 관리 구역에 들어가.",
-   "status": "needs_review"
+   "ko": "슬슬 시에라의 관리 구역에 들어가겠네.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.032",
@@ -317,16 +317,16 @@
    "end": 31.12,
    "ja": "ガードシステムが働く頃なんじゃ",
    "ko": "경비 시스템이 작동할 때쯤인데…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.033",
    "audio": 1,
-   "start": 31.12,
-   "end": 32.5,
+   "start": 31.52,
+   "end": 33.97,
    "ja": "来た",
    "ko": "왔다!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.034",
@@ -335,7 +335,7 @@
    "end": 4.78,
    "ja": "今海の中で何か動いたわ",
    "ko": "방금 바닷속에서 뭔가 움직였어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.035",
@@ -344,7 +344,7 @@
    "end": 6.3,
    "ja": "気のせいじゃないの",
    "ko": "기분 탓 아니야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.036",
@@ -353,25 +353,36 @@
    "end": 10.04,
    "ja": "で、ブロー、これからどうするっていうの",
    "ko": "그래서 블로, 이제 어쩔 건데?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
-   "id": "st1.037",
+   "id": "st1.037a",
    "audio": 2,
    "start": 10.52,
-   "end": 16.0,
+   "end": 16.24,
    "ja": "さーてね、この辺で暴れてたら海王シエラが出てくるかと思ったんだけど",
    "ko": "글쎄, 이 근처에서 날뛰면 해왕 시에라가 나올 줄 알았는데.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st1.037b",
+   "audio": 2,
+   "start": 19.12,
+   "end": 19.96,
+   "ja": "どうしたの?",
+   "ko": "어떻게 된 거지?",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "기존 자막에 없던 말. 두 모델 모두 「どうしたの」로 들었고 음높이로 블로 말로 봤으나 끝말(「どうしたのかな」 등)은 확인 필요."
   },
   {
    "id": "st1.038",
    "audio": 2,
-   "start": 21.64,
+   "start": 20.64,
    "end": 26.22,
-   "ja": "あんたってどうしてそう行き当たりばったりなのよ",
-   "ko": "넌 어째서 그렇게 무계획이야?",
-   "status": "needs_review"
+   "ja": "呆れた。あんたってどうしてそう行き当たりばったりなのよ",
+   "ko": "어이없어. 넌 어째서 그렇게 무계획이야?",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.039",
@@ -380,7 +391,7 @@
    "end": 30.98,
    "ja": "大丈夫みたいだ、ほら来たよ",
    "ko": "괜찮은 것 같아. 봐, 왔어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.040",
@@ -388,8 +399,8 @@
    "start": 1.8,
    "end": 4.44,
    "ja": "侵入者アウトロー二人に告げます",
-   "ko": "침입자 무법자 둘에게 알립니다.",
-   "status": "needs_review"
+   "ko": "침입자, 무법자 두 명에게 알립니다.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.041",
@@ -398,7 +409,7 @@
    "end": 8.52,
    "ja": "このエリアでの破壊行為、許すわけにはいきません",
    "ko": "이 지역에서의 파괴 행위는 용납할 수 없습니다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.042",
@@ -407,7 +418,7 @@
    "end": 11.26,
    "ja": "破壊行為だって",
    "ko": "파괴 행위라니?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.043",
@@ -416,7 +427,7 @@
    "end": 16.68,
    "ja": "あなたたちは危険な存在。だからこの場で始末するべき",
    "ko": "당신들은 위험한 존재. 그러니 이 자리에서 처리해야 합니다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.044",
@@ -425,7 +436,7 @@
    "end": 17.74,
    "ja": "そうはいかない",
    "ko": "그렇게는 안 돼.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.045",
@@ -434,7 +445,7 @@
    "end": 20.3,
    "ja": "僕たちは話し合いに来たんだから",
    "ko": "우린 대화하러 왔으니까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.046",
@@ -443,7 +454,7 @@
    "end": 23.46,
    "ja": "反逆者に喋る権利などありません",
    "ko": "반역자에게 말할 권리 따윈 없습니다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.047",
@@ -452,7 +463,7 @@
    "end": 24.34,
    "ja": "待ってくれ",
    "ko": "기다려 줘!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.048",
@@ -460,17 +471,17 @@
    "start": 24.34,
    "end": 25.54,
    "ja": "排除します",
-   "ko": "배제합니다.",
-   "status": "needs_review"
+   "ko": "제거합니다.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.049",
    "audio": 4,
-   "start": 3.54,
+   "start": 2.9,
    "end": 4.9,
-   "ja": "何ぼーっとしてんのよ",
-   "ko": "뭘 멍하니 있어!",
-   "status": "needs_review"
+   "ja": "ブロー、何ぼーっとしてんのよ",
+   "ko": "블로, 뭘 멍하니 있어!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.050",
@@ -479,7 +490,7 @@
    "end": 6.38,
    "ja": "仕方ない",
    "ko": "어쩔 수 없지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.051",
@@ -488,8 +499,7 @@
    "end": 9.56,
    "ja": "手荒だけど実力行使だ",
    "ko": "거칠지만 힘으로 하는 수밖에.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.052",
@@ -498,7 +508,7 @@
    "end": 2.98,
    "ja": "システムに異常",
    "ko": "시스템 이상.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.053",
@@ -507,7 +517,7 @@
    "end": 6.26,
    "ja": "生体コネクションから拒否反応のため",
    "ko": "생체 커넥션의 거부 반응으로",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.054",
@@ -516,16 +526,16 @@
    "end": 8.34,
    "ja": "機能停止",
    "ko": "기능 정지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.055",
    "audio": 5,
-   "start": 8.34,
-   "end": 10.5,
+   "start": 15.17,
+   "end": 17.39,
    "ja": "意外にあっけなかったわね",
    "ko": "의외로 싱거웠네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.056",
@@ -534,7 +544,7 @@
    "end": 20.71,
    "ja": "で、ブロー、これからどうするの",
    "ko": "그래서 블로, 이제 어떡해?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.057",
@@ -543,7 +553,7 @@
    "end": 23.69,
    "ja": "思ったよりウイルスの影響は強いみたいだ",
    "ko": "생각보다 바이러스 영향이 강한 것 같아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.058",
@@ -551,8 +561,8 @@
    "start": 23.69,
    "end": 24.07,
    "ja": "え",
-   "ko": "응?",
-   "status": "needs_review"
+   "ko": "어?",
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.059",
@@ -561,7 +571,7 @@
    "end": 26.33,
    "ja": "とりあえず降りよう",
    "ko": "일단 내려가자.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.060",
@@ -570,7 +580,7 @@
    "end": 2.92,
    "ja": "目標破壊",
    "ko": "목표 파괴.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.061",
@@ -579,7 +589,7 @@
    "end": 6.9,
    "ja": "僕にはやらなければいけないことがあるんだ",
    "ko": "나에겐 해야 할 일이 있어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.062",
@@ -588,17 +598,16 @@
    "end": 2.68,
    "ja": "任務完了",
    "ko": "임무 완료.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st1.063",
    "audio": 7,
-   "start": 2.68,
-   "end": 4.5,
-   "ja": "って言ったのよね",
-   "ko": "…라고 했지.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "start": 4.1,
+   "end": 6.7,
+   "ja": "だ、だから無茶って言ったのよね",
+   "ko": "그, 그러니까 무모하다고 했잖아.",
+   "status": "distribution_eligible"
   }
  ]
 }

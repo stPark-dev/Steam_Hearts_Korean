@@ -1,6 +1,6 @@
 {
  "stage": 3,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -33,7 +33,7 @@
    "end": 4.2,
    "ja": "これが…初めて見るわ",
    "ko": "이게… 처음 봐.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.002",
@@ -42,7 +42,7 @@
    "end": 7.14,
    "ja": "ここがファクトリーの中なのね",
    "ko": "여기가 팩토리 안이구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.003",
@@ -51,7 +51,7 @@
    "end": 9.34,
    "ja": "なんか息苦しいな",
    "ko": "왠지 숨이 막히네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.004",
@@ -60,7 +60,7 @@
    "end": 11.52,
    "ja": "緑の匂いがしない",
    "ko": "풀 냄새가 안 나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.005",
@@ -69,7 +69,7 @@
    "end": 13.18,
    "ja": "なに言ってんの",
    "ko": "무슨 소리야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.006",
@@ -78,7 +78,7 @@
    "end": 16.24,
    "ja": "私たちもここで生まれたんでしょ",
    "ko": "우리도 여기서 태어났잖아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.007",
@@ -87,7 +87,7 @@
    "end": 18.16,
    "ja": "深い",
    "ko": "깊다…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.008",
@@ -96,7 +96,7 @@
    "end": 21.38,
    "ja": "吸い込まれて落ちてしまいそうだ",
    "ko": "빨려 들어가 떨어질 것 같아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.009",
@@ -105,7 +105,7 @@
    "end": 25.72,
    "ja": "障害物が多いから、ぶつかったら洒落にならないわよ",
    "ko": "장애물이 많으니까 부딪히면 큰일 나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.010",
@@ -114,7 +114,7 @@
    "end": 3.32,
    "ja": "あんたたちがアウトロー?",
    "ko": "너희가 무법자야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.011",
@@ -123,7 +123,7 @@
    "end": 7.54,
    "ja": "あたしの大事なファクトリーでずいぶん暴れてくれたわね",
    "ko": "내 소중한 팩토리에서 꽤나 날뛰어 줬더라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.012",
@@ -132,17 +132,18 @@
    "end": 9.3,
    "ja": "あ、あの",
    "ko": "저, 저기…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.013",
    "audio": 1,
    "start": 9.3,
    "end": 16.4,
-   "ja": "この最も美しくて強いあたし様がじきじきに遊んであげるわ",
-   "ko": "이 세상에서 가장 아름답고 강한 내가 직접 놀아 주지.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ja": "この最も美しくて強いタルテキサヌス・イア様がじきじきに遊んであげるわ",
+   "ko": "가장 아름답고 강한 타르테키사누스 이아 님이 직접 놀아 주지.",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "「イア様」 앞의 칭호 「タルテキサヌス」는 받아쓰기로만 알아 소리대로 옮김. 확인 필요."
   },
   {
    "id": "st3.014",
@@ -151,16 +152,25 @@
    "end": 18.1,
    "ja": "いらっしゃい、坊や",
    "ko": "덤벼 봐, 꼬마야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.015",
    "audio": 1,
-   "start": 19.72,
+   "start": 19.04,
    "end": 20.44,
-   "ja": "美しい?",
+   "ja": "う、美しい?",
    "ko": "아름답다고?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st3.015n",
+   "audio": 1,
+   "start": 24.8,
+   "end": 27.1,
+   "ja": "あはははは、おかしい!",
+   "ko": "아하하하, 웃겨!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.016",
@@ -169,7 +179,7 @@
    "end": 30.27,
    "ja": "なーにがおかしいっての?",
    "ko": "뭐가 웃기다는 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.017",
@@ -178,7 +188,7 @@
    "end": 31.81,
    "ja": "このメスガキ",
    "ko": "이 계집애가.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.018",
@@ -187,7 +197,7 @@
    "end": 34.29,
    "ja": "メスガキですって?",
    "ko": "계집애라고?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.019",
@@ -196,16 +206,16 @@
    "end": 36.71,
    "ja": "ブロー!",
    "ko": "블로!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.020",
    "audio": 2,
    "start": 0.14,
    "end": 2.92,
-   "ja": "終わり?",
-   "ko": "끝이야?",
-   "status": "needs_review"
+   "ja": "もう終わり?",
+   "ko": "벌써 끝이야?",
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.021",
@@ -214,16 +224,16 @@
    "end": 4.8,
    "ja": "あっけないわね",
    "ko": "싱겁네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.022",
    "audio": 2,
-   "start": 4.8,
-   "end": 8.0,
+   "start": 5.36,
+   "end": 11.1,
    "ja": "あんたたち消去してあげるわ",
    "ko": "너희를 지워 주겠어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.023",
@@ -232,7 +242,7 @@
    "end": 3.7,
    "ja": "待ちなさいよ",
    "ko": "기다려!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.024",
@@ -241,7 +251,7 @@
    "end": 8.08,
    "ja": "こいつはすごいわよ",
    "ko": "이건 굉장할걸.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.025",
@@ -250,7 +260,7 @@
    "end": 13.28,
    "ja": "ブラックホールボムか、まずい",
    "ko": "블랙홀 폭탄인가. 큰일이다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.026",
@@ -259,7 +269,7 @@
    "end": 19.05,
    "ja": "オーバーブーストだ、ファラ",
    "ko": "오버부스트야, 파라!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.027",
@@ -268,7 +278,7 @@
    "end": 23.31,
    "ja": "喋るな、舌を噛む",
    "ko": "말하지 마, 혀 깨문다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.028",
@@ -277,34 +287,25 @@
    "end": 27.43,
    "ja": "行っちゃいなさい、静寂の彼方へ",
    "ko": "가 버려라, 정적의 저편으로!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.029",
    "audio": 4,
    "start": 3.84,
-   "end": 5.46,
-   "ja": "鬼ごっこはおしまいだね",
-   "ko": "술래잡기는 끝이야.",
-   "status": "needs_review"
-  },
-  {
-   "id": "st3.030",
-   "audio": 4,
-   "start": 5.46,
    "end": 6.22,
-   "ja": "いや",
-   "ko": "싫어…",
-   "status": "needs_review"
+   "ja": "鬼ごっこはおしまいだね、イア",
+   "ko": "술래잡기는 끝이야, 이아.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.031",
    "audio": 4,
-   "start": 6.22,
-   "end": 8.5,
-   "ja": "終わったわね",
-   "ko": "끝났네.",
-   "status": "needs_review"
+   "start": 7.22,
+   "end": 10.58,
+   "ja": "ふぅ、やっと終わったわね",
+   "ko": "휴, 겨우 끝났네.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.032",
@@ -313,7 +314,7 @@
    "end": 11.3,
    "ja": "うん",
    "ko": "응.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.033",
@@ -322,7 +323,7 @@
    "end": 14.98,
    "ja": "さて、大人の遊びを",
    "ko": "자, 그럼 어른의 놀이를…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.034",
@@ -331,7 +332,7 @@
    "end": 15.74,
    "ja": "おいおい",
    "ko": "어이어이.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.035",
@@ -340,16 +341,16 @@
    "end": 18.26,
    "ja": "じゃなくて治療だったわね",
    "ko": "가 아니라 치료였지.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.036",
    "audio": 4,
-   "start": 18.26,
-   "end": 20.5,
-   "ja": "この子気絶してるわ",
-   "ko": "얘 기절했어.",
-   "status": "needs_review"
+   "start": 18.52,
+   "end": 22.97,
+   "ja": "あら、この子気絶してるわ",
+   "ko": "어머, 얘 기절했어.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.037",
@@ -358,7 +359,7 @@
    "end": 5.76,
    "ja": "この私に挑もうなんて10年早いわ、坊や",
    "ko": "나한테 덤비기엔 10년은 이르다, 꼬마야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.038",
@@ -367,7 +368,7 @@
    "end": 7.34,
    "ja": "死ねない!",
    "ko": "죽을 수 없어!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.039",
@@ -376,7 +377,7 @@
    "end": 9.64,
    "ja": "僕たちの代わりはいないんだ!",
    "ko": "우리 대신은 없어!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.040",
@@ -385,7 +386,7 @@
    "end": 2.1,
    "ja": "どう?",
    "ko": "어때?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.041",
@@ -394,7 +395,7 @@
    "end": 6.34,
    "ja": "これに懲りたらもう変な気起こさないことね",
    "ko": "이번에 혼났으면 다시는 이상한 생각 하지 마.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st3.042",
@@ -403,7 +404,7 @@
    "end": 10.18,
    "ja": "あんたなんかに負けるなんて認めないわ",
    "ko": "너 같은 것한테 지다니 인정 못 해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
  "stage": 2,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -28,19 +28,18 @@
    "audio": 0,
    "start": 0.84,
    "end": 4.76,
-   "ja": "抜いたコースね",
-   "ko": "빠른 길로 왔네.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ja": "さすが、シエラの言ったコースね",
+   "ko": "역시 시에라가 말한 길이네.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.002",
    "audio": 0,
    "start": 5.12,
    "end": 8.4,
-   "ja": "バッチリ敵もいないしスイスイ進めるわ",
+   "ja": "バッチリ敵もいないし、スイスイ進めるわ",
    "ko": "적도 하나 없고 술술 나아가네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.003",
@@ -48,8 +47,8 @@
    "start": 8.4,
    "end": 11.46,
    "ja": "さっきのようにすんなり行くといいんだけれどね",
-   "ko": "아까처럼 순순히 풀리면 좋겠는데.",
-   "status": "needs_review"
+   "ko": "아까처럼 순조롭게 풀리면 좋겠는데.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.004",
@@ -58,7 +57,7 @@
    "end": 15.96,
    "ja": "誰かさんと違ってシエラは賢いわね",
    "ko": "누구랑은 달리 시에라는 똑똑하네.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.005",
@@ -67,7 +66,7 @@
    "end": 17.24,
    "ja": "ちぇ",
    "ko": "쳇.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.006",
@@ -75,28 +74,28 @@
    "start": 1.74,
    "end": 2.46,
    "ja": "でかい",
-   "ko": "크다…",
-   "status": "needs_review"
+   "ko": "크다!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.007",
    "audio": 1,
    "start": 3.7,
    "end": 6.68,
-   "ja": "私は天空を管理するホウメイ",
-   "ko": "나는 하늘을 관리하는 호메이.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ja": "私は天空を管理するケイフレッティ・ホウメイ",
+   "ko": "나는 하늘을 관리하는 케이프레티 호메이.",
+   "status": "needs_human_review",
+   "asr_uncertain": true,
+   "note": "「ホウメイ」 앞의 「ケイフレッティ」는 large-v3가 여러 번 같은 소리로 받아썼으나 무슨 말(이름·칭호)인지 확인 필요."
   },
   {
    "id": "st2.008",
    "audio": 1,
    "start": 7.38,
    "end": 11.58,
-   "ja": "空を汚したあなたたちをここから先へ行かせるわけにはいかない",
+   "ja": "空を汚(けが)したあなたたちをここから先へ行かせるわけにはいかない",
    "ko": "하늘을 더럽힌 너희를 여기서 더 보낼 수는 없다.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.009",
@@ -105,7 +104,7 @@
    "end": 15.54,
    "ja": "私たちも先へ行かないわけにはいかないの",
    "ko": "우리도 앞으로 가지 않을 수는 없어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.010",
@@ -114,7 +113,7 @@
    "end": 19.4,
    "ja": "ホウメイ、強引に侵入したことは悪いと思ってるけど",
    "ko": "호메이, 억지로 들어온 건 미안하게 생각하지만",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.011",
@@ -123,25 +122,25 @@
    "end": 22.14,
    "ja": "僕たちの言い分も聞いてくれないか",
    "ko": "우리 얘기도 들어 주지 않겠어?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.012",
    "audio": 1,
    "start": 22.14,
    "end": 23.88,
-   "ja": "問答無用、覚悟",
+   "ja": "問答無用!覚悟!",
    "ko": "말이 필요 없다. 각오해라!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.013",
    "audio": 1,
    "start": 24.6,
    "end": 25.7,
-   "ja": "じゃ、ちょっと話…",
-   "ko": "자, 잠깐 얘기를…",
-   "status": "needs_review"
+   "ja": "ちょ、ちょっと、話…",
+   "ko": "잠, 잠깐, 얘기 좀…",
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.014",
@@ -150,7 +149,7 @@
    "end": 5.15,
    "ja": "仕方ない、やるよファラ",
    "ko": "어쩔 수 없지. 하자, 파라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.015",
@@ -159,16 +158,25 @@
    "end": 6.02,
    "ja": "ファラ、彼女を助けるんだ",
    "ko": "파라, 저 사람을 구하는 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
-   "id": "st2.016",
+   "id": "st2.016a",
    "audio": 3,
    "start": 6.02,
+   "end": 7.95,
+   "ja": "なんであんなやつを",
+   "ko": "왜 저런 녀석을?",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st2.016b",
+   "audio": 3,
+   "start": 8.2,
    "end": 8.7,
-   "ja": "なんであんなやつを助けるんだ",
-   "ko": "왜 저런 녀석을 구해야 하는데?",
-   "status": "needs_review"
+   "ja": "助けるんだ!",
+   "ko": "구해야 해!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.017",
@@ -177,7 +185,7 @@
    "end": 10.98,
    "ja": "もう、わかったわよ",
    "ko": "아, 알았다고.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.018",
@@ -186,7 +194,7 @@
    "end": 3.6,
    "ja": "たわいもないわね",
    "ko": "별것 아니군.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.019",
@@ -195,7 +203,7 @@
    "end": 7.22,
    "ja": "ダメだ、火力が違いすぎる",
    "ko": "안 돼, 화력 차이가 너무 커.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.020",
@@ -204,8 +212,7 @@
    "end": 3.98,
    "ja": "因果応報ってやつかしら",
    "ko": "인과응보라는 건가.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st2.021",
@@ -214,7 +221,7 @@
    "end": 5.14,
    "ja": "そんな",
    "ko": "그런…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }

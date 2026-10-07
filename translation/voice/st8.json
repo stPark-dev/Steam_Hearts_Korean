@@ -1,6 +1,6 @@
 {
  "stage": 8,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -15,7 +15,7 @@
    "end": 1.44,
    "ja": "プロト、狭くない?",
    "ko": "프로토, 좁지 않아?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.002",
@@ -24,7 +24,7 @@
    "end": 2.4,
    "ja": "大丈夫",
    "ko": "괜찮아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.003",
@@ -33,7 +33,7 @@
    "end": 4.94,
    "ja": "船が崩れる?",
    "ko": "배가 무너지는 거야?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.004",
@@ -42,7 +42,7 @@
    "end": 6.8,
    "ja": "急げ、ファラ!",
    "ko": "서둘러, 파라!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.005",
@@ -51,7 +51,7 @@
    "end": 12.65,
    "ja": "まだ動いている",
    "ko": "아직 움직이고 있어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.006",
@@ -60,7 +60,7 @@
    "end": 13.39,
    "ja": "どうして?",
    "ko": "어째서?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.007",
@@ -69,7 +69,7 @@
    "end": 15.89,
    "ja": "プロトはこっちに乗っているのに",
    "ko": "프로토는 여기 타고 있는데.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.008",
@@ -77,8 +77,44 @@
    "start": 15.89,
    "end": 19.09,
    "ja": "ウイルス自身が僕たちを殺すっていうのか",
-   "ko": "바이러스 스스로 우리를 죽이려는 건가?",
-   "status": "needs_review"
+   "ko": "바이러스 스스로 우리를 죽이려는 거야?",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st8.008n1",
+   "audio": 0,
+   "start": 23.22,
+   "end": 24.38,
+   "ja": "持ちこたえて!",
+   "ko": "버텨 줘!",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st8.008n2",
+   "audio": 0,
+   "start": 24.64,
+   "end": 25.86,
+   "ja": "ファラ、逃げろ!",
+   "ko": "파라, 도망쳐!",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st8.008n3",
+   "audio": 0,
+   "start": 27.94,
+   "end": 28.86,
+   "ja": "ファラ!",
+   "ko": "파라!",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st8.008n4",
+   "audio": 0,
+   "start": 35.2,
+   "end": 37.0,
+   "ja": "何をグズグズしている!",
+   "ko": "뭘 꾸물거리고 있나!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.009",
@@ -87,7 +123,7 @@
    "end": 38.28,
    "ja": "アルバルト!",
    "ko": "알바르트!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.010",
@@ -96,7 +132,7 @@
    "end": 41.7,
    "ja": "あまりに遅いんで、しびれを切らしたぞ",
    "ko": "너무 늦어서 기다리다 지쳤다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.011",
@@ -105,8 +141,7 @@
    "end": 43.12,
    "ja": "恩に着るよ",
    "ko": "고마워.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.012",
@@ -115,7 +150,7 @@
    "end": 45.22,
    "ja": "ファラ、行けるか?",
    "ko": "파라, 갈 수 있겠어?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.013",
@@ -124,7 +159,7 @@
    "end": 48.06,
    "ja": "どうにか、持ちそうよ",
    "ko": "어떻게든 버틸 것 같아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.014",
@@ -133,7 +168,7 @@
    "end": 49.46,
    "ja": "早くしろ!",
    "ko": "서둘러라!",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.015",
@@ -142,8 +177,7 @@
    "end": 52.22,
    "ja": "私とていつまで持つかわからん",
    "ko": "나도 언제까지 버틸지 모른다.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.016",
@@ -152,7 +186,7 @@
    "end": 54.08,
    "ja": "君も一緒に",
    "ko": "너도 같이…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.017",
@@ -161,7 +195,7 @@
    "end": 54.84,
    "ja": "先に行け",
    "ko": "먼저 가라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.018",
@@ -170,7 +204,7 @@
    "end": 57.5,
    "ja": "こいつはまだ生きている",
    "ko": "이 녀석은 아직 살아 있다.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.019",
@@ -179,7 +213,7 @@
    "end": 58.18,
    "ja": "でも",
    "ko": "하지만…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.020",
@@ -187,8 +221,8 @@
    "start": 58.18,
    "end": 60.2,
    "ja": "どうした、早くしろ",
-   "ko": "왜 그러나, 서둘러라.",
-   "status": "needs_review"
+   "ko": "왜 그러지? 서둘러라!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.021",
@@ -197,7 +231,7 @@
    "end": 63.38,
    "ja": "お前たちが今までしてきたことを無駄にするつもりか",
    "ko": "너희가 지금까지 해 온 일을 헛되게 할 셈이냐?",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.022",
@@ -206,7 +240,7 @@
    "end": 67.01,
    "ja": "プロトを助けるのが先だ",
    "ko": "프로토를 구하는 게 먼저야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.023",
@@ -215,8 +249,7 @@
    "end": 72.94,
    "ja": "アルバルトの好意を無駄にしたくないんだ",
    "ko": "알바르트의 호의를 헛되게 하고 싶지 않아.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.024",
@@ -225,25 +258,34 @@
    "end": 75.5,
    "ja": "いい奴らだよ",
    "ko": "좋은 녀석들이야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.025",
    "audio": 0,
    "start": 79.85,
-   "end": 83.0,
-   "ja": "アウトローともっと早くに出会えていたら",
+   "end": 85.48,
+   "ja": "アウトローともっと早くに出会えていたらな",
    "ko": "무법자들과 좀 더 일찍 만났더라면…",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st8.025n",
+   "audio": 0,
+   "start": 88.58,
+   "end": 89.46,
+   "ja": "アルバルト!",
+   "ko": "알바르트!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st8.026",
    "audio": 0,
-   "start": 85.47,
-   "end": 88.0,
+   "start": 90.56,
+   "end": 93.82,
    "ja": "必ず生きて帰ってきて",
    "ko": "꼭 살아서 돌아와.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }

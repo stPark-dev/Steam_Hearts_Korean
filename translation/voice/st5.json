@@ -1,6 +1,6 @@
 {
  "stage": 5,
- "ja_source": "faster-whisper large-v3 받아쓰기 (사람 확인 전)",
+ "ja_source": "faster-whisper large-v3·kotoba-whisper v2.0 대조, AI 교정(2026-10-07); AI 교차 검수(2026-10-07)",
  "note": "스테이지 안 대화. start/end는 음성 파일 시작부터의 초. audio는 audio 목록의 번호(게임은 파일 이름으로 찾음). 게임에서는 그 음성이 울리기 시작한 순간(사운드 칩 슬롯 12 키온)부터 잰다.",
  "audio": [
   {
@@ -21,14 +21,22 @@
  ],
  "entries": [
   {
-   "id": "st5.001",
+   "id": "st5.001a",
    "audio": 0,
    "start": 1.68,
+   "end": 3.52,
+   "ja": "ブロー、この先は?",
+   "ko": "블로, 이 앞은?",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st5.001b",
+   "audio": 0,
+   "start": 4.32,
    "end": 6.78,
-   "ja": "ブロー、この先は誰も足を踏み入れたことのないエリアだ",
-   "ko": "블로, 이 앞은 아무도 발을 들인 적 없는 지역이야.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ja": "誰も足を踏み入れたことのないエリアだ",
+   "ko": "아무도 발을 들인 적 없는 지역이야.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.002",
@@ -37,7 +45,7 @@
    "end": 11.04,
    "ja": "遺跡だなんて何もないじゃない",
    "ko": "유적이라더니 아무것도 없잖아.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.003",
@@ -46,7 +54,7 @@
    "end": 15.24,
    "ja": "タブーを犯すことになるから覚悟がいるかもしれないよ",
    "ko": "금기를 어기는 거니까 각오가 필요할지도 몰라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.004",
@@ -54,8 +62,8 @@
    "start": 16.02,
    "end": 21.84,
    "ja": "見渡す限りの森、森、森。居住エリアもないのね",
-   "ko": "보이는 건 숲, 숲, 숲. 사는 곳도 없네.",
-   "status": "needs_review"
+   "ko": "보이는 건 숲, 숲, 숲. 거주 지역도 없네.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.005",
@@ -64,8 +72,7 @@
    "end": 26.88,
    "ja": "夢を見ながら街に至るって言ってたっけ",
    "ko": "'꿈을 꾸며 거리에 이른다'고 했던가.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.006",
@@ -74,16 +81,16 @@
    "end": 30.3,
    "ja": "プロトはここで眠っているのかしら",
    "ko": "프로토는 여기서 잠들어 있는 걸까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.007",
    "audio": 0,
    "start": 31.46,
    "end": 37.86,
-   "ja": "そうか、今まで誰もここには来てないから起きる必要もなかったという意味なのかな",
-   "ko": "그렇군, 지금까지 아무도 안 와서 깨어날 필요도 없었다는 뜻일까.",
-   "status": "needs_review"
+   "ja": "そうか、今まで誰もここには来てないから、起きる必要もなかったという意味なのかな",
+   "ko": "그렇구나, 지금까지 아무도 안 와서 깨어날 필요도 없었다는 뜻일까.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.008",
@@ -92,7 +99,7 @@
    "end": 39.34,
    "ja": "ねえ、ブロー",
    "ko": "있잖아, 블로.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.009",
@@ -101,16 +108,16 @@
    "end": 45.14,
    "ja": "だとしたらプロトはずっとここで一人ぼっちなのかしら",
    "ko": "그렇다면 프로토는 줄곧 여기서 혼자인 걸까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.010",
    "audio": 0,
    "start": 47.19,
    "end": 51.91,
-   "ja": "一人でずっと来るものを拒み続けなければならないなんて嫌よ",
+   "ja": "一人でずっと来る者を拒み続けなければならないなんて嫌よ",
    "ko": "혼자서 오는 이를 계속 거부해야 한다니 싫어.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.011",
@@ -119,7 +126,7 @@
    "end": 57.01,
    "ja": "ファラは寂しがりなんだね",
    "ko": "파라는 외로움을 많이 타는구나.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.012",
@@ -128,7 +135,7 @@
    "end": 59.53,
    "ja": "もう、やめてよ",
    "ko": "아이참, 그만해.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.013",
@@ -137,16 +144,16 @@
    "end": 66.77,
    "ja": "ブロー、私を置いて死んだら許さないから",
    "ko": "블로, 날 두고 죽으면 용서 안 할 거야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.014",
    "audio": 0,
    "start": 69.51,
    "end": 72.21,
-   "ja": "ああ、ファラこそ",
+   "ja": "ああ、ファラこそな",
    "ko": "응, 파라야말로.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.015",
@@ -155,17 +162,16 @@
    "end": 3.06,
    "ja": "侵入者接近、レベル1",
    "ko": "침입자 접근, 레벨 1.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.016",
    "audio": 1,
    "start": 4.56,
    "end": 6.86,
-   "ja": "障壁、迎撃モードへ",
-   "ko": "방벽, 요격 모드로.",
-   "status": "needs_review",
-   "asr_uncertain": true
+   "ja": "哨戒機、迎撃モードへ",
+   "ko": "초계기, 요격 모드로.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.017",
@@ -174,7 +180,7 @@
    "end": 11.38,
    "ja": "侵入者なお接近、レベル2",
    "ko": "침입자 계속 접근, 레벨 2.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.018",
@@ -183,7 +189,7 @@
    "end": 14.0,
    "ja": "迎撃開始",
    "ko": "요격 개시.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.019",
@@ -192,7 +198,7 @@
    "end": 18.51,
    "ja": "侵入者レベル3まで侵入",
    "ko": "침입자 레벨 3까지 침입.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.020",
@@ -201,7 +207,7 @@
    "end": 22.26,
    "ja": "武装ユニット起動準備",
    "ko": "무장 유닛 기동 준비.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.021",
@@ -210,7 +216,7 @@
    "end": 2.9,
    "ja": "目標捕捉",
    "ko": "목표 포착.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.022",
@@ -219,7 +225,7 @@
    "end": 5.38,
    "ja": "主兵装使用可能",
    "ko": "주무장 사용 가능.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.023",
@@ -228,16 +234,25 @@
    "end": 10.34,
    "ja": "全兵装起動、起動",
    "ko": "전 무장 기동. 기동.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st5.023n",
+   "audio": 2,
+   "start": 11.56,
+   "end": 12.84,
+   "ja": "なんなのこれ!",
+   "ko": "이게 뭐야!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.024",
    "audio": 2,
-   "start": 13.77,
+   "start": 13.9,
    "end": 16.83,
-   "ja": "反応が接近してくるわ",
-   "ko": "반응이 다가오고 있어.",
-   "status": "needs_review"
+   "ja": "とんでもないエネルギー反応が接近してくるわ",
+   "ko": "엄청난 에너지 반응이 다가오고 있어.",
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.025",
@@ -246,7 +261,7 @@
    "end": 5.22,
    "ja": "大丈夫かい? ファラ",
    "ko": "괜찮아? 파라.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.026",
@@ -255,7 +270,7 @@
    "end": 9.62,
    "ja": "大丈夫じゃないわよ。まったくとんでもない子ね",
    "ko": "안 괜찮아. 정말 터무니없는 애야.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.027",
@@ -264,16 +279,34 @@
    "end": 12.56,
    "ja": "プロトはどこにいるんだろう",
    "ko": "프로토는 어디 있는 걸까.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st5.027n1",
+   "audio": 4,
+   "start": 1.52,
+   "end": 2.94,
+   "ja": "ビンゴです",
+   "ko": "빙고예요.",
+   "status": "distribution_eligible"
+  },
+  {
+   "id": "st5.027n2",
+   "audio": 4,
+   "start": 4.72,
+   "end": 6.96,
+   "ja": "ブロー、脱出して!",
+   "ko": "블로, 탈출해!",
+   "status": "distribution_eligible"
   },
   {
    "id": "st5.028",
    "audio": 4,
    "start": 8.64,
    "end": 10.66,
-   "ja": "これが遺跡を犯した報いなのか",
+   "ja": "これが遺跡を侵した報いなのか",
    "ko": "이게 유적을 침범한 대가인가.",
-   "status": "needs_review"
+   "status": "distribution_eligible"
   }
  ]
 }
