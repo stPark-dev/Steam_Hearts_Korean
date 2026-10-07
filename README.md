@@ -48,8 +48,8 @@
 ### 남은 일
 
 1. 번역 2차 검수와 사람 검수 (`translation/*.json`의 `status`를 `distribution_eligible`로).
-2. 스태프 롤 이름 중 독음이 확실하지 않은 것 확인 (`credits.json`의 `reading_uncertain`: 吉田 圭良, 堀 善宜, 福島 瑞生, 東 孝, 吉川 元庸, 村松 英孝, 須山 秀治, 石立 勉, 里内 知).
-3. 타이틀 로고 승인 (`assets/title/layout.json`의 `approved`).
+2. 스태프 롤 이름 독음: 9명 중 6명은 출처로 확인. 福島 瑞生, 東 孝, 里内 知 3명은 출처를 못 찾음(`credits.json`의 `reading_uncertain`).
+3. ~~타이틀 로고 승인~~ — 2026-10-07 승인.
 4. 데이터 선택 화면(`SIYO.SA`, `RAM.SA`)과 카트리지 읽는 중 줄의 실제 표시 확인.
 5. 스테이지 지도(`.MAX`) 안에 그림 글자가 없는지 남은 스테이지 확인.
 6. 음성 자막: 받아쓰기 교정·번역 검수를 AI 2중 검수로 마침(948줄 중 927줄 `distribution_eligible`, [`docs/subtitle-pilot.md`](docs/subtitle-pilot.md) 11절). 사람이 들어야 확정되는 21줄(보스 칭호·화자 불확실 등)이 남음. 스테이지 끝까지·`_BD`·`_FD`·`ST8.AIF` 자막 확인 완료(10.8절).
