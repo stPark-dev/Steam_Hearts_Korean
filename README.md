@@ -52,7 +52,7 @@
 3. 타이틀 로고 승인 (`assets/title/layout.json`의 `approved`).
 4. 데이터 선택 화면(`SIYO.SA`, `RAM.SA`)과 카트리지 읽는 중 줄의 실제 표시 확인.
 5. 스테이지 지도(`.MAX`) 안에 그림 글자가 없는지 남은 스테이지 확인.
-6. 음성 자막: 일본어 받아쓰기를 원음과 대조해 고치고(`asr_uncertain` 표시 줄 우선) 번역 검수. 스테이지 끝까지 진행 확인은 했음([`docs/subtitle-pilot.md`](docs/subtitle-pilot.md) 10.8); `_FD` 대사와 `ST8.AIF`가 언제 나오는지는 아직 모름.
+6. 음성 자막: 일본어 받아쓰기를 원음과 대조해 고치고(`asr_uncertain` 표시 줄 우선) 번역 검수. 스테이지 끝까지·`_BD`(블로우 게임 오버)·`_FD`(파라 게임 오버)·`ST8.AIF`(최종 보스 뒤 탈출 구간) 자막 확인 완료([`docs/subtitle-pilot.md`](docs/subtitle-pilot.md) 10.8).
 7. v0.2.2 zip(`out/release/`)을 배포 사이트에 올리고 제보 c57c84bd·602552bd에 답하기. 실기(Saroo)에서 스테이지 자막 확인 부탁.
 
 ## 릴리스 노트
