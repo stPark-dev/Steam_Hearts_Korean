@@ -69,7 +69,7 @@
    "end": 20.99,
    "ja": "チェルノ。バストーガー・チェルノだね",
    "ko": "첼노. 바스토가 첼노야.",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "두 모델 모두 「チェルノ。バストーガー(バストーが)チェルノだね」로 들음. 「バストーガー」는 마스터 엠브리오 칭호로 보이나 소리대로 음차함."
   },
@@ -116,7 +116,7 @@
    "end": 5.81,
    "ja": "ブロー、あれ! 赤い機体…まさか",
    "ko": "블로, 저거! 붉은 기체… 설마.",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "lv3 cue 「ブロー、アレン!」·kotoba 「ブローあれ」로 앞에 부르는 말이 있음. 화자가 둘인지 불분명하고 나눌 시각 근거가 없어 한 줄로 둠."
   },

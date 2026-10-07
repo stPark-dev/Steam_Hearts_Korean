@@ -252,7 +252,7 @@
    "end": 17.11,
    "ja": "貴様に敗れた私には、もう興味のないことだ",
    "ko": "너에게 패한 나에겐 이제 관심 없는 일이다.",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "large-v3는 「興味のない」로 들었으나 다음 줄 「関係なくなんかない!」로 보아 「関係のない」일 수도 있음."
   },
@@ -308,7 +308,7 @@
    "end": 40.58,
    "ja": "自分の存在に疑問を持ったことも",
    "ko": "내 존재에 의문을 품은 적도…",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "원래 구간(34.49~)에선 두 모델 모두 「何?」만 들려 시각을 전체 받아쓰기 기준으로 옮김. 앞의 「何?」 화자는 불명."
   },

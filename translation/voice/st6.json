@@ -513,7 +513,7 @@
    "end": 106.52,
    "ja": "僕は僕だ。ウエスティナの一部だ",
    "ko": "나는 나야. 웨스티나의 일부야.",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "두 모델 모두 「僕は僕だ」로 들었지만 문맥상 「僕らも/僕らだって」일 가능성도 있음."
   },

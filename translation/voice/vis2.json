@@ -99,7 +99,7 @@
    "end": 29.62,
    "ja": "そう言われても説得力に欠けるわね",
    "ko": "그렇게 말해 봤자 설득력이 없어.",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "cue는 환각이고 전체 받아쓰기는 「そうすると、説得力に欠けるわな」라 앞부분과 화자(호메이로 봄)가 불확실함."
   },
@@ -299,7 +299,7 @@
    "end": 109.32,
    "ja": "ごめん…自分は何をするべきだろう",
    "ko": "미안… 나는 뭘 해야 하는 거지…",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "두 모델 모두 「ごめん」 뒤에 「自分は何にするべきだ(ろう)」로 들어 뜻과 화자가 분명하지 않음. 앞 구간(101.6초~)은 파라 대사라 시각을 옮김."
   },
@@ -760,7 +760,7 @@
    "end": 163.6,
    "ja": "照れちゃって、かわいい",
    "ko": "부끄러워하기는. 귀엽네.",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "이 구간만 다시 받아쓰면 large-v3는 「照れちゃって、かわいい」, kotoba는 줄 구간에서 「照れちゃった」로 들음. 파라 대사로 봄."
   },

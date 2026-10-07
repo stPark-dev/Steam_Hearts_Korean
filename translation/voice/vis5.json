@@ -300,7 +300,7 @@
    "end": 97.78,
    "ja": "難しい…",
    "ko": "어려워…",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "두 모델 모두 「難しい」로 들었으나 누구 말인지, 앞부분이 잘린 다른 말인지 불확실함."
   },

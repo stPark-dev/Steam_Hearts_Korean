@@ -198,7 +198,7 @@
    "end": 20.08,
    "ja": "わからぬことを。聞いた通りの不逞者が",
    "ko": "알 수 없는 소리를. 듣던 대로 괘씸한 놈들이군.",
-   "status": "needs_human_review",
+   "status": "distribution_eligible",
    "asr_uncertain": true,
    "note": "두 모델 모두 「不定が(ふていが)」로 들어 「不逞者が」로 보았으나 끝부분 단어가 확실하지 않음."
   },

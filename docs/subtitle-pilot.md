@@ -247,3 +247,7 @@
 - **백업 RAM 안내(`translation/sa.json`) 17칸**: 원본 그림과 일본어 대조, 번역·용어 검수(1차·교차 모두 수정 없음) → 전부 `distribution_eligible`.
 - **스태프 롤(`translation/credits.json`) 18블록**: 롤 그림과 한자·직함 대조, 이름 독음은 웹 출처로 확인(블록의 `reading_note`에 URL). 吉田圭良 → 요시다 **케이로**, 石立勉 → 이시**타**테, 각본은 롤 그림을 확대 판독해 「堰 善宜」(세키 요시노부, PC엔진판 크레딧 「堰 善宣 Yoshinobu Seki」와 같은 사람으로 봄). 16블록 `distribution_eligible`.
 - **남은 것**: credit.06·credit.15의 福島瑞生·東孝·里内知 독음은 출처를 찾지 못해 `needs_human_review`.
+
+### 11.2 남은 줄 확정과 v0.9 (2026-10-07)
+
+프로젝트 소유자 결정으로 2차 검수 뒤에도 `needs_human_review`로 남았던 줄(소리가 애매한 음성 자막 21줄, 독음 출처를 못 찾은 스태프 3명이 든 credits 블록 2개)을 지금 해석대로 `distribution_eligible`로 확정했다. `asr_uncertain`·`reading_uncertain`·`note`는 나중에 귀로 확인할 사람이 생길 때를 위해 그대로 둔다. 이로써 빌드 결과 `distribution: true`가 되어 v0.9(배포 후보)로 올렸다. 배포 zip `Steam_Hearts_KR_v0.9.zip` SHA-1 `471db49e22fdbc4e360b4e5970a09ed8c0f5c2d1`, 한글판 BIN SHA-1 `8fdd1487de3ea1016eb1780a7b5364f927154c92`.
