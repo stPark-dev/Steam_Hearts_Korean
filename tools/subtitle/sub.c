@@ -24,7 +24,10 @@
    right before that.  Up to two lines, above the faces.  Voices are found by file name.
    The pause loop (0x0603355C..) saves the lists once (0x0601123C), stops the voice stream and
    then restores the saved lists every frame (0x06011298): the cue clock and the texture are
-   held while that happens.  Our sprites in a saved copy are switched off when it is saved;
+   held while that happens.  START during the dialogue skips it and keys the voice off for
+   good (START with no voice playing is the pause): when slot 12 stays off for VOICE_GONE
+   vblanks outside the pause, the voice's cues stop.  A voice timed by the fallback (no key-on
+   seen) cannot be cut this way.  Our sprites in a saved copy are switched off when it is saved;
    fresh ones are added on top every frame.
 
    An earlier version drew the stage text on VDP2 NBG3.  That only works in emulators: the
@@ -62,6 +65,7 @@ typedef unsigned int u32;
 #define KEYON_FALLBACK  39
 #define MAX_AUDIO   4
 #define SCENE_GONE  30          /* vblanks without the scene's frame wait: the scene is over */
+#define VOICE_GONE  30          /* vblanks with slot 12 keyed off: the stage voice was cut */
 
 /* ---- small helpers: gcc for SH-4 turns constant shifts into shad, force SH-2 sequences
    (shll/shlr set T: the "t" clobber keeps gcc from testing a stale T across them) */
@@ -140,12 +144,15 @@ static u32 called[MAX_AUDIO] = { 0 };
 static u32 anchor[MAX_AUDIO] = { 0 };
 static u8 started[MAX_AUDIO] = { 0 };
 static u8 seen_off[MAX_AUDIO] = { 0 };
+static u8 keyed[MAX_AUDIO] = { 0 };     /* the key-on was seen (not the fallback) */
+static int voice_off = 0;               /* stages: vblanks slot 12 has been off since */
 static int watch = -1;                  /* slot being watched for key-on */
 
 static void start_watch(int slot)
 {
     called[slot] = VBLANKS;
-    started[slot] = seen_off[slot] = 0;
+    started[slot] = seen_off[slot] = keyed[slot] = 0;
+    voice_off = 0;
     watch = slot;
 }
 
@@ -161,7 +168,7 @@ static NOINLINE void watch_keyon(u32 now)
         seen_off[a] = 1;
     } else if (seen_off[a]) {
         anchor[a] = now;
-        started[a] = 1;
+        started[a] = keyed[a] = 1;
         return;
     }
     if (now - called[a] >= KEYON_WAIT) {
@@ -601,7 +608,15 @@ void sub_on_vblank(void)        /* end of the vblank handler, every frame in eve
         if (paused(now)) {
             anchor[0]++;
             called[0]++;
+            voice_off = 0;      /* a full VOICE_GONE after the pause for the voice to come back */
             return;
+        }
+        /* START skips the dialogue: the game keys the voice off, so its cues end too */
+        if (keyed[0] && stage_voice >= 0) {
+            if (VOICE_SLOT & 0x0800)
+                voice_off = 0;
+            else if (++voice_off >= VOICE_GONE)
+                stage_voice = -1;
         }
         stg_want = stage_cue_now(now);
     } else {
