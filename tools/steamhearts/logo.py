@@ -12,13 +12,14 @@ from PIL import Image
 from . import spt
 
 ALPHA_CUT = 0.5
+CROP_ALPHA = 64         # pixels fainter than this (out of 255) do not count for the crop
 KMEANS_ITER = 40
 SEED = 1
 
 
 def _resample(path: Path, w: int, h: int) -> tuple[np.ndarray, np.ndarray]:
     im = Image.open(path).convert("RGBA")
-    im = im.crop(im.getbbox())
+    im = im.crop(im.getchannel("A").point(lambda v: 255 if v >= CROP_ALPHA else 0).getbbox())
     a = np.asarray(im).astype(float) / 255
     a[..., :3] *= a[..., 3:4]                    # premultiply so edges do not darken
     r = np.asarray(Image.fromarray((a * 255).round().astype(np.uint8), "RGBA")

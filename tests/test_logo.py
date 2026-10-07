@@ -53,3 +53,15 @@ def test_frames_keep_part_fields_in_range():
     for f in frames:
         for p in f.parts:
             assert 0 <= p.x <= 255 and 0 <= p.y <= 255
+
+
+def test_convert_ignores_faint_stray_pixels_when_cropping(tmp_path):
+    a = np.zeros((100, 300, 4), np.uint8)
+    a[10:60, 20:280] = (240, 240, 240, 255)
+    a[60:90, 80:200] = (220, 30, 40, 255)
+    clean = tmp_path / "clean.png"
+    Image.fromarray(a, "RGBA").save(clean)
+    a[0, 0] = a[99, 299] = (255, 255, 255, 10)    # near-invisible specks far outside the art
+    noisy = tmp_path / "noisy.png"
+    Image.fromarray(a, "RGBA").save(noisy)
+    assert (logo.convert(clean, 150, 25)[1] == logo.convert(noisy, 150, 25)[1]).all()

@@ -20,22 +20,22 @@
 
 ## 현재 상태
 
-**v0.9.1 (2026-10-07, 배포 파일 준비 완료)** — 화면 글자와 음성 대사 자막을 모두 한글로 옮기고 검수까지 마친 판입니다. 원음을 들을 사람이 없어 음성 대사는 음성 인식 두 가지(Whisper large-v3, kotoba-whisper)와 AI 2중 검수로 받아쓰기·번역을 확정했고(프로젝트 소유자 결정, [`docs/subtitle-pilot.md`](docs/subtitle-pilot.md) 11절), 소리가 애매한 21줄과 독음 출처를 못 찾은 스태프 3명도 지금 해석대로 확정했습니다(`asr_uncertain`·`reading_uncertain` 표시는 남겨 둠). 빌드 결과 `distribution: true`. 배포 zip은 만들어 두었고 사이트 업로드는 아직입니다([릴리스 노트](#릴리스-노트)).
+**v0.9.2 (2026-10-07, 배포 파일 준비 완료)** — 화면 글자와 음성 대사 자막을 모두 한글로 옮기고 검수까지 마친 판입니다. 원음을 들을 사람이 없어 음성 대사는 음성 인식 두 가지(Whisper large-v3, kotoba-whisper)와 AI 2중 검수로 받아쓰기·번역을 확정했고(프로젝트 소유자 결정, [`docs/subtitle-pilot.md`](docs/subtitle-pilot.md) 11절), 소리가 애매한 21줄과 독음 출처를 못 찾은 스태프 3명도 지금 해석대로 확정했습니다(`asr_uncertain`·`reading_uncertain` 표시는 남겨 둠). 빌드 결과 `distribution: true`. 배포 zip은 만들어 두었고 사이트 업로드는 아직입니다([릴리스 노트](#릴리스-노트)).
 
 ### 받기
 
 **[돈골's 한글팩 — 스팀 하츠 한글패치](https://hangul.dongolpack.workers.dev/resources/steam-hearts/)** 에서 받습니다(현재 사이트에는 v0.2 `Steam_Hearts_KR_v0.2.zip`이 올라가 있고, v0.2.1 zip은 올릴 준비가 된 상태). 원본 디스크 이미지는 배포하지 않으며, 사용자가 가진 원본에 적용하는 방식입니다. 적용 방법은 사이트 상세 페이지와 zip 안 `README.txt`(원문 [`docs/release/README.txt`](docs/release/README.txt))에 있습니다.
 
-| zip 안 폴더 | 원본 | v0.9.1 패치 결과 |
+| zip 안 폴더 | 원본 | v0.9.2 패치 결과 |
 |---|---|---|
-| `Redump/` | Redump 판 트랙별 BIN 18개. `Steam-Heart's (Japan) (Track 01).bin` SHA-1 `71cc4fc3e0613cc76c99392a2fa66cfa18fb05ef` | 한글판 1번 트랙(SHA-1 `b4dedcf86f631dfc86b357f611e2a1b4489d58ac`). 한글판 cue가 원본 2–18번 트랙을 그대로 읽음 |
-| `CHD/` | CHD를 `chdman extractcd`로 푼 BIN 하나(Redump 18개를 합친 것과 같음). SHA-1 `6f7ec1792e5f87bd080ad87dd9026514cb2e88e4` | 음악까지 든 한글판 BIN 하나(SHA-1 `f113f433425eea7a6710bb7eae6c069a5b538c5e`, 이 커밋의 `out/ko` 빌드와 같음) |
+| `Redump/` | Redump 판 트랙별 BIN 18개. `Steam-Heart's (Japan) (Track 01).bin` SHA-1 `71cc4fc3e0613cc76c99392a2fa66cfa18fb05ef` | 한글판 1번 트랙(SHA-1 `3e000f1a869cac254da9101cdb90f7892ca07c36`). 한글판 cue가 원본 2–18번 트랙을 그대로 읽음 |
+| `CHD/` | CHD를 `chdman extractcd`로 푼 BIN 하나(Redump 18개를 합친 것과 같음). SHA-1 `6f7ec1792e5f87bd080ad87dd9026514cb2e88e4` | 음악까지 든 한글판 BIN 하나(SHA-1 `638b30eae20c01c00f9b21b6779a569cd3a8aa5f`, 이 커밋의 `out/ko` 빌드와 같음) |
 
-두 패치는 BPS 형식이며 Floating IPS(flips)로 적용합니다. zip은 `python3 tools/mkrelease.py --source "원본.cue" --version 0.9.1`로 만들며(`out/release/`), 쓰기 전에 각 패치를 원본에 다시 적용해 빌드와 같은지 확인합니다. v0.9.1 zip `Steam_Hearts_KR_v0.9.1.zip` 409,106바이트, SHA-1 `17ec163d5f04099a7e17b04dba9e68156ba8b081` (올리지 않은 v0.9 zip은 `471db49e…`, v0.2.2 zip은 `80ac06c6…`). v0.2.2부터 해시는 **리눅스(데비안 12, Pillow 9.4.0, FreeType 2.12.1) 빌드 기준**입니다. Windows 등 다른 FreeType으로 빌드하면 한글 그림 글자의 일부 화소가 달라 해시가 다를 수 있습니다(동작은 같음). 이전 판(v0.2 `a54170ed…`, v0.2.1 `963f725d…`)은 Windows 빌드 기준이었습니다.
+두 패치는 BPS 형식이며 Floating IPS(flips)로 적용합니다. zip은 `python3 tools/mkrelease.py --source "원본.cue" --version 0.9.2`로 만들며(`out/release/`), 쓰기 전에 각 패치를 원본에 다시 적용해 빌드와 같은지 확인합니다. v0.9.2 zip `Steam_Hearts_KR_v0.9.2.zip` 407,861바이트, SHA-1 `242aebac1b1b3ff0fe96d481b26b1ba55b902f93` (올리지 않은 v0.9.1 zip은 `17ec163d…`, v0.9 zip은 `471db49e…`, v0.2.2 zip은 `80ac06c6…`). v0.2.2부터 해시는 **리눅스(데비안 12, Pillow 9.4.0, FreeType 2.12.1) 빌드 기준**입니다. Windows 등 다른 FreeType으로 빌드하면 한글 그림 글자의 일부 화소가 달라 해시가 다를 수 있습니다(동작은 같음). 이전 판(v0.2 `a54170ed…`, v0.2.1 `963f725d…`)은 Windows 빌드 기준이었습니다.
 
 | 대상 | 내용 | 상태 |
 |---|---|---|
-| 타이틀 로고 (`SHLOGO.SPT`) | 제공된 `title_ko.png`를 원래 로고 자리에 16색 스프라이트로 넣음 | 실행 확인, **로고 승인 대기** |
+| 타이틀 로고 (`SHLOGO.SPT`) | 제공된 `title_ko.png`(v0.9.2 새 디자인)를 원래 로고 자리에 5색 스프라이트로 넣음 | 실행 확인, 승인 |
 | 백업 RAM 안내 7장 (`*.SA`) | 용량 부족·초기화 안 됨·기록 손상·데이터 선택·읽는 중·예/아니요·본체/카트리지 RAM | 5장 실행 확인(화소 단위 일치), 데이터 선택·카트리지 줄은 코드로만 확인 |
 | 엔딩 스태프 롤 (`SR.SPT`) | 18블록, 역할·회사명 번역, 이름 한글 음역 | 실행 확인, **이름 독음 일부 확인 필요** |
 | 오프닝 동영상 속 로고 | Cinepak 동영상 안의 그림 | 1차에서는 그대로 둠 (결정 D-2) |
@@ -47,12 +47,19 @@
 
 ### 남은 일
 
-1. v0.9.1 zip(`out/release/`)을 배포 사이트에 올리고 제보 c57c84bd·602552bd에 답하기. 실기(Saroo)에서 스테이지 자막 확인 부탁.
+1. v0.9.2 zip(`out/release/`)을 배포 사이트에 올리고 제보 c57c84bd·602552bd에 답하기. 실기(Saroo)에서 스테이지 자막 확인 부탁.
 2. 데이터 선택 화면(`SIYO.SA`, `RAM.SA`)과 카트리지 읽는 중 줄의 실제 표시 확인.
 3. 스테이지 지도(`.MAX`) 안에 그림 글자가 없는지 확인(스테이지 전부를 자동 진행하며 본 화면에는 없었음, 파일 해석은 안 함).
 4. 귀로 들어 확인할 사람이 생기면: `asr_uncertain`이 붙은 음성 자막 21줄(줄마다 `note`)과 스태프 3명(福島 瑞生, 東 孝, 里内 知) 독음.
 
 ## 릴리스 노트
+
+### v0.9.2
+
+2026-10-07 배포 파일 준비 (`Steam_Hearts_KR_v0.9.2.zip`). v0.9·v0.9.1 zip은 올리지 않고 이 판으로 바꿈.
+
+**바뀐 것**
+- 타이틀 화면 로고를 새 디자인(영문 STEAM-HEART'S + 붉은 한글 「스팀 하츠」, `title_ko.png`)으로 바꿨습니다. 높이는 원래 로고와 같은 88줄이고, 원래 파일 자리(3섹터)에 넣으려고 5색으로 줄였습니다(`assets/title/layout.json`).
 
 ### v0.9.1
 
@@ -198,7 +205,7 @@ python3 -m pytest -q tests
 | 버전 | 의미 |
 |---|---|
 | v1.0 | 정식판. v0.9에 실기 확인(세가새턴 실기 또는 Saroo 등에서 스테이지·장면 자막 표시)과 배포 뒤 들어온 오역 제보 반영을 마친 판 |
-| **v0.9 / v0.9.1** | 배포 후보(2026-10-07, v0.9.1은 대사 넘기기 자막 수정). 모든 번역 `distribution_eligible`(음성 대사는 AI 2중 검수로 확정, 소유자 결정), 로고 승인, 빌드 `distribution: true` |
+| **v0.9 – v0.9.2** | 배포 후보(2026-10-07, v0.9.1은 대사 넘기기 자막 수정, v0.9.2는 새 타이틀 로고). 모든 번역 `distribution_eligible`(음성 대사는 AI 2중 검수로 확정, 소유자 결정), 로고 승인, 빌드 `distribution: true` |
 | v0.5 | 확인·1차 검수 완료판. ① 화면 확인: 보스 직전·격파 대사(`_BD`·`_FD`), 스테이지를 깬 뒤 비주얼 장면과 엔딩까지 한 번 끝까지 진행, 데이터 선택 화면·카트리지 줄, 스테이지 지도(`.MAX`) 그림 글자 ② 받아쓰기 교정: `asr_uncertain` 줄 원음 대조, 일본어 전체 한 번 훑기 ③ 번역 2차 검수: 모든 줄 `needs_human_review` 이상 ④ 스태프 롤 `reading_uncertain` 독음 확인 |
 | v0.2.2-beta | 공개 시험판(2026-10-06 준비). 장면 자막 잘림·실기 스테이지 자막 미표시 제보 수정(자막을 VDP1 스프라이트로), 일시정지 중 자막 수정 |
 | v0.2.1-beta | 공개 시험판(2026-10-05 준비). 게임 오버 때 끝난 대사 자막이 다시 나오던 문제 수정, 스테이지 2–8 시작 대사 화면 확인 |
